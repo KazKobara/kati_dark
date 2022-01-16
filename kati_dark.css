@@ -1,4 +1,4 @@
-/* ¡¼¡¼¡¼¡¼¡¼¡¼Á´ÂÎ¤ÎÀßÄê¡¼¡¼¡¼¡¼¡¼¡¼ */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼å…¨ä½“ã®è¨­å®šãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
 body {
 	# background-color: lightgray;
 	background-color: black;
@@ -31,7 +31,7 @@ div.section p{
 	margin : 1em 10px 1em 35px;
 	text-indent:1em;
 }
-/* ¥ê¥¹¥È¥¹¥¿¥¤¥ë */
+/* ãƒªã‚¹ãƒˆã‚¹ã‚¿ã‚¤ãƒ« */
 ul li {
 	font-family:"Osaka",sans-serif;
 	list-style-image: url('./list_a.gif')
@@ -57,7 +57,7 @@ div.section ul li,div.section ol li {
 }
 
 
-/* ¥ê¥ó¥¯¤ÎÀßÄê */
+/* ãƒªãƒ³ã‚¯ã®è¨­å®š */
 A:link,A:visited { 
 	# color            :#422100;
 	color            :#ff0000;
@@ -75,14 +75,14 @@ A:active {
 	text-decoration : none;
 }
 
-/* ¡¼¡¼¡¼¡¼¡¼¡¼Á´ÂÎ¤ÎÀßÄê ½ªÎ»¡¼¡¼¡¼¡¼¡¼¡¼ */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼å…¨ä½“ã®è¨­å®š çµ‚äº†ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
 
-/* ¡¼¡¼¡¼¡¼¡¼¡¼¥á¥Ë¥å¡¼¤ÎÀßÄê³«»Ï¡¼¡¼¡¼¡¼¡¼¡¼ */
-/* ¥á¥Ë¥å¡¼¤Î¥µ¥¤¥º */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®è¨­å®šé–‹å§‹ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
+/* ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®ã‚µã‚¤ã‚º */
 div.adminmenu {
     	background-color: lightgray;
 	background-repeat: no-repeat;
-	font-family:"Hiragino Kaku Gothic Pro", "¥Ò¥é¥®¥Î³Ñ¥´ Pro W8","Osaka",sans-serif;
+	font-family:"Hiragino Kaku Gothic Pro", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W8","Osaka",sans-serif;
 	font-size      : 12px;
 	line-height : 26px;
 	font-weight  : bold;
@@ -92,8 +92,8 @@ div.adminmenu {
 	margin-left: 205px;
 }
 
-/* ¥á¥Ë¥å¡¼¤ÎÁõ¾ş */
-/* ¥ê¥ó¥¯ */
+/* ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®è£…é£¾ */
+/* ãƒªãƒ³ã‚¯ */
 div.adminmenu A{
 	padding : 2px 7px;
 	font-weight  : bold;
@@ -110,7 +110,7 @@ div.adminmenu A:link,div.adminmenu A:visited {
 	text-shadow: #3CB371 0px 0px 10px;
 }
 
-/* ¥«¡¼¥½¥ë¤ò¾å¤Ë»ı¤Ã¤Æ¤­¤¿»ş¥ê¥ó¥¯ */
+/* ã‚«ãƒ¼ã‚½ãƒ«ã‚’ä¸Šã«æŒã£ã¦ããŸæ™‚ãƒªãƒ³ã‚¯ */
 div.adminmenu A:hover {
 	text-decoration  : none;
 	font-weight  : bold;
@@ -119,9 +119,9 @@ div.adminmenu A:hover {
 	color : black;
 	text-shadow: #3CB371 0px 0px 10px;
 }
-/* ¡¼¡¼¡¼¡¼¡¼¡¼¥á¥Ë¥å¡¼¤ÎÀßÄê½ªÎ»¡¼¡¼¡¼¡¼¡¼¡¼ */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®è¨­å®šçµ‚äº†ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
 
-/* ¡¼¡¼¡¼¡¼¡¼¡¼ header¤ÎÀßÄê ¡¼¡¼¡¼¡¼¡¼¡¼ */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ headerã®è¨­å®š ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
 div.header {
 	background-color: #f8f5f1;
 	padding: 1px 18px;
@@ -149,9 +149,9 @@ div.header ul li ul li{
 div.header ul li ul li ul li{
 	list-style-image: url('./go_back_3.gif')
 }
-/* ¡¼¡¼¡¼¡¼¡¼¡¼ header¤ÎÀßÄê½ªÎ» ¡¼¡¼¡¼¡¼¡¼¡¼ */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ headerã®è¨­å®šçµ‚äº† ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
 
-/* ¡¼¡¼¡¼¡¼¡¼¡¼ footerÀßÄê ¡¼¡¼¡¼¡¼¡¼¡¼ */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ footerè¨­å®š ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
 .footer {
 	margin-top:0px;
 	margin-right:3px;
@@ -169,14 +169,14 @@ div.header ul li ul li ul li{
 .footer A {
 	text-decoration  : none;
 }
-/* ¡¼¡¼¡¼¡¼¡¼¡¼ footerÀßÄê½ªÎ» ¡¼¡¼¡¼¡¼¡¼¡¼ */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ footerè¨­å®šçµ‚äº† ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
 
 hr {
 	border-top    : #3CB371 2px solid;
 	color : #3CB371;
 }
 
-/* ¡¼¡¼¡¼¡¼¡¼¡¼ ¢¢°Ï¤ßÊ¸»ú ¡¼¡¼¡¼¡¼¡¼¡¼ */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ â–¡å›²ã¿æ–‡å­— ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
 pre {
 	-moz-border-radius: 10px;
 	border : #D3D3D3 1px solid;
@@ -188,7 +188,7 @@ pre {
 	font-size      : 13px;
 }
 
-/* ¡¼¡¼¡¼¡¼¡¼¡¼ °úÍÑÊ¸ ¡¼¡¼¡¼¡¼¡¼¡¼ */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ å¼•ç”¨æ–‡ ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
 blockquote {
 	-moz-border-radius: 10px;
 	border      : #d4d4d4 1px dotted;
@@ -201,10 +201,10 @@ blockquote {
 	font-style  : italic;
 }
 
-/* ¡¼¡¼¡¼¡¼¡¼¡¼¸«½Ğ¤·¤ÎÀßÄê³«»Ï¡¼¡¼¡¼¡¼¡¼¡¼ /
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼è¦‹å‡ºã—ã®è¨­å®šé–‹å§‹ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ /
 /* H1 */
 h1{
-	font-family:"Hiragino Kaku Gothic Pro", "¥Ò¥é¥®¥Î³Ñ¥´ Pro W8","Osaka",sans-serif;
+	font-family:"Hiragino Kaku Gothic Pro", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W8","Osaka",sans-serif;
 	font-weight  : bold;
 	text-align       : right;
 	font-size   : 30px;
@@ -225,7 +225,7 @@ h1{
 }
 
 h1 A:link,h1 A:visited{
-	font-family:"Hiragino Kaku Gothic Pro", "¥Ò¥é¥®¥Î³Ñ¥´ Pro W8","Osaka",sans-serif;
+	font-family:"Hiragino Kaku Gothic Pro", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W8","Osaka",sans-serif;
 	# color : black;
 	color : white;
 	text-decoration : none;
@@ -234,7 +234,7 @@ h1 A:link,h1 A:visited{
 }
 
 h1 A:hover {
-	font-family:"Hiragino Kaku Gothic Pro", "¥Ò¥é¥®¥Î³Ñ¥´ Pro W8","Osaka",sans-serif;
+	font-family:"Hiragino Kaku Gothic Pro", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W8","Osaka",sans-serif;
 	font-weight  : bold;
 	color            : #fe3670;
 	text-shadow: yellow 0px 0px 10px;
@@ -242,7 +242,7 @@ h1 A:hover {
 
 /* H2 */
 h2 {
-	font-family:"Hiragino Kaku Gothic Pro", "¥Ò¥é¥®¥Î³Ñ¥´ Pro W8","Osaka",sans-serif;
+	font-family:"Hiragino Kaku Gothic Pro", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W8","Osaka",sans-serif;
 	font-weight  : bold;
 	font-size   : 20px;
 	line-height  :20px;
@@ -258,14 +258,14 @@ h2 {
 }
 
 h2 A:link,h2 A:visited { 
-	font-family:"Hiragino Kaku Gothic Pro", "¥Ò¥é¥®¥Î³Ñ¥´ Pro W8","Osaka",sans-serif;
+	font-family:"Hiragino Kaku Gothic Pro", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W8","Osaka",sans-serif;
 	font-weight  : bold;
 	color            : khaki;
 	text-decoration : none;
 }
 
 h2 A:hover {
-	font-family:"Hiragino Kaku Gothic Pro", "¥Ò¥é¥®¥Î³Ñ¥´ Pro W8","Osaka",sans-serif;
+	font-family:"Hiragino Kaku Gothic Pro", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W8","Osaka",sans-serif;
 	font-weight  : bold;
 	color            : #fe3670;
 	text-decoration : none;
@@ -273,7 +273,7 @@ h2 A:hover {
 
 /* H3 */
 h3 {
-	font-family:"Hiragino Kaku Gothic Pro", "¥Ò¥é¥®¥Î³Ñ¥´ Pro W8","Osaka",sans-serif;
+	font-family:"Hiragino Kaku Gothic Pro", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W8","Osaka",sans-serif;
 	font-weight  : bold;
 	color : #3CB371;
 	font-size   : 17px;
@@ -292,7 +292,7 @@ h3 {
 }
 
 h3 A:link,h3 A:visited{
-	font-family:"Hiragino Kaku Gothic Pro", "¥Ò¥é¥®¥Î³Ñ¥´ Pro W8","Osaka",sans-serif;
+	font-family:"Hiragino Kaku Gothic Pro", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W8","Osaka",sans-serif;
 	font-weight  : bold;
 	# color: black;
 	color: royalblue;
@@ -300,7 +300,7 @@ h3 A:link,h3 A:visited{
 }
 
 h3 A:hover {
-	font-family:"Hiragino Kaku Gothic Pro", "¥Ò¥é¥®¥Î³Ñ¥´ Pro W8","Osaka",sans-serif;
+	font-family:"Hiragino Kaku Gothic Pro", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W8","Osaka",sans-serif;
 	font-weight  : bold;
 	color            : #fe3670;
 	text-decoration : none;
@@ -308,7 +308,7 @@ h3 A:hover {
 
 /* H4 */
 h4 {
-	font-family:"Hiragino Kaku Gothic Pro", "¥Ò¥é¥®¥Î³Ñ¥´ Pro W8","Osaka",sans-serif;
+	font-family:"Hiragino Kaku Gothic Pro", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W8","Osaka",sans-serif;
 	font-weight  : bold;
 	# color : black;
 	color : #3CB371;
@@ -324,7 +324,7 @@ h4 {
 }
 
 h4 A:link,h4 A:visited{
-	font-family:"Hiragino Kaku Gothic Pro", "¥Ò¥é¥®¥Î³Ñ¥´ Pro W8","Osaka",sans-serif;
+	font-family:"Hiragino Kaku Gothic Pro", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W8","Osaka",sans-serif;
 	font-weight  : bold;
 	# color: lightskyblue;
 	color: royalblue;
@@ -333,14 +333,14 @@ h4 A:link,h4 A:visited{
 }
 
 h4 A:hover {
-	font-family:"Hiragino Kaku Gothic Pro", "¥Ò¥é¥®¥Î³Ñ¥´ Pro W8","Osaka",sans-serif;
+	font-family:"Hiragino Kaku Gothic Pro", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W8","Osaka",sans-serif;
 	font-weight  : bold;
 	color            : #fe3670;
 	text-decoration : none;
 }
-/* ¡¼¡¼¡¼¡¼¡¼¡¼¸«½Ğ¤·¤ÎÀßÄê½ªÎ»¡¼¡¼¡¼¡¼¡¼¡¼ */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼è¦‹å‡ºã—ã®è¨­å®šçµ‚äº†ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
 
-/* ¡¼¡¼¡¼¡¼¡¼¡¼¥Æ¡¼¥Ö¥ëÀßÄê³«»Ï ¡¼¡¼¡¼¡¼¡¼¡¼ */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ†ãƒ¼ãƒ–ãƒ«è¨­å®šé–‹å§‹ ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
 table {
 	margin : 10px 10px 10px 35px;
 	border-collapse: collapse;
@@ -368,8 +368,8 @@ td {
 	padding :5px 10px;
 	border   : #D3D3D3 1px solid;
 }
-/* ¡¼¡¼¡¼¡¼¡¼¡¼¥Æ¡¼¥Ö¥ëÀßÄê½ªÎ» ¡¼¡¼¡¼¡¼¡¼¡¼ */
-/* ¡¼¡¼¡¼¡¼¡¼¡¼ partedit¥×¥é¥°¥¤¥ó ¡¼¡¼¡¼¡¼¡¼¡¼ */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ†ãƒ¼ãƒ–ãƒ«è¨­å®šçµ‚äº† ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ parteditãƒ—ãƒ©ã‚°ã‚¤ãƒ³ ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
 div.partedit {
 	font-family:"Osaka",sans-serif;
 	font-size  : 12px;
@@ -383,7 +383,7 @@ div.partedit A{
 	text-decoration  : none;
 }
 
-/* ¡¼¡¼¡¼¡¼¡¼¡¼ partedit¥×¥é¥°¥¤¥ó½ªÎ» ¡¼¡¼¡¼¡¼¡¼¡¼ */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ parteditãƒ—ãƒ©ã‚°ã‚¤ãƒ³çµ‚äº† ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
 dl {
 	margin : 0.5em 10px 0.5em 35px;
 }
@@ -404,7 +404,7 @@ div.main {
 	margin-right: 1px;
 }
 
-/* ¡¼¡¼¡¼¡¼¡¼¡¼ footer ÀßÄê³«»Ï ¡¼¡¼¡¼¡¼¡¼¡¼ */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ footer è¨­å®šé–‹å§‹ ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
 div.comment {
 	padding  : 4px 16px;
 	margin-top       : 10px;
@@ -447,10 +447,10 @@ div.comment h3 {
 div.comment h3 A:link {
 	color : black;
 }
-/* ¡¼¡¼¡¼¡¼¡¼¡¼ footer ÀßÄê½ªÎ» ¡¼¡¼¡¼¡¼¡¼¡¼ */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ footer è¨­å®šçµ‚äº† ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
 
-/* ¡¼¡¼¡¼¡¼¡¼¡¼ ¥µ¥¤¥É¥Ğ¡¼(¥á¥Ë¥å¡¼)ÀßÄê³«»Ï ¡¼¡¼¡¼¡¼¡¼¡¼ */
-/* ¥µ¥¤¥É¥Ğ¡¼(¥á¥Ë¥å¡¼)ÀßÄê */
+/* ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ ã‚µã‚¤ãƒ‰ãƒãƒ¼(ãƒ¡ãƒ‹ãƒ¥ãƒ¼)è¨­å®šé–‹å§‹ ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¼ */
+/* ã‚µã‚¤ãƒ‰ãƒãƒ¼(ãƒ¡ãƒ‹ãƒ¥ãƒ¼)è¨­å®š */
 div.sidebar {
 	overflow: hidden;
 	position        : absolute;
@@ -461,14 +461,15 @@ div.sidebar {
 	# background-color: #f8f5f1;
 	background-color: #101010;
 }
-/* ¥µ¥¤¥É¥Ğ¡¼(¥á¥Ë¥å¡¼)¸«½Ğ¤·ÀßÄê */
+/* ã‚µã‚¤ãƒ‰ãƒãƒ¼(ãƒ¡ãƒ‹ãƒ¥ãƒ¼)è¦‹å‡ºã—è¨­å®š */
 div.sidebar h2,div.sidebar h3,div.sidebar h4{
-	font-family:"Hiragino Kaku Gothic Pro", "¥Ò¥é¥®¥Î³Ñ¥´ Pro W8","Osaka",sans-serif;
+	font-family:"Hiragino Kaku Gothic Pro", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W8","Osaka",sans-serif;
 	font-size   : 14px;
 	line-height  :20px;
 	margin:0px;
 	# background-color : #c8c9b5;
-	background-color : green;
+	# background-color : green;
+	background-color : khaki;
 	background-image: url(./sid_men.jpg);
 	background-repeat: no-repeat;
 	border:0px;
@@ -490,9 +491,9 @@ div.g4ser{
 	border: 0;
 }
 
-/* ¥µ¥¤¥É¥Ğ¡¼(¥á¥Ë¥å¡¼)¥ê¥¹¥ÈÀßÄê */
+/* ã‚µã‚¤ãƒ‰ãƒãƒ¼(ãƒ¡ãƒ‹ãƒ¥ãƒ¼)ãƒªã‚¹ãƒˆè¨­å®š */
 div.sidebar ul,div.sidebar li {
-	font-family:"Hiragino Kaku Gothic Pro", "¥Ò¥é¥®¥Î³Ñ¥´ Pro W8","Osaka",sans-serif;
+	font-family:"Hiragino Kaku Gothic Pro", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W8","Osaka",sans-serif;
 	font-size       : 11px;
 	line-height    :15px;
 	padding-left : 0px; 
@@ -572,7 +573,7 @@ div.sidebar ul li ul li ul li A:visited {
 }
 */
 
-/*  ¸¡º÷paddingÀßÄê */
+/*  æ¤œç´¢paddingè¨­å®š */
 div.sidebar form {
 	padding-left : 5px;
 }
@@ -582,7 +583,7 @@ div.sidebar p,div.sidebar EMBED {
 	margin  : 0px;
 }
 
-/* °ì¹Ô¥³¥á¥ó¥È */
+/* ä¸€è¡Œã‚³ãƒ¡ãƒ³ãƒˆ */
 div.linecom {
 	margin-top: 0px;
 	margin-left: 35px;
@@ -683,13 +684,13 @@ table.calendar td.today{
 	background-color : #D3D3D3;
 }
 
-/* MenuÍÑ */
+/* Menuç”¨ */
 div.sidebar .calendar{
 		width  : 190px;
 		height : auto;
 }
 
-/* ¥×¥ê¥ó¥ÈÀßÄê */
+/* ãƒ—ãƒªãƒ³ãƒˆè¨­å®š */
 @media print {
  div.header,div.adminmenu,div.footer,div.form,div.sidebar,div.partedit,div.comment,form {display:none;}
  div.day,div.body{border:none;}
