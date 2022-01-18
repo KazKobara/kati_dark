@@ -699,3 +699,8 @@ div.sidebar .calendar{
  h2,h3 { font-size: medium; }
  a { text-decoration: none; }
 }
+
+/* Fit textarea width for edit with browser */
+textarea.edit {
+	width: 100%;
+}
