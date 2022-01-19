@@ -44,14 +44,19 @@ FSWiki に標準で含まれております kitta 氏の [kati](https://fswiki.o
 
 - [こちら](https://github.com/KazKobara/dockerfile_fswiki_local)で起動される Docker container の theme として設定してあります。
   - 上記のローカルユース用 Docker FSWiki は（インターネットで公開するサーバー用ではなく、データ自体はクラウドスレージなどと同期させるなどして、その同期したデータや手元の wiki データを）、PCのブラウザで表示させることを意図したものになります…
+
+<!--
+  差分箇所の表示は v0.0.3 から CSP Hash を使い('unsafe-inline' や'unsafe-hashes' を許可することなく)表示されるようになっております。
+
   - また、「差分」メニューの差分箇所の表示はデフォルトではオフにしてあります。
-    - inline scriptを用いた攻撃を受けない状況で使用される場合には、<!--/usr/local/apache2/conf/extra/-->`httpd-security-fswiki-local.conf` 中において以下のように後者の行をコメントアウトし、前者を有効にすることで差分箇所を表示できるようになります。
+    - inline scriptを用いた攻撃を受けない状況で使用される場合には、/usr/local/apache2/conf/extra/`httpd-security-fswiki-local.conf` 中において以下のように後者の行をコメントアウトし、前者を有効にすることで差分箇所を表示できるようになります。
     - ただし、SCP (Content Security Policy) の `script-src` の設定は 'unsafe-inline' でなく、script を更新し、CSP Hash または CSP Nonce を使うようにする方がより理想的な対応となります。
 
     ```apache
     Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline';"
     # Header always set Content-Security-Policy "default-src 'self';"
     ```
+-->
 
 ## 設定値の調整
 
