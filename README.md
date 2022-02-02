@@ -42,8 +42,12 @@ FSWiki に標準で含まれております kitta 氏の [kati](https://fswiki.o
 
 ### Docker で試す場合
 
-- [こちら](https://github.com/KazKobara/dockerfile_fswiki_local)で起動される Docker container の theme として設定してあります。
-  - 上記のローカルユース用 Docker FSWiki は（インターネットで公開するサーバー用ではなく、データ自体はクラウドスレージなどと同期させるなどして、その同期したデータや手元の wiki データを）、PCのブラウザで表示させることを意図したものになります…
+- [ローカルユース用 Docker FSWiki] の default theme として設定してあります。
+  - [ローカルユース用 Docker FSWiki] は（インターネットで公開するサーバー用ではなく、データ自体はクラウドスレージなどと同期させるなどして、その同期したデータや手元の wiki データを）、PCのブラウザで表示させることを意図したものになります…
+  - [Markdown Plugin と CSP の設定](https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md)も有効になってます。
+
+[ローカルユース用 Docker FSWiki]: https://github.com/KazKobara/dockerfile_fswiki_local "https://github.com/KazKobara/dockerfile_fswiki_local"
+[Markdown Plugin と CSP の設定]: https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md "https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md"
 
 <!--
   差分箇所の表示は v0.0.3 から CSP Hash を使い('unsafe-inline' や'unsafe-hashes' を許可することなく)表示されるようになっております。

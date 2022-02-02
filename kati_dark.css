@@ -1,3 +1,76 @@
+/* -------- Common Settings Among Themes -------- */
+/*
+	TODO: Share common settings with other themes.
+	NOTE: Using '@import' is not recommended in terms of
+	the processing speed.
+*/
+/*
+@import url('../resources/common.css');
+*/
+
+/* Fit textarea width for edit with browser */
+textarea.edit {
+	width: 100%;
+}
+
+/***** Settings for Content Security Policy (CSP) *****/
+
+/*** For plugin/markdown/Markdown.pm ***/
+
+/* Text alignment in a markdown table */
+/* TODO: Modify Markdown/Discount to output the following
+    non-inline-style <th> and <td> tags:
+
+ <th type="text/css" class="text-left">
+ <th type="text/css" class="text-right">
+ <th type="text/css" class="text-center">
+
+ <td type="text/css" class="text-left">
+ <td type="text/css" class="text-right">
+ <td type="text/css" class="text-center">
+
+    instead of the following inline-styles,
+    which are not desirable in the sense of CSP:
+
+ <th style="text-align:left;">
+ <th style="text-align:right;">
+ <th style="text-align:center;">
+  
+ <td style="text-align:left;">
+ <td style="text-align:right;">
+ <td style="text-align:center;">
+
+A compromised alternative is to allow 'unsafe-hashes'
+in CSP style-src setting, cf. 
+https://github.com/KazKobara/dockerfile_fswiki_local/blob/main/data/httpd-security-fswiki-local.conf.
+
+*/
+ 
+/* Class selectors for the above modification. */
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+/* https://raw.githubusercontent.com/twbs/bootstrap/main/dist/css/bootstrap.css */
+.text-center {
+    text-align: center !important;
+}
+
+/* Non-inline styles, which are used securely in markdown blocks
+instead of inline styles ignored by default CSP settings. */
+
+/* Color */
+orange {color:orange;}   /* type selector */
+.orange {color:orange;}  /* class selector */
+#orange {color:orange;}  /* id selector */
+
+
+/* -------- Theme Specific Settings -------- */
 /* ーーーーーー全体の設定ーーーーーー */
 body {
 	/* background-color: lightgray; */
@@ -714,7 +787,3 @@ div.sidebar .calendar{
 	a { text-decoration: none; }
 }
 
-/* Fit textarea width for edit with browser */
-textarea.edit {
-	width: 100%;
-}
