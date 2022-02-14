@@ -8,10 +8,24 @@
 @import url('../resources/common.css');
 */
 
-/* Fit textarea width for edit with browser */
+/***** Common Style *****/
+
+/*** To fit textarea width for edit with browser ***/
 textarea.edit {
 	width: 100%;
 }
+
+/*** For plugin/markdown/Markdown.pm ***/
+
+/* Cancel the setting of 'div.section p' in item lists.
+   some versions of Markdown discount insert p tags to the items
+   right before and after blank lines in an item list.
+ */
+div.section li p{
+	margin : 0em 0px 0em 0px;
+	text-indent:0em;
+}
+
 
 /***** Settings for Content Security Policy (CSP) *****/
 
@@ -71,6 +85,7 @@ orange {color:orange;}   /* type selector */
 
 
 /* -------- Theme Specific Settings -------- */
+/* kati_dark.css v0.0.1 */
 /* ーーーーーー全体の設定ーーーーーー */
 body {
 	/* background-color: lightgray; */
@@ -85,6 +100,16 @@ body {
 input,textarea{
 	font-family:"Osaka",sans-serif;
 	font-size      : 14px;
+}
+
+input{
+	background-color: #383838;
+	color           : white;
+}
+
+textarea{
+	background-color: #101010;
+	color           : #f0fff0;
 }
 
 div.section img{
@@ -104,20 +129,26 @@ div.section p{
 	margin : 1em 10px 1em 35px;
 	text-indent:1em;
 }
+
 /* リストスタイル */
-ul li {
+div.sidebar ul li {
 	font-family:"Osaka",sans-serif;
 	list-style-image: url('./list_a.gif')
 }
 
+ul li {
+	font-family:"Osaka",sans-serif;
+	/* list-style-image: url('./list_a.gif') */
+}
+
 ul li ul li {
 	font-family:sans-serif;
-	list-style-image: url('./list_b.gif')
+	/* list-style-image: url('./list_b.gif') */
 }
 
 ul li ul li ul li {
 	font-family:sans-serif;
-	list-style-image: url('./list_c.gif')
+	/* list-style-image: url('./list_c.gif') */
 }
 
 div.section ul,div.section ol{
@@ -259,8 +290,9 @@ pre {
 	/*
 	background-color: #f8f5f1;
 	background-color: dimgray;
-	*/
 	background-color: black;
+	*/
+	background-color: #101010;
 	margin : 10px 20px 10px 35px;
 	padding: 5px 15px 5px 15px;
 	font-size      : 13px;
@@ -274,8 +306,9 @@ blockquote {
 	/*
 	background-color: #f8f5f1;
 	background-color: dimgray;
-	*/
 	background-color: black;
+	*/
+	background-color: #101010;
 	padding: 5px 15px 5px 15px;
 	margin : 10px 20px 10px 35px;
 	font-size      : 13px;
@@ -786,4 +819,3 @@ div.sidebar .calendar{
 	h2,h3 { font-size: medium; }
 	a { text-decoration: none; }
 }
-

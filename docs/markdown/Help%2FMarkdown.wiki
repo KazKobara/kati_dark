@@ -4,7 +4,8 @@
 
 [Markdown plugin|https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417]のインストールと設定方法は[こちら|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]もご参照下さい。
 
-* この [[Help/Markdown]] は2022年2月4日版です。最新版は（FSWki本体に取り込まれるまでは）[こちら|https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki]からご入手ください。
+* この [[Help/Markdown]] は2022年2月14日版です。
+** 最新版は（FSWki本体に取り込まれるまでは）[こちら|https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki]からご入手ください。
 * 本ページを表示した場合に CSP (Content-Security-Policy) の警告が出るか、以下の[要確認！！]が紫色で表示されている場合
 ** CSPの設定が有効になっていないか、有効になっているが任意のインラインスクリプト/インラインスタイルの実行が可能になっています。
 ** 前者の場合にはCSPなどの設定を有効にし、後者の場合には 'unsafe-inline' を使用しないようにします。
@@ -22,9 +23,35 @@
 
 !! Markdown構文の対応状況
 
-* *1 が付いている構文は [Text::Markdown |https://metacpan.org/pod/Text::Markdown] 1.000031 および 1.000031-3 (Ubuntu 20.04 において $ apt-get -y install libtext-markdown-perl で入れたもの)では未対応。
-* *2 が付いている構文は [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] 0.12-1+b1 with libmarkdown2:amd64 (2.2.6-1) (Ubuntu 20.04 において $ apt-get -y install libtext-markdown-discount-perl で入れたもの)では未対応。
-* *3 が付いている構文は [Text::Markdown::Discount 0.13 (357a2ef)|https://github.com/sekimura/text-markdown-discount.git] (--with-fenced-code --with-dl=both 対応版(ここで dl は Definition List)) 及びそれに対して[本家 Discount の b002a5a コミット|https://github.com/Orc/discount/commit/b002a5a4db31e42dfb45451c059bc56941c17974]を反映させた版では未対応。
+以下の表の最左列の注釈記号がついている Markdown 構文は、その行の構成では未対応です。
+
+, 注釈記号,  CPAN, Markdown to HTML converter ,Makefile.PL 中の ./configure.sh オプション, Discount.pm 中のランタイムフラグ, 備考
+, *1, [Text::Markdown|https://metacpan.org/pod/Text::Markdown] 1.000031, Markdown.pl,-,-, 27 Dec 2015以降更新無
+, *1, [Text::Markdown|https://metacpan.org/pod/Text::Markdown] 1.000031-3, Markdown.pl,-,-, apt-get -y install libtext-markdown-perl (Ubuntu 20.04) 
+, *2, [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] 0.12-1+b1, Discount 2.2.6-1,  --github-checkbox ,MKD_NOHEADER MKD_NOPANTS, apt-get -y install libtext-markdown-discount-perl (Ubuntu 20.04)
+, *3, [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] 0.13 (357a2ef), Discount 2.1.7 + patches, --with-fenced-code --with-dl=both, MKD_NOHEADER MKD_NOPANTS, [脆弱性|https://github.com/Orc/discount/issues/189] 修正コミット [b002a5a|https://github.com/Orc/discount/commit/b002a5a4db31e42dfb45451c059bc56941c17974]などを取り込む必要があるため、*4 (0.14)以降を使う方がよいです。
+, *4, [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] 0.14 ([pull request中|https://github.com/sekimura/text-markdown-discount/pull/25]), Discount 2.2.7 (v2maint 34a8ebb), --github-checkbox=input, MKD_NOHEADER MKD_NOPANTS MKD_FENCEDCODE MKD_DLEXTRA , Discountのバージョンとオプション/フラグ設定の関係は、[こちら|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]の「Markdownの拡張構文を有効にする方法の違い」をご参照下さい。
+
+// [こちら|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]の「Discount Markdown のバージョンと機能選択方法の違い」に移動。
+//
+//* 以下の表において、「停止」は ./configure.sh やコマンドが停止することを意味します。「無効」はそれらは停止しないが、指定した機能は有効にならないことを意味します。
+//
+//, Discount ver.2 保守ブランチ, Makefile.PL 中の ./configure.sh オプション,<<,<<,  Discount.pm 中のランタイムフラグ,<<
+//,  'v2maint', --with-fenced-code, --with-dl=both (による行頭コロンスペース定義リスト), --github-checkbox[=input], MKD_FENCEDCODE, MKD_DLEXTRA (による行頭コロンスペース定義リスト)
+//,2.2.4<= ver. <=2.2.7, 無効 (Invalid option), 無効 (Setting theme default --with-dl), 有効, 有効,<<
+//,2.2.0  <= ver. <=2.2.3, 無効 (Invalid option), 無効 (Setting theme default --with-dl), 停止 (Bad option) , 有効,<<
+//,2.1.9(3eb3a68)<= ver. < 2.2.0, 無効 (Invalid option),<<, 停止 (Bad option), 有効,<<
+//,2.1.9 (088b5ab)<= ver. <=2.1.9 (bde87f6), 停止 (Invalid option),<<, 停止 (Bad option) , 有効, <<
+//,2.1.9<= ver. <=2.1.9 (06f029e) ,有効, 停止 (Invalid option) , 停止 (Bad option) ,  無効 (unknown option), 有効
+//,2.1.8< ver. <2.1.9,有効, 停止 (Invalid option), 停止 (Bad option) ,  無効 (unknown option),<<
+//,2.1.6<= ver. <=2.1.8,有効,<<, 停止 (Bad option) ,  無効 (unknown option),<<
+//
+// 3eb3a68 Have configure.sh just state that an option is not supported instead of dying.
+// (Invalid option: --with-fenced-code. Please use a runtime flag to configure this feature.）
+
+//なお、以下の３構文については [こちらの pull request|https://github.com/Orc/discount/pull/238] で検討と対応が進んでいるようです。
+//
+// A^サーカムフレックス挟み上付き^、 A~チルダ挟み下付き~、 ==二重等号挟みハイライト==
 
 !! Markdown での入力
 
@@ -65,8 +92,8 @@
  *イタリック*、_イタリック_
  **ボールド**、__ボールド__
  ***ボールドイタリック***、___ボールドイタリック___
- *イタリックの中で更に__ボールド__*、_イタリックの中で更に**ボールド**_
- **ボールドの中で更に_イタリック_**、__ボールドの中で更に*イタリック*__
+ *イタリック中の__ボールド__*、_イタリック中の**ボールド**_
+ **ボールド中の_イタリック_**、__ボールド中の*イタリック*__
 
 {{markdown
 *イタリック*、_イタリック_
@@ -75,33 +102,33 @@
 
 ***ボールドイタリック***、___ボールドイタリック___
 
-*イタリックの中で更に__ボールド__*、_イタリックの中で更に**ボールド**_
+*イタリック中の__ボールド__*、_イタリック中の**ボールド**_
 
-**ボールドの中で更に_イタリック_**、__ボールドの中で更に*イタリック*__
+**ボールド中の_イタリック_**、__ボールド中の*イタリック*__
+}}
+
+ g<sup>タグによる上付き</sup>、g<sub>タグによる下付き</sub>  
+ g^サーカムフレックス挟み上付き^、 g~チルダ挟み下付き~ \*1,\*2,\*3,\*4 ([こちらの pull request](https://github.com/Orc/discount/pull/238) で検討と対応が進んでいるようです。) 
+ g^x、g^x1Y2、g^(サーカムフレックス上付き/半角英数字以外が含まれる場合には丸括弧で挟む) （Discount独自拡張 (Smartypants substitutions)）
+
+{{markdown
+g<sup>タグによる上付き</sup>、g<sub>タグによる下付き</sub>  
+
+g^サーカムフレックス挟み上付き^、 g~チルダ挟み下付き~ \*1,\*2,\*3,\*4 ([こちらの pull request](https://github.com/Orc/discount/pull/238) で検討と対応が進んでいるようです。)
+
+g^x、g^x1Y2、g^(サーカムフレックス上付き/半角英数字以外が含まれる場合には丸括弧で挟む) （Discount独自拡張 (Smartypants substitutions)）
 }}
 
  <u>タグによる下線</u>
- A<sup>タグによる上付き</sup>、 A<sub>タグによる下付き</sub>
- A^サーカムフレックス挟み上付き^、 A~チルダ挟み下付き~ *1*2 (*3はオプションで対応できる可能性有)
- 文書中の `code and variables`。テキストとしてのcode and variables。
+ ~~二重チルダ挟み打消し~~ \*1
+ これは<del>タグによる打消し</del>です。
+ <del>タグによる行頭の文字列の打消し</del>  
+ （\*1 の環境では、pタグなどで挟まないと(HTML4.01でのdelタグの仕様により)ブロック要素と解釈されインデントが行われません。）
+ <p><del>タグによる行頭の文字列の打消し（pタグ挟み）</del></p>
 
 {{markdown
 <u>タグによる下線</u>
 
-A<sup>タグによる上付き</sup>、A<sub>タグによる下付き</sub>
-
-A^サーカムフレックス挟み上付き^、 A~チルダ挟み下付き~ \*1\*2  (\*3はオプションで対応できる可能性有)
-
-文書中の `code and variables`。テキストとしてのcode and variables。
-}}
-
- ~~二重チルダ挟み打消し~~ *1
- これは<del>タグによる打消し</del>です。
- <del>タグによる行頭の文字列の打消し</del>  
- （*1 の環境では、pタグなどで挟まないと(HTML4.01でのdelタグの仕様により)ブロック要素と解釈されインデントが行われません。）
- <p><del>タグによる行頭の打消し</del></p>
-
-{{markdown
 ~~二重チルダ挟み打消し~~ \*1
 
 これは<del>タグによる打消し</del>です。
@@ -109,13 +136,13 @@ A^サーカムフレックス挟み上付き^、 A~チルダ挟み下付き~ \*1\*2  (\*3はオプションで
 <del>タグによる行頭の文字列の打消し</del>  
 （\*1 の環境では、pタグなどで挟まないと(HTML4.01でのdelタグの仕様により)ブロック要素と解釈されインデントが行われません。）
 
-<p><del>タグによる行頭の文字列の打消し</del></p>
+<p><del>タグによる行頭の文字列の打消し（pタグ挟み）</del></p>
 }}
 
- ==二重等号挟みハイライト== *1*2*3
+ ==二重等号挟みハイライト== \*1,\*2,\*3,\*4 ([こちらの pull request](https://github.com/Orc/discount/pull/238) で検討と対応が進んでいるようです。) 
 
 {{markdown
-==二重等号挟みハイライト== \*1\*2\*3
+==二重等号挟みハイライト== \*1,\*2,\*3,\*4 ([こちらの pull request](https://github.com/Orc/discount/pull/238) で検討と対応が進んでいるようです。) 
 }}
 
 !! テキスト装飾 スタイルの利用
@@ -166,16 +193,50 @@ A^サーカムフレックス挟み上付き^、 A~チルダ挟み下付き~ \*1\*2  (\*3はオプションで
 - <span type="text/css" class="gold">インラインで定義されたclassセレクタによる着色</span>（**[注意!!]**着色されている場合にはWebサーバのCSP等の設定によりインラインスタイル(及びインラインスクリプト)を禁止してください。）
 }}
 
+
+!!! 実体参照符号
+
+実体参照符号の一覧は、例えば、
+[こちら|https://www.scollabo.com/banban/apply/ap8.html]
+や
+[こちら|https://www.w3schools.com/charsets/ref_html_symbols.asp]
+などにあります。
+
+ &copy; &reg; &trade; &Delta; &pi; &euro; &rArr; &spades; &clubs; &hearts; &diams; &sum; &radic; &infin;
+
+{{markdown
+&copy; &reg; &trade; &Delta; &pi; &euro; &rArr; &spades; &clubs; &hearts; &diams; &sum; &radic;
+}}
+
+!!実体参照符号への自動変換
+
+ 「&」と（後ろに>が無い）「<」は、それぞれ「&amp;」と「&lt;」に変換されます。
+ 「"」は「&quot;」には変換されません。
+ >行頭の「>」はMarkdownの引用構文のため`<blockquote></blockquote>`に変換されます。
+  行頭以外でも「>」は「&gt;」には変換されません。
+
+{{markdown
+「&」と（後ろに>が無い）「<」は、それぞれ「&amp;」と「&lt;」に変換されます。
+
+「"」は「&quot;」には変換されません。
+
+>行頭の「>」はMarkdownの引用構文のため`<blockquote></blockquote>`に変換されます。
+
+ 行頭以外でも「>」は「&gt;」には変換されません。
+}}
+
 !!! エスケープ記号"\"
 
  エスケープされていない3つのアスタリスクで挟まれているため***ボールドイタリック***
- 
  \*\*\*アスタリスクで挟まれた通常の文字\*\*\*
+ エスケープされる記号  \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \! \\ 
 
 {{markdown
 ***ボールドイタリック***
 
 \*\*\*アスタリスクで挟まれた通常の文字\*\*\*
+
+エスケープされる記号  \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \! \\
 }}
 
 !!! 改行
@@ -202,64 +263,46 @@ A^サーカムフレックス挟み上付き^、 A~チルダ挟み下付き~ \*1\*2  (\*3はオプションで
 > 引用
 }}
 
-!!! 説明 (定義リスト)
-// Definition List
+!! 引用の詳細
 
-!!タグによる定義リスト
-
- <dl>
- <dt>項目</dt>
- <dd>説明文</dd>
- <dt><strong>協調項目</strong></dt>
- <dd>説明文</dd>
- </dl>
-
-{{markdown
-<dl>
-<dt>項目</dt>
-<dd>説明文</dd>
-<dt><strong>協調項目</strong></dt>
-<dd>説明文</dd>
-</dl>
-}}
-
-!! 等号挟み定義リスト 拡張構文 [[*1|#p2]]
-// VS Code 1.63.2 では未対応
-
- =項目=
-     説明文
+ > コードブロックとは異なり、  
+ 前行末の２スペース改行を含め、__構文__ や <span type="text/css" class="orange">タグ</span> は有効です。
+ >> 入れ子も可能です。
+ > ただし、連続する引用行は入れ子が深くなる場合を除き、前行の入れ子と同じ深さになります。そのため、ここはまだ入れ子の中です。
+ >>> ここは、
+ >> 入れ子の入れ子。
+ 
+ > 入れ子から抜けるには、空行を入れます。
 
 {{markdown
-=項目=
-    説明文
+> コードブロックとは異なり、  
+前行末の２スペース改行を含め、__構文__ や <span type="text/css" class="orange">タグ</span> は有効です。
+>> 入れ子も可能です。
+> ただし、連続する引用行は入れ子が深くなる場合を除き、前行の入れ子と同じ深さになります。そのため、ここはまだ入れ子の中です。
+>>> ここは、
+>> 入れ子の入れ子。
+
+> 入れ子から抜けるには、空行を入れます。
 }}
 
-!!コロン行頭定義リスト 拡張構文 [[*1|#p2]][[*2|#p2]]
-// VS Code 1.63.2 では未対応
 
- 項目
- :   説明文
 
-{{markdown
-項目
-:   説明文
-}}
+!!! リスト
 
-!!! 項目
+!! 順序無しリスト
 
-!! 順序無し項目
-
- * 項目1
- - 項目2
+ - 項目1
+ * 項目2
  + 項目3
 
 {{markdown
-* 項目1
-- 項目2
+- 項目1
+* 項目2
 + 項目3
 }}
 
-!! 順序有り項目
+
+!! 順序有りリスト
 
  1. 項目1
  1. 項目2
@@ -271,155 +314,129 @@ A^サーカムフレックス挟み上付き^、 A~チルダ挟み下付き~ \*1\*2  (\*3はオプションで
 1. 項目3
 }}
 
-!!! 項目間に空行が入る場合の不具合
+! 順序有りリストの詳細
 
-[[*3|#p2]]の環境では、空行の前後の項目のインデントがずれます。
-（[[*1|#p2]][[*2|#p2]]の環境では未確認）
-
- {{markdown
- - I
- - II
- 
- - III
- - IV
- }}
+ 555. 項目1。値が何であれ「整数.」で始まると「1.」から始まる順序有りリストになります。（標準的なMarkdown構文とは異なり、先頭の値からの順序にはなりません。）
+ -3. 項目2。（標準的なMarkdown構文とは異なり、負の整数も受け付けます。）
+  
+ - 項目3。項目間の改行やスペースは無視され連続したリストになります。
+ - 項目4。（標準的なMarkdown構文とは異なり、リストの型が異なっても連続したリストになります。） 
 
 {{markdown
-- I
-- II
-
-- III
-- IV
+555. 項目1。値が何であれ「整数.」で始まると「1.」から始まる順序有りリストになります。（標準的なMarkdown構文とは異なり、先頭の値からの順序にはなりません。）
+3. 項目2。（標準的なMarkdown構文とは異なり、負の整数も受け付けます。）
+ 
+- 項目3。項目間の改行やスペースは無視され連続したリストになります。
+- 項目4。（標準的なMarkdown構文とは異なり、リストの型が異なっても連続したリストになります。） 
 }}
 
-これは、以下のようにpタグが挿入されるのが原因です。
 
- <li>I</li>
- <li><p>II</p></li>
- <li><p>III</p></li>
- <li>IV</li>
+!! アルファベットリスト Discount 拡張構文
+// --enable-alpha-list during configuration
+// VS Code 1.64.1 未対応
 
-FSWiki構文では正しく表示されます。
+ a. 項目1
+ a. 項目2
+ a. 項目3
 
- * I
- * II
+{{markdown
+a. 項目1
+a. 項目2
+a. 項目3
+}}
+
+! アルファベットリストの詳細
+
+ y. 項目1。文字が何であれ「アルファベット.」で始まると「a.」から始まるアルファベットリストになります。
+ z. 項目2
+  
+ - 項目3。リストの型が何であれ項目間の改行やスペースは無視され連続したリストになります。
+ 3. 項目4。（標準的なMarkdown構文とは異なり、リストの型が異なっても連続したリストになります。） 
+
+{{markdown
+y. 項目1。文字が何であれ「アルファベット.」で始まると「a.」から始まるアルファベットリストになります。
+z. 項目2
  
- * III
- * IV
+- 項目3。リストの型が何であれ項目間の改行やスペースは無視され連続したリストになります。
+3. 項目4。（標準的なMarkdown構文とは異なり、リストの型が異なっても連続したリストになります。） 
+}}
 
-* I
-* II
 
-* III
-* IV
+!! リスト間に空行が入る場合の不具合
+// echo -e "- I\n- II\n\n- III\n- IV\n" | ./markdown
+// ./markdown -V
+// markdown: discount 3 GHC=INPUT
+// (c2617280)でも未解決
+
+[[*3|#p2]]の環境（[[*1|#p2]][[*2|#p2]]の環境では未確認）では、以下のように項目と項目との間に空行が入ると
+
+ {{markdown
+ 10. I
+ 20. II
+ 
+ 30. III
+ 40. IV
+ }}
+
+以下のように、空行の前後の項目の内容にpタグが挿入されます。
+
+ <li> I</li>
+ <li><p> II</p></li>
+ <li><p> III</p></li>
+ <li> IV</li>
+
+そのためスタイルシートで div.section p などの設定を行っていた場合、それが空行の前後の項目にも反映されその項目が他と異なって表示されます。
+この問題は、div.section li p を設定することで div.section p の設定を元に戻すことにより解消します。
+
+{{markdown
+ 10. I
+ 20. II
+ 
+ 30. III
+ 40. IV
+}}
 
 また、
 
  {{markdown
- - I
- - II
+ 10. I
+ 20. II
  
- 空行以外が入る場合にはずれません。
+ 空行以外がインデント無しで入る場合には項目の内容には p タグは挿入されません。
  
- - III
- - IV
+ 30. III
+ 40. IV
  }}
 
 {{markdown
-- I
-- II
+10. I
+20. II
 
-空行以外が入る場合にはずれません。
+空行以外がインデント無しで入る場合には項目の内容には p タグは挿入されません。
 
-- III
-- IV
+30. III
+40. IV
 }}
 
-!! 混合項目
+ちなみに、FSWiki構文では、空行が入ると連続したリストにはならず、pタグも挿入されません。
 
-[[*3|#p2]]の環境では、2番目以降の項目の種類は1番目の項目の種類と同じになります。
-（[[*1|#p2]][[*2|#p2]]の環境では未確認）
+ + I
+ + II
+ 
+ + III
+ + IV
 
- {{markdown
- - 順序無し項目
- 1. 順序有り項目
- }}
++ I
++ II
 
-{{markdown
-- 順序無し項目
-1. 順序有り項目
-}}
++ III
++ IV
 
-FSWiki構文では正しく表示されます。
+!!! 階層リスト 拡張構文
 
-* FSWiki順序無し項目
-+ FSWiki順序有り項目
+4スペースずつインデントさせることで、階層的なリストを表現できます。
 
- {{markdown
- 1. 順序有り項目
- - 順序無し項目
- }}
-
-{{markdown
-1. 順序有り項目
-- 順序無し項目
-}}
-
-FSWiki構文では正しく表示されます。
-
-+ FSWiki順序有り項目
-* FSWiki順序無し項目
-
-! 階層混合項目の場合
-
-[[*3|#p2]]の環境では、順序無し項目後に階層化された順序有り項目が来る場合には、順序無しになります。
-（[[*1|#p2]][[*2|#p2]]の環境では未確認）
-
- {{markdown
- - 順序無し項目
-     1. 順序有り項目
-         - 順序無し項目
-             1. 順序有り項目
- }}
-
-{{markdown
-- 順序無し項目
-    1. 順序有り項目
-        - 順序無し項目
-            1. 順序有り項目
-}}
-
-FSWiki構文では正しく表示されます（ただし、仕様上3段まで）。
-
-* FSWiki順序無し項目
-++ FSWiki順序有り項目
-*** FSWiki順序無し項目
-++++ FSWiki順序有り項目
-
- {{markdown
- 1. 順序有り項目
-     - 順序無し項目
-         1. 順序有り項目
-             - 順序無し項目
- }}
-
-{{markdown
-1. 順序有り項目
-    - 順序無し項目
-        1. 順序有り項目
-            - 順序無し項目
-}}
-
-//FSWiki構文では正しく表示されます（ただし、仕様上3段まで）。
-//
-//+ FSWiki順序有り項目
-//** FSWiki順序無し項目
-//*** FSWiki順序有り項目
-//++++ FSWiki順序無し項目
-
-!!! 階層項目 拡張構文
-
-4スペースずつインデントさせることで、階層的な項目を表現できます。
+なお、Discount markdown のタブ幅は configure オプションの --with-tabstop やランタイムフラグ 'MKD_TABSTOP' で調整できます。
 
 !! 階層とインデント幅の関係
 
@@ -460,8 +477,7 @@ FSWiki構文では正しく表示されます（ただし、仕様上3段まで）。
              - 13スペースインデント
 }}
 
-
-!! 順序無し階層項目
+!! 順序無し階層リスト
 
  - 項目1
      - 項目1-1
@@ -485,8 +501,7 @@ FSWiki構文では正しく表示されます（ただし、仕様上3段まで）。
     - 項目2-1
 }}
 
-
-!! 順序有り階層項目
+!! 順序有り階層リスト
 
  1. 番号付き項目1
      1. 番号付き項目1-1
@@ -514,48 +529,248 @@ FSWiki構文では正しく表示されます（ただし、仕様上3段まで）。
 1. 番号付き項目3
 }}
 
-!!! タスクリスト 拡張構文 [[*1|#p2]][[*3|#p2]]
+!!! 混合リスト
+// echo -e "- I\n1. II\n" | ./markdown
+// echo -e "1. I\n- II\n" | ./markdown
+// ./markdown -V
+// markdown: discount 3 GHC=INPUT
+// (c2617280)でも未解決
 
- - [ ] タスク１
- - [ ] タスク２
+[[*3|#p2]]の環境では、2番目以降の項目の型は1番目の項目の型と同じになります。
+（[[*1|#p2]][[*2|#p2]]の環境では未確認）
+
+ {{markdown
+ - 順序無し項目
+ 1. 順序有り項目
+ }}
+
+{{markdown
+- 順序無し項目
+1. 順序有り項目
+}}
+
+FSWiki構文では型どおり表示されます。
+
+* FSWiki順序無し項目
++ FSWiki順序有り項目
+
+ {{markdown
+ 1. 順序有り項目
+ - 順序無し項目
+ }}
+
+{{markdown
+1. 順序有り項目
+- 順序無し項目
+}}
+
+FSWiki構文では型どおり表示されます。
+
++ FSWiki順序有り項目
+* FSWiki順序無し項目
+
+! 階層混合リストの場合
+// echo -e "- I\n    1. II\n" | ./markdown
+
+FSWiki と Discount Markdown とでは階層混合リストを実現する際の HTML の記述が異なります。
+例えば、FSWiki では以下のように階層毎に独立したリストとして実現されます。
+
+ * FSWiki順序無し項目
+ ++ FSWiki順序有り項目
+
+ <ul>
+ <li> FSWiki順序無し項目</li>
+ </ul>
+ 
+ <ol>
+   <ol>
+   <li> FSWiki順序有り項目</li>
+   </ol>
+ </ol>
+
+これに対して、Discount Markdown では入れ子として実現されます。
+
+ {{markdown
+ - Discount順序無し項目
+     1. Discount順序有り項目
+ }}
+
+ <ul>
+ <li>Discount順序無し項目
+ 
+   <ol>
+   <li> Discount順序有り項目</li>
+   </ol>
+ </li>
+ </ul>
+
+そのため、前者のみを前提とした theme を利用した場合、後者との表示が意図したものにならない場合があります。
+例えば、theme として kati.css を選択すると、順序無し項目後の階層化された順序有り項目は、順序無しとして表示されます。
+この問題は、スタイルシートのリストの設定を変更することで修正できます。
+
+ {{markdown
+ - 順序無し項目
+     1. 順序有り項目
+         - 順序無し項目
+             1. 順序有り項目
+ }}
+
+{{markdown
+- 順序無し項目
+    1. 順序有り項目
+        - 順序無し項目
+            1. 順序有り項目
+}}
+
+ {{markdown
+ 1. 順序有り項目
+     - 順序無し項目
+         1. 順序有り項目
+             - 順序無し項目
+ }}
+
+{{markdown
+1. 順序有り項目
+    - 順序無し項目
+        1. 順序有り項目
+            - 順序無し項目
+}}
+
+なお、FSWiki構文では階層化は３段までという制約があります。
+
+* FSWiki順序無し項目
+++ FSWiki順序有り項目
+*** FSWiki順序無し項目
+++++ FSWiki順序有り項目
+
+//FSWiki構文では正しく表示されます（ただし、仕様上3段まで）。
+//
+//+ FSWiki順序有り項目
+//** FSWiki順序無し項目
+//*** FSWiki順序有り項目
+//++++ FSWiki順序無し項目
+
+!!! タスクリスト github 拡張構文 [[*1|#p2]]
+
+タスク未完了の場合の角括弧 '[ ]' の中にはスペースが必要です。
+
+ - [ ] タスク未完了
  - [x] タスク完了
 
 {{markdown
-- [ ] タスク１
-- [ ] タスク２
+- [ ] タスク未完了
 - [x] タスク完了
 }}
 
-[[*2|#p2]]の環境では、以下のような見た目になります。
+Discount markdown で configure.sh --github-checkbox とした場合([[*2|#p2]]の環境のデフォルト)には、以下のような見た目になります。
 
 {{markdown
 <ul>
-<li class="github_checkbox">&#x2610; タスク１</li>
-<li class="github_checkbox">&#x2610; タスク２</li>
+<li class="github_checkbox">&#x2610; タスク未完了</li>
 <li class="github_checkbox">&#x2611; タスク完了</li>
 </ul>
 }}
 
+Discount markdown で configure.sh --github-checkbox=input とした場合には、以下のような見た目になります。
+
+{{markdown
+<ul>
+<li class="github_checkbox"><input disabled="" type="checkbox"/> タスク未完了</li>
+<li class="github_checkbox"><input disabled="" type="checkbox" checked="checked"/> タスク完了</li>
+</ul>
+}}
+
+!!! 説明 (定義リスト)
+// Definition List
+
+!!行頭コロンスペース定義リスト Discount 2.0.4/PHP 拡張構文 [[*1|#p2]][[*2|#p2]]
+// VS Code 1.63.2 では未対応
+
+ 項目
+ : 説明文。コロンの後ろにはスペースが必要です。
+
+{{markdown
+項目
+: 説明文。コロンの後ろにはスペースが必要です。
+}}
+
+! 行頭コロンスペース定義リストの詳細
+
+ 項目
+ : 説明文を複数行で記述する場合は、
+ : 行頭をコロンスペースで開始するか、  
+ 前行の最後にスペースを２つ付け改行します（ただし、次の行が「: 」で始まるとこの行は「項目」になります）。
+ 
+ 別名有り項目
+ 別名１
+ 別名２
+ : 項目に別名を付けることもできます。
+
+{{markdown
+項目
+: 説明文を複数行で記述する場合は、
+: 行頭をコロンスペースで開始するか、  
+前行の最後にスペースを２つ付け改行します（ただし、次の行が「: 」で始まるとこの行は「項目」になります）。
+
+別名有り項目
+別名１
+別名２
+: 項目に別名を付けることもできます。
+}}
+
+!! 等号挟み定義リスト Discount 1.2.3 拡張構文 [[*1|#p2]]
+// VS Code 1.63.2 では未対応
+
+ =項目=
+     説明文。説明文の前にはスペースが４つ以上必要です。  
+
+{{markdown
+=項目=
+    説明文。説明文の前にはスペースが４つ以上必要です。  
+}}
+
+! 等号挟み定義リストの詳細
+
+ =項目=
+     説明文を複数行で記述する場合は、  
+ 前行の最後にスペースを２つ付け改行します。
+ 
+ =別名有り項目=
+ =別名１=
+ =別名２=
+     項目に別名を付けることもできます。
+
+{{markdown
+=項目=
+     説明文を複数行で記述する場合は、  
+前行の最後にスペースを２つ付け改行します。
+
+=別名有り項目=
+=別名１=
+=別名２=
+    項目に別名を付けることもできます。
+}}
+
 !!! リンク
 
-// *3の環境でのオートリンクにはオプション指定が必要 markdown($text, Text::Markdown::Discount::MKD_AUTOLINK)
+// *3,*4の環境でのオートリンクにはオプション指定が必要 markdown($text, Text::Markdown::Discount::MKD_AUTOLINK)。コマンドラインでは -f autolink 。
 
- - https://fswiki.osdn.jp/cgi-bin/wiki.cgi (オートリンク \*1,\*2,\*3(ただし、\*3はオプションで対応できる可能性有))
- - <https://fswiki.osdn.jp/cgi-bin/wiki.cgi>
+ - address@example.com https://fswiki.osdn.jp/cgi-bin/wiki.cgi (オートリンク \*1,\*2,(\*3,\*4は MKD_AUTOLINK の指定で対応可能です。))
+ - <address@example.com> <https://fswiki.osdn.jp/cgi-bin/wiki.cgi>
  - [FSWiki（吹き出し無）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi)
  - [FSWiki（""で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi "吹 き 出 し")
  - [FSWiki（''で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi '吹 き 出 し')
- - [FSWiki（()で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi (吹き出し)) \*1,\*2,\*3 （最初の閉じ括弧までがリンクとなります。）
- - [FSWiki（"",'',()のいずれでも挟まれていない文字列が()内にある場合）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi 文字列) （\*1,\*2,\*3の環境では、最初の閉じ括弧までがリンクとなります。）
+ - [FSWiki（()で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi (吹き出し)) \*1,\*2,\*3,\*4 （最初の閉じ括弧までがリンクとなります。）
+ - [FSWiki（"",'',()のいずれでも挟まれていない文字列が()内にある場合）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi 文字列) （\*1,\*2,\*3,\*4 の環境では、最初の閉じ括弧までがリンクとなります。）
 
 {{markdown
-- https://fswiki.osdn.jp/cgi-bin/wiki.cgi (オートリンク \*1,\*2,\*3(ただし、\*3はオプションで対応できる可能性有))
-- <https://fswiki.osdn.jp/cgi-bin/wiki.cgi>
+- address@example.com https://fswiki.osdn.jp/cgi-bin/wiki.cgi (オートリンク \*1,\*2,(\*3,\*4は MKD_AUTOLINK の指定で対応可能です。))
+- <address@example.com> <https://fswiki.osdn.jp/cgi-bin/wiki.cgi>
 - [FSWiki（吹き出し無）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi)
 - [FSWiki（""で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi "吹 き 出 し")
 - [FSWiki（''で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi '吹 き 出 し')
-- [FSWiki（()で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi (吹き出し)) \*1,\*2,\*3 （最初の閉じ括弧までがリンクとなります。）
-- [FSWiki（"",'',()のいずれにも挟まれていない文字列が()内にある場合）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi 文字列) （\*1,\*2,\*3の環境では、最初の閉じ括弧までがリンクとなります。）
+- [FSWiki（()で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi (吹き出し)) \*1,\*2,\*3,\*4 （最初の閉じ括弧までがリンクとなります。）
+- [FSWiki（"",'',()のいずれにも挟まれていない文字列が()内にある場合）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi 文字列) （\*1,\*2,\*3,\*4 の環境では、最初の閉じ括弧までがリンクとなります。）
 }}
 
 //VS Code 1.63.2 では「()で挟んだ吹き出し」は 有効、"",'',()のいずれにも挟まれていない文字列が()内に入っている場合はその構文はリンクとはみなされず、通常の文字列となり、オートリンクが有効な場合にはURLのみリンクとなります。
@@ -570,9 +785,10 @@ FSWiki構文では正しく表示されます（ただし、仕様上3段まで）。
 しかしながら、Markdownブロック内では、Wikiページ（例えば Help、FrontPage、Menuなど）へのリンクは自動生成されません。
 }}
 
+
 !!! 内部リンク
 
-!! (#見出し)形式での内部リンク [[*1|#p2]][[*2|#p2]][[*3|#p2]]
+!! (#見出し)形式での内部リンク [[*1|#p2]][[*2|#p2]][[*3|#p2]][[*4|#p2]]
 
 以下の(#見出し)形式での内部リンクでは、「本ページのURLの後ろに(#見出し)が付けられた URL」へリンクが張られます。(ただし、プレビュー時には引数(?より右側)が取り除かれたURLとなり、[[*2|#p2]][[*3|#p2]]の環境では「URLエンコードされた(#見出し)」が付けられた URLへリンクが張られます。）
 
@@ -627,7 +843,7 @@ FSWiki構文では正しく表示されます（ただし、仕様上3段まで）。
 
  {{markdown
  - しかしながら、参照先の「ラベル」に「[[角括弧挟みラベル]]」のように角括弧「[]」を含めるとラベルでなく通常の文字列と見なされます。
- - 参照する側の「通常ラベル」を「[[通常のラベル]]」のように角括弧「[]」で挟むことは可能です。
+ - 参照する側の「通常のラベル」を「[[通常のラベル]]」のように角括弧「[]」で挟むことは可能です。
  
  [[角括弧挟みラベル]]: https://fswiki.osdn.jp/cgi-bin/wiki.cgi "この行はリンク先の定義ではなく通常の文字列と見なされます。"
  [通常のラベル]: https://fswiki.osdn.jp/cgi-bin/wiki.cgi "この行はリンク先の定義と見なされます。"
@@ -635,13 +851,13 @@ FSWiki構文では正しく表示されます（ただし、仕様上3段まで）。
 
 {{markdown
 - しかしながら、参照先の「ラベル」に「[[角括弧挟みラベル]]」のように角括弧「[]」を含めるとラベルでなく通常の文字列と見なされます。
-- 参照する側の「通常ラベル」を「[[通常のラベル]]」のように角括弧「[]」で挟むことは可能です。
+- 参照する側の「通常のラベル」を「[[通常のラベル]]」のように角括弧「[]」で挟むことは可能です。
 
 [[角括弧挟みラベル]]: https://fswiki.osdn.jp/cgi-bin/wiki.cgi "この行はリンク先の定義ではなく通常の文字列と見なされます。"
 [通常のラベル]: https://fswiki.osdn.jp/cgi-bin/wiki.cgi "この行はリンク先の定義と見なされます。"
 }}
 
-!!! 注釈 拡張構文 [[*1|#p2]][[*2|#p2]][[*3|#p2]]
+!!! 注釈 拡張構文 [[*1|#p2]][[*2|#p2]][[*3|#p2]][[*4|#p2]]
 
 //Visual Studio Code でも未対応
 
@@ -661,14 +877,28 @@ FSWiki構文では正しく表示されます（ただし、仕様上3段まで）。
 
  - ![CSP img-srcに'self'を追加する必要があります!!](http://localhost:8366/favicon.ico "ローカルサーバ上の画像")
  - ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&page=FrontPage&action=ATTACH "別のサーバ上の画像")
- - <p class="image"><img src="favicon.ico" width="16" height="16" alt="CSP img-srcに'self'を追加する必要があります!!" title="ローカルサーバ上の画像+サイズ変更" /></p>
- - <p class="image"><img src="https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&amp;page=FrontPage&amp;action=ATTACH" width="75" height="70" alt="CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!" title="別のサーバ上の画像+サイズ変更" /></p>
+// - <p class="image"><img src="favicon.ico" width="16" height="16" alt="CSP img-srcに'self'を追加する必要があります!!" title="ローカルサーバ上の画像+サイズ変更" /></p>
+// - <p class="image"><img src="https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&amp;page=FrontPage&amp;action=ATTACH" width="75" height="70" alt="CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!" title="別のサーバ上の画像+サイズ変更" /></p>
 
 {{markdown
 - ![CSP img-srcに'self'を追加する必要があります!!](http://localhost:8366/favicon.ico "ローカルサーバ上の画像")
 - ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&page=FrontPage&action=ATTACH "別のサーバ上の画像")
-- <p class="image"><img src="favicon.ico" width="16" height="16" alt="CSP img-srcに'self'を追加する必要があります!!" title="ローカルサーバ上の画像+サイズ変更" /></p>
-- <p class="image"><img src="https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&amp;page=FrontPage&amp;action=ATTACH" width="75" height="70" alt="CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!" title="別のサーバ上の画像+サイズ変更" /></p>
+<!--
+- <div class="image"><img src="favicon.ico" width="16" height="16" alt="CSP img-srcに'self'を追加する必要があります!!" title="ローカルサーバ上の画像+サイズ変更" /></div>
+- <div class="image"><img src="https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&amp;page=FrontPage&amp;action=ATTACH" width="75" height="70" alt="CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!" title="別のサーバ上の画像+サイズ変更" /></div>
+-->
+}}
+
+!! サイズ指定画像 Discount 拡張構文
+
+URL の後ろに '=widthxheight' を付けることで画像サイズを変更できます。
+
+ - ![CSP img-srcに'self'を追加する必要があります!!](http://localhost:8366/favicon.ico =16x16 "ローカルサーバ上の画像16x16")
+ - ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&page=FrontPage&action=ATTACH 75x70 "別のサーバ上の画像75x70")
+
+{{markdown
+- ![CSP img-srcに'self'を追加する必要があります!!](http://localhost:8366/favicon.ico =16x16 "ローカルサーバ上の画像16x16")
+- ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&page=FrontPage&action=ATTACH 75x70 "別のサーバ上の画像75x70")
 }}
 
 !!! コメント
@@ -726,27 +956,55 @@ _    _		_
 
 !!! テーブル 拡張構文 [[*1|#p2]]
 
- | 左揃え列 | 中央揃え列 | 右揃え列 |
+ | 左寄せ列 | 中央寄せ列 | 右寄せ列 |
  |:---------|:----------:|---------:|
  | 1-1      |    1-2     |      1-3 |
  | 2-1      |    2-2     |      2-3 |
 
+中央寄せ、右寄せが有効になっていない場合は、以下の節の注意点をご参照下さい。
+
 {{markdown
-| 左揃え列 | 中央揃え列 | 右揃え列 |
+| 左寄せ列 | 中央寄せ列 | 右寄せ列 |
 |:---------|:----------:|---------:|
 | 1-1      |    1-2     |      1-3 |
 | 2-1      |    2-2     |      2-3 |
 }}
 
-!! 中央揃え、右揃えを有効にする際の注意点
+!! Discount/PHP 拡張構文
 
-[[*2|#p2]][[*3|#p2]]の環境はテーブル表示に対応しているのですが、中央揃え、右揃えのスタイルが以下のようにインラインで出力されます。
+ 左寄せ列 | 中央寄せ列 | 右寄せ列
+ :--------|:----------:|---------:
+ 1-1      |    1-2     |      1-3
+ 2-1      |    2-2     |      2-3
 
- <th style="text-align:left;"> 左揃え列 </th>
- <th style="text-align:center;"> 中央揃え列 </th>
- <th style="text-align:right;"> 右揃え列 </th>
+中央寄せ、右寄せが有効になっていない場合は、以下の節の注意点をご参照下さい。
 
-CSPを無効にしたり、CSPの style-src に "unsafe-inline" を指定することで中央揃え、右揃えで表示されるようになるのですが、この方法は任意のインラインスタイルも有効にするためセキュリティ上'''非推奨'''となります。
+{{markdown
+左寄せ列 | 中央寄せ列 | 右寄せ列
+:--------|:----------:|---------:
+1-1       |    1-2     |      1-3
+2-1       |    2-2     |      2-3
+}}
+
+!! 中央寄せ Discount 拡張構文
+
+中央寄せが有効になっていない場合は、以下の節の注意点をご参照下さい。
+
+ ->中央寄せ<-
+
+{{markdown
+->中央寄せ<-
+}}
+
+!! 左寄せ、中央寄せ、右寄せを有効にする際の注意点
+
+[[*2|#p2]][[*3|#p2]][[*4|#p2]]の環境はテーブル表示に対応しているのですが、中央寄せ、右寄せのスタイルが以下のようにインラインで出力されます。
+
+ <th style="text-align:left;"> 左寄せ列 </th>
+ <th style="text-align:center;"> 中央寄せ列 </th>
+ <th style="text-align:right;"> 右寄せ列 </th>
+
+CSPを無効にしたり、CSPの style-src に "unsafe-inline" を指定することで中央寄せ、右寄せで表示されるようになるのですが、この方法は任意のインラインスタイルも有効にするためセキュリティ上'''非推奨'''となります。
 
 セキュリティ的に理想的な対応は、インラインスタイルを用いず、スタイルシートで実現できるように Markdown to HTML Converter (Discountなど)を修正し、それに対応するスタイルシートを参照することになります。
 例えば、スタイルシートで以下のような text-align: を定義しておき、
@@ -766,9 +1024,9 @@ CSPを無効にしたり、CSPの style-src に "unsafe-inline" を指定することで中央揃え、
 
 HTMLのthタグとtdタグがそれぞれ以下のように出力されるように Markdown to HTML Converter (Discountなど)を修正します。
 
- <th type="text/css" class="text-left"> 左揃え列 </th>
- <th type="text/css" class="text-center"> 中央揃え列 </th>
- <th type="text/css" class="text-right"> 右揃え列 </th>
+ <th type="text/css" class="text-left"> 左寄せ列 </th>
+ <th type="text/css" class="text-center"> 中央寄せ列 </th>
+ <th type="text/css" class="text-right"> 右寄せ列 </th>
 
  <td type="text/css" class="text-left"> 1-1 </td>
  <td type="text/css" class="text-center">  1-2  </td>
@@ -778,28 +1036,133 @@ HTMLのthタグとtdタグがそれぞれ以下のように出力されるように Markdown to HTML Conv
 
 汎用的かつ暫定的な妥協策としては CSPの style-src に 'unsafe-hashes'  と、上記のインラインスタイルのハッシュ値を追加するという方法があります。具体的には、[httpd-security-fswiki-local.conf|https://raw.githubusercontent.com/KazKobara/dockerfile_fswiki_local/main/data/httpd-security-fswiki-local.conf] の Next-recommended CSP  のような設定を有効にします。
 
+
 !!! 整形済テキスト 拡張構文
-// Fenced Code Block
+// Fenced Code Block / Code Snippet
+// インデント無しでの整形済テキストは、FSWikiLite だと[preプラグイン|https://fswiki.osdn.jp/cgi-bin/wiki.cgi/docs?page=FSWikiLite%2Freadme#p3]で実現できます。LiteでないFSWikiには入っていないようです。
+
+!! 文書中のコード
+
+同じ長さのバッククオートで挟まれた箇所は、そのまま表示されます。  
+
+ {{markdown
+ マークダウンブロック内の文章：  
+ 挟まれていない場合「&copy; &lt; _イタリック_」は変換されます。  
+ 挟まれている場合「`&copy; &lt; _イタリック_`」は変換されません。
+ }}
+
+{{markdown
+マークダウンブロック内の文章：  
+挟まれていない場合「&copy; &lt; _イタリック_」は変換されます。  
+挟まれている場合「`&copy; &lt; _イタリック_`」は変換されません。
+}}
+
+! 連続するバッククオートをコードブロック内に含める場合
+
+それより長いバッククオートで挟みます。
+
+ {{markdown
+ マークダウンブロック内の文章：  
+ 挟まれていない場合「```鍵括弧内のバッククオートは表示されません。```」、  
+ 挟まれている場合````「```鍵括弧内のバッククオートは表示されます。```」````。
+ }}
+
+{{markdown
+マークダウンブロック内の文章：  
+挟まれていない場合「```鍵括弧内のバッククオートは表示されません。```」、  
+挟まれている場合````「```鍵括弧内のバッククオートは表示されます。```」````。
+}}
+
+
+!! コードブロック(三重バッククオート上下挟み) [[*1|#p2]][[*2|#p2]]
+// Github-flavored
+
+[[*1|#p2]][[*2|#p2]]の環境では、改行は半角スペースに変換され、文書中のコードとして解釈されます。
+
+ {{markdown
+ コードブロック外では「&copy; &lt; _イタリック_」は変換されます。
+ 
+ ```shell
+ echo "１行目。コードブロック内では「&copy; &lt; _イタリック_」は変換されません。"
+ echo "２行目。コードブロック内では「&copy; &lt; _イタリック_」は変換されません。"
+ ```
+ }}
+
+{{markdown
+コードブロック外では「&copy; &lt; _イタリック_」は変換されます。
+
+```shell
+echo "１行目。コードブロック内では「&copy; &lt; _イタリック_」は変換されません。"
+echo "２行目。コードブロック内では「&copy; &lt; _イタリック_」は変換されません。"
+```
+}}
+
+[[*1|#p2]][[*2|#p2]]の環境では、コードブロック内に空行を入れるとコードブロック内とは解釈されず通常の文字と判断されます。
+
+ {{markdown
+ コードブロック外では「&copy; &lt; _イタリック_」は変換されます。
+ 
+ ``` shell
+ echo "１行目。コードブロック内に空行を含む場合でも「&copy; &lt; _イタリック_」は変換されてはなりません。"
+ 
+ echo "２行目。コードブロック内に空行を含む場合でも「&copy; &lt; _イタリック_」は変換されてはなりません。"
+ ```
+ }}
+
+{{markdown
+コードブロック外では「&copy; &lt; _イタリック_」は変換されます。
+
+``` shell
+echo "１行目。コードブロック内に空行を含む場合でも「&copy; &lt; _イタリック_」は変換されてはなりません。"
+
+echo "２行目。コードブロック内に空行を含む場合でも「&copy; &lt; _イタリック_」は変換されてはなりません。"
+```
+}}
+
+!! コードブロック(三重チルダ上下挟み) [[*1|#p2]][[*2|#p2]]
+// Pandoc-style fenced code blocks
+
+ {{markdown
+ コードブロック外では「&copy; &lt; _イタリック_」は変換されます。
+ 
+ ~~~shell
+ echo "１行目。コードブロック内に空行を含む場合でも「&copy; &lt; _イタリック_」は変換されてはなりません。"
+ 
+ echo "２行目。コードブロック内に空行を含む場合でも「&copy; &lt; _イタリック_」は変換されてはなりません。"
+ ~~~
+ }}
+
+{{markdown
+コードブロック外では「&copy; &lt; _イタリック_」は変換されます。
+
+~~~shell
+echo "１行目。コードブロック内に空行を含む場合でも「&copy; &lt; _イタリック_」は変換されてはなりません。"
+
+echo "２行目。コードブロック内に空行を含む場合でも「&copy; &lt; _イタリック_」は変換されてはなりません。"
+~~~
+}}
+
 
 !! タグによるコードブロック
 
 preタグとcodeタグを使います。
-ただし、<code>タグの後ろと</code>の後ろに改行を入れると<pre></pre>による囲み内の最初と最後に改行が入ります。
+ただし、<code>タグ後の改行と</code>後の改行は、それぞれ<pre></pre>内の最初と最後の改行と解釈されます。
+また、実体参照符号へは自動変換されないため、手動で変換しなければなりません。
 
  {{markdown
  <pre><code>
- echo "コードブロック(後ろに改行のあるcodeタグ)1行目"
+ echo "1行目。&lt;code&gt;タグ後に改行がある場合。"
  
- echo "コードブロック(後ろに改行のあるcodeタグ)2行目"
+ echo "2行目。&lt;/code&gt;タグ後に改行がある場合。"
  </code>
  </pre>
  }}
 
 {{markdown
 <pre><code>
-echo "コードブロック(後ろに改行のあるcodeタグ)1行目"
+echo "1行目。&lt;code&gt;タグ後に改行がある場合。"
 
-echo "コードブロック(後ろに改行のあるcodeタグ)2行目"
+echo "2行目。&lt;/code&gt;タグ後に改行がある場合。"
 </code>
 </pre>
 }}
@@ -808,79 +1171,32 @@ echo "コードブロック(後ろに改行のあるcodeタグ)2行目"
 
  {{markdown
  <pre>
- <code>echo "コードブロック(後ろに改行のないcodeタグ)1行目"
+ <code>echo "1行目。&lt;code&gt;タグ後に改行がある場合。"
  
- echo "コードブロック(後ろに改行のないcodeタグ)2行目"
- </code></pre>
+ echo "2行目。&lt;/code&gt;タグ後に改行がある場合。"
+  </code></pre>
  }}
 
 {{markdown
 <pre>
-<code>echo "コードブロック(後ろに改行のないcodeタグ)1行目"
+<code>echo "1行目。&lt;code&gt;タグ後に改行がある場合。"
 
-echo "コードブロック(後ろに改行のないcodeタグ)2行目"
+echo "2行目。&lt;/code&gt;タグ後に改行がある場合。"
 </code></pre>
 }}
 
-!! コードブロック(三重バッククオート上下挟み) [[*1|#p2]][[*2|#p2]]
-
-[[*1|#p2]][[*2|#p2]]の環境では、改行は半角スペースに変換されます。
-
- {{markdown
- ``` shell
- echo "コードブロック(三重バッククオート上下挟み)1行目"
- echo "コードブロック(三重バッククオート上下挟み)２行目"
- ```
- }}
-
-{{markdown
-``` shell
-echo "コードブロック(三重バッククオート上下挟み)1行目"
-echo "コードブロック(三重バッククオート上下挟み)２行目"
-```
-}}
-
-[[*1|#p2]][[*2|#p2]]の環境では、空行を入れると通常の文字と判断されます。
-
- {{markdown
- ``` shell
- echo "空行を含むコードブロック(三重バッククオート上下挟み)1行目"
- 
- echo "空行を含むコードブロック(三重バッククオート上下挟み)２行目"
- ```
- }}
-
-{{markdown
-``` shell
-echo "空行を含むコードブロック(三重バッククオート上下挟み)1行目"
-
-echo "空行を含むコードブロック(三重バッククオート上下挟み)２行目"
-```
-}}
-
-!! コードブロック(三重チルダ上下挟み) [[*1|#p2]][[*2|#p2]]
-
- {{markdown
- ~~~ shell
- echo "コードブロック(三重チルダ上下挟み)"
- ~~~
- }}
-
-{{markdown
-~~~ shell
-echo "コードブロック(三重チルダ上下挟み)"
-~~~
-}}
-
 !! コードブロック（4スペース以上のインデント）
-// Code Snippet
 
  {{markdown
-     echo "4スペースインデント"
+ コードブロック外では「&copy; &lt; _イタリック_」は変換されます。
+ 
+     echo "コードブロック内（4スペース以上インデントされた行）では「&copy; &lt; _イタリック_」は変換されません。"
  }}
 
 {{markdown
-    echo "4スペースインデント"
+コードブロック外では「&copy; &lt; _イタリック_」は変換されます。
+
+    echo "コードブロック内（4スペース以上インデントされた行）では「&copy; &lt; _イタリック_」は変換されません。"
 }}
 
 ! インデント幅とコードブロック範囲の関係
@@ -932,26 +1248,7 @@ echo "コードブロック(三重チルダ上下挟み)"
     echo "4スペースインデント。前行は1スペース。------ ここまでコードブロック ------"
 }}
 
-また、
- {{markdown
-     
- 4スペースインデントのみの行で上下を挟まれた行はコードブロックとは見なされません。
-     
- 	
- 1タブインデントのみの行で上下を挟まれた行はコードブロックとは見なされません。
- 	
- }}
-
-{{markdown
-    
-4スペースインデントのみの行で上下を挟まれた行はコードブロックとは見なされません。
-    
-	
-1タブインデントのみの行で上下を挟まれた行はコードブロックとは見なされません。
-	
-}}
-
-!! コードブロックの入れ子
+!! コードブロックの入れ子 [[*1|#p2]][[*2|#p2]]
 
 ３個以降連続する`及び３個以降連続する~の内、コードブロック内で使用されていないもので上下を挟むか、インデントでのコードブロックを使用します。
 
@@ -994,3 +1291,60 @@ echo "入れ子４段目"
 ````
 `````
 }}
+
+!!! LaTeX埋込 拡張構文  [[*1|#p2]][[*2|#p2]][[*3|#p2]]
+
+* 本構文を利用するには、Discount.pm 中のランタイムフラグに MKD_LATEX() を追加する必要があります。
+** v2maint 2.2.3以降で利用可能です。
+** さらに、LaTeX として出力するためには、LaTeX renderer での追加処理([mathjax|https://github.com/mathjax/MathJax/]など)が必要になります。
+* $$…$$, \[…\], and \(…\)で囲まれている部分は(「<」、「&」の実体参照符号化、改行、スペースの削除を除いて)囲み記号を含めて、そのまま出力されます。
+** ただし、同じ段落内で閉じられていない「\[」、「 \(」 の円記号はエスケープ記号と解釈され左括弧がそのまま出力されます。
+
+ $$
+ \begin{eqnarray}
+ \alpha &<& \sum_{i=1}^n i \\
+           &=& \frac{n (n+1)}{2}
+ \end{eqnarray}
+ $$
+ 
+ \[\frac{\sqrt{x^2+1}}{c_4} \]  
+ 
+ \( \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \)
+
+{{markdown
+$$
+\begin{eqnarray}
+\alpha &<& \sum_{i=1}^n i \\
+          &=& \frac{n (n+1)}{2}
+\end{eqnarray}
+$$
+
+\[\frac{\sqrt{x^2+1}}{c_4} \]  
+
+\( \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \)
+}}
+
+//!!! その他の Discount 拡張構文
+//
+{{markdown
+<!--
+% Document title Help/Markdown for FSWiki
+% Document author Kaz KOBARA <https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki>
+% Document date Feb. 14, 2022
+
+More than three consecutive lines stating with % are treated as Pandoc-style document headers retrieved by the library functions mkd_doc_title(), mkd_doc_author(), and mkd_doc_date().
+
+- orange::スタイルシートで定義されたtypeセレクタによる着色
+- class:orange:スタイルシートで定義されたclassセレクタによる着色
+- id:orange:スタイルシートで定義されたidセレクタによる着色
+- raw:テキスト
+
+<style>
+In Discount extension,
+this block is set aside for printing via mkd_style().
+</style>
+
+> %orange%  This area will become &amp;div class=\"class\"\> instead of a <blockquote\> by Discount extension.
+-->
+}}
+

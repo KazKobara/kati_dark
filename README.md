@@ -1,6 +1,7 @@
 # FSWiki 用ダークテーマ kati_dark
 
 FSWiki に標準で含まれております kitta 氏の [kati](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dtheme%2F4) theme をダークに変換したものです。
+[Markdown Plugin や Content Security Policy (CSP) のための修正](https://kazkobara.github.io/kati_dark/docs/markdown/markdown_plugin_for_fswiki.html "https://kazkobara.github.io/kati_dark/docs/markdown/markdown_plugin_for_fswiki.html") も加えてます。
 
 動作や見た目は自分の使っている範囲でしか確認できていないのと、画像などのパーツは改良の余地がありますので、有志の方々に
 改良してもらえることを期待して(本体に取り込まれるまでは)こちらで公開してメンテナンスすることに致しました。
@@ -89,25 +90,6 @@ table.diff .insert {
         /* background-color:#050 *//* for white text */
         background-color:#3C3      /* for both */
 ```
-
-<!--
-### 編集時の幅
-
-> 現在は[こちらの方法](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dwiki%2F355)
-により自動的にブラウザの幅と一致するようになっています。
-
-「テーマ」として `kati_dark` または `kati` を選択し、Firefox\*1で編集画面を表示させると、Chrome\*2、Edge\*3 と比べ編集欄の幅が広くなります。幅を狭める場合には、FSWiki の tmpl/editform.tmpl の `cols` の値を以下のように小さくします。
-
-```css
-<textarea cols="50" rows="20"
-```
-
-\*1 バージョン 96.0 で確認
-
-\*2 バージョン 97.0.4692.71で確認
-
-\*3 バージョン 97.0.1072.55で確認
--->
 
 ## TODO
 

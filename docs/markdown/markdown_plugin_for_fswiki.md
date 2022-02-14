@@ -4,7 +4,7 @@
 
 FSWiki に Markdown Plugin を入れると以下のスクリーンショットのように markdown block 内に記述した Markdown 構文を表示できるようになります。
 
-ただし、Markdown Plugin として入れる部品により利用できる Markdown 構文が変わり、また、セキュリティを含めた設定にもひと工夫が必要ですので、このページにまとめておきます。
+ただし、Markdown Plugin として入れる構成要素により利用できる Markdown 構文が変わり、また、セキュリティを含めた設定にもひと工夫が必要ですので、このページにまとめておきます。
 
 ## スクリーンショット
 
@@ -14,7 +14,7 @@ FSWiki に Markdown Plugin を入れると以下のスクリーンショット�
 
 このスクリーンショットは以下の Markdown 文書を [kati_dark] テーマで表示させたものです。[その他のテーマ]でも使えると思います。（ただし、一部の機能は、必要に応じて [kati_dark.css] 上部の「Common Settings Among Themes」の部分をコピーする必要がある場合があります。）
 
-````fswiki
+````markdown
 # マークダウンプラグインとCSP
 
 ## マークダウンセキュリティ
@@ -48,23 +48,36 @@ cd dockerfile_fswiki_local
 ```
 ````
 
-対応している Markdown 構文は、[Help/Markdown] にまとめてあります。
+対応している Markdown 構文は、 [Help/Markdown (FSWiki版)] や [Help/Markdown (HTML版)] にまとめてあります。
 
-## [Help/Markdown] の閲覧方法
+## [Help/Markdown (HTML版)] の閲覧方法
 
-[Help/Markdown] をテキストファイルとして直接閲覧するか、以下の方法によりFSWiki上でご参照下さい。
+1. ファイルを入手
 
-> FSWikiは、[ローカルユース用 Docker FSWiki]でも試すことができます(デフォルトで Markdown Plugin と CSP の設定も有効になっております）。
+    ```shell
+    git clone https://github.com/KazKobara/kati_dark.git
+    cd ./kati_dark/docs/markdown/
+    ```
+
+1. Help_Markdown_for_FreeStyleWiki.htm をブラウザで開く。
+
+## [Help/Markdown (FSWiki版)] の閲覧方法
+
+### FSWikiを使われていない場合
+
+- FSWiki やその Markdown Plugin などは、[ローカルユース用 Docker FSWiki]でも試すことができます。
+  - デフォルトで CSP の設定なども有効になっております。
+
+### FSWikiを使われている場合
 
   1. FSWiki の「新規」メニューボタンを押します。
   1. 現れるページ名入力用のテキストエリアに「Help/Markdown」を入力し「作成」ボタンを押します。
-  1. 続いて現れる内容入力用のテキストエリアに[Help/Markdown]のテキストを貼り付けます。
-     - テキストエリアに古い内容が表示される場合には、その内容を削除してから貼り付けます。
-     - github メニューの「Copy raw contents」でコピーすると文字化けします。
+  1. 続いて現れる内容入力用のテキストエリアに[Help/Markdown (FSWiki版)]のテキストを貼り付けます。
+     - テキストエリアに古い版が表示される場合には、その内容を削除してから貼り付けます。
+     > なお、github メニューの「Copy raw contents」でコピーすると文字化けします。
   1. 「プレビュー」（または「保存」）で閲覧します。
      - Markdown Plugin が入っていない状態では markdown block 部分は、FSWikiの構文で処理されます。
-
-     > FSWikiの ./data フォルダに Help%2FMarkdown.wiki を直接置くだけでは「一覧」に表示されません。./log/pagelist.cache に Help/Markdown を追加するか、./log/pagelist.cache を一旦削除すると表示されるようになります。
+     > なお、ｌFSWikiの ./data フォルダに Help%2FMarkdown.wiki を直接置くだけでは「一覧」に表示されません。 ./log/pagelist.cache に Help/Markdown を追加するか、./log/pagelist.cache を一旦削除すると表示されるようになります。
 
 ## [Markdown plugin]のインストール方法
 
@@ -102,40 +115,34 @@ cd dockerfile_fswiki_local
                 apk add git cmake make gcc musl-dev perl-dev
                 ```
 
-        1. git版 Text::Markdown::Discount を clone しそのフォルダへ移動
+        1. git版 Text::Markdown::Discount を clone し、そのフォルダへ移動
 
             ```console
-            git clone https://github.com/sekimura/text-markdown-discount.git --depth 1
+            git clone https://github.com/KazKobara/text-markdown-discount.git -b discount-2.2.7 --depth 1
             cd text-markdown-discount
             ```
 
-        1. [Discount本家]の Ver.2保守ブランチ `v2maint` から必要なコミットを cherry-pick しておきます。最低限、[脆弱性](https://github.com/Orc/discount/issues/189)修正コミット [b002a5a](https://github.com/Orc/discount/commit/b002a5a4db31e42dfb45451c059bc56941c17974) は取り込まなければなりません。
+            > Discount Markdown V2保守ブランチ `v2maint` の最新版を使うための [pull request](https://github.com/sekimura/text-markdown-discount/pull/25) が取り込まれれば、`git clone https://github.com/sekimura/text-markdown-discount.git --depth 1` をご利用下さい。
 
-            ```console
-            git remote add -t v2maint discount https://github.com/Orc/discount.git
-            git fetch --depth 400 -n discount
-            git cherry-pick -n b002a5a
-            ```
-
-        1. メイク
+        1. メイクとテスト
 
             ```console
             perl Makefile.PL
             make
-            ```
-
-        1. テスト
-
-            ```console
             make test
             ```
 
-            - diff コマンドが `c` オプションに対応していない場合(Alpine 3.15 (BusyBox v1.34.1)など )、`discount/tools/checkbits.sh` から `c` オプションを削除後に上記テストを実行します。
+            - 上記 make 時に ./discount/ 内で Discount の `make test` (上記の `make test` とは異なることに注意!)も行われるのですが、 diff コマンドが `c` オプションに対応していない場合(Alpine 3.15 (BusyBox v1.34.1)など)、`discount/tools/checkbits.sh` から `c` オプションを削除し `make clean` 後に `perl Makefile.PL` からやり直して下さい。
 
                 ```shell
                 # diff -c -bw in.markdown.h in.mkdio.h
                 diff -bw in.markdown.h in.mkdio.h
                 ```
+
+                > この部分の自動化は Pull request 済みです。
+
+                - [上記の状況に陥った場合の自動リトライの追加](https://github.com/Orc/discount/pull/252)
+                - おまけで、[BusyBox diff のオプションエラーコードの修正](https://github.com/mirror/busybox/pull/51)
 
         1. インストール
 
@@ -150,27 +157,74 @@ cd dockerfile_fswiki_local
             apt-get -y install libtext-markdown-discount-perl
             ```
 
+        > 2022年1月時点での注意点:
+
+        - Ubuntu/Debian が提供するパッケージを利用する場合、2022年1月時点では Text::Markdown::Discount Ver. 0.12-1+b1 with libmarkdown2:amd64 (2.2.6-1) がインストールされます。
+            - この版は、コードブロックやコロン行頭定義リストなどに対応しておりません。
+            - 後継の[libtext-markdown-discount-perl]の準備も進んでいるようですので、将来的には Linux distributor が提供するパッケージを利用することでよくなると思われます。
+
+## 古いインストール方法の備忘録
+
+1. git版 Text::Markdown::Discount Ver. 0.13 を clone し、そのフォルダへ移動
+
+    ```console
+    git clone https://github.com/sekimura/text-markdown-discount.git --depth 1
+    cd text-markdown-discount
+    ```
+
+1. [Discount本家]の Ver.2保守ブランチ `v2maint` から必要なコミットを cherry-pick しておきます。最低限、[脆弱性](https://github.com/Orc/discount/issues/189)修正コミット [b002a5a](https://github.com/Orc/discount/commit/b002a5a4db31e42dfb45451c059bc56941c17974) は取り込まなければなりません。
+
+    ```console
+    git remote add -t v2maint discount https://github.com/Orc/discount.git
+    git fetch --depth 400 -n discount
+    git cherry-pick -n b002a5a
+    ```
+
     > 2022年1月時点での注意点:
 
-    - Ubuntu/Debian が提供するパッケージを利用する場合、 Text::Markdown::Discount Ver. 0.12-1+b1 with libmarkdown2:amd64 (2.2.6-1) がインストールされます。
-        - この版は [Help/Markdown] のとおり、コードブロックやコロン行頭定義リストなどに対応しておりません。
-            - \``` ```で上下を挟むコードブロックに対しては、[ktat氏によるfork版Markdown.pm](https://gist.github.com/ktat/4f15ffd29074663e0c08)を用いることで有効になりそうなのですが、こちらの環境では、なぜかうまくゆきませんでした。
-        - 後継の[libtext-markdown-discount-perl]の準備も進んでいるようですので、将来的には Linux distributor が提供するパッケージを利用することでよくなると思われます。
-    - 前述のgit版では Ver.0.13 がインストールされます。
-        - ただし、discount は v2.1.7 に"--with-fenced-code --with-dl=both"などの修正が加えられた版が利用されます。
-        - [Discount本家]のVer.2保守ブランチ(v2maint)の2022年1月時点の最新版は v2.2.7 (34a8ebb) で、v2.1.7との間に脆弱性修正のコミット b002a5a が行われているため、少なくともそれは取り込んでおく必要があります。
+    - Text::Markdown::Discount Ver.0.13 は、discount v2.1.7 に"--with-fenced-code --with-dl=both"などの修正が加えられた版が利用されます。
+        - [Discount本家]のVer.2保守ブランチ `v2maint` の2022年1月時点の最新版は v2.2.7 (34a8ebb) で、v2.1.7との間に脆弱性修正のコミット b002a5a が行われているため、少なくともそれは取り込んでおく必要があります。
+        - 今後、前述の Discount Markdown V2保守ブランチ 'v2maint' の最新版を使うための [pull request](https://github.com/sekimura/text-markdown-discount/pull/25) が取り込まれましたら、この cherry-pick 作業は不要となります。
+
+## 設定
 
 1. Webサーバで CSP などを設定しインラインスクリプトやインラインスタイルなどを禁止
 
-    - 詳しくは [Help/Markdown] や [httpd の場合の設定例](https://github.com/KazKobara/dockerfile_fswiki_local/blob/main/data/httpd-security-fswiki-local.conf "https://github.com/KazKobara/dockerfile_fswiki_local/blob/main/data/httpd-security-fswiki-local.conf") をご参照下さい。
+    - 詳しくは [Help/Markdown (FSWiki版)] や [httpd の場合の設定例](https://github.com/KazKobara/dockerfile_fswiki_local/blob/main/data/httpd-security-fswiki-local.conf "https://github.com/KazKobara/dockerfile_fswiki_local/blob/main/data/httpd-security-fswiki-local.conf") をご参照下さい。
 
 1. FSWikiの設定
 
     - FSWiki 画面の [管理] -> [プラグイン設定 ] で markdown にチェックを入れます。
-    - 上記の「[Help/Markdown] の閲覧方法」に従い [Help/Markdown] などをFSWikiで表示させCSPやMarkdown Pluginの設定を確認
+    - 上記の「[Help/Markdown (FSWiki版)] の閲覧方法」に従い [Help/Markdown (FSWiki版)] などをFSWikiで表示させCSPやMarkdown Pluginの設定を確認
     - 信頼できない第三者が Markdown を入力・編集できる場合には、Webサーバの Content Security Policy (CSP)などを設定し、インラインスクリプトやインラインスタイルを禁止して下さい。
 
-  > [ローカルユース用 Docker FSWiki]ではデフォルトで Markdown Plugin と CSP の設定が有効になってます。
+## Markdownの拡張構文を有効にする方法の違い
+
+以下の表は、Text::Markdown::Discount において以下の拡張構文
+
+- コードブロック(Fenced Code Block)
+- 行頭を「: 」にすることによる定義リスト（行頭コロンスペース定義リスト）
+- タスクリスト(checkbox)）
+
+を `./configure.sh` のオプションで指定しなければならないのか、`Discount.pm` 中のランタイムフラグとして指定しなければならないのかについてまとめたものになります。
+
+- 表中の `--*` が `./configure.sh` のオプション、`MKD_*` がDiscount.pm 中のランタイムフラグになります。
+- 「停止」は、そのオプションやフラグを指定すると ./configure.sh やコマンドが停止することを意味します。
+- 「無効」はそれらを指定しても停止しないが、機能は有効にならないことを意味します。
+- 例えば、
+  - コードブロック構文を有効にするためには、2.1.9 (06f029e) までは `./configure.sh --with-fenced-code` とする必要がありましたが、2.1.9 (088b5ab) 以降は、それを指定しても有効にはならず、`Discount.pm` 中のランタイムフラグに MKD_FENCEDCODE を追加する必要があります。
+
+> なお、Text::Markdown 及び Text::Markdown::Discount の構成と対応している Markdown構文の違いは[Help/Markdown (FSWiki版)] 又は [Help/Markdown (HTML版)] をご参照下さい。
+
+| Discount ver.2 保守ブランチ 'v2maint' のバージョン| --with-fenced-code| --with-dl=both (による行頭コロンスペース定義リスト)| --github-checkbox[=input]| MKD_FENCEDCODE| MKD_DLEXTRA (による行頭コロンスペース定義リスト)
+|---|---|---|---|---|---
+|2.2.4<= ver. <=2.2.7| 無効 (Invalid option)| 無効 (Setting theme default --with-dl)| 有効| 有効|有効
+|2.2.0  <= ver. <=2.2.3| 無効 (Invalid option)| 無効 (Setting theme default --with-dl)| 停止 (Bad option) | 有効|有効
+|2.1.9(3eb3a68)<= ver. < 2.2.0| 無効 (Invalid option)|無効 (Invalid option)| 停止 (Bad option)| 有効|有効
+|2.1.9 (088b5ab)<= ver. <=2.1.9 (bde87f6)| 停止 (Invalid option)|無効 (Invalid option)| 停止 (Bad option) | 有効| 有効
+|2.1.9<= ver. <=2.1.9 (06f029e) |有効| 停止 (Invalid option) | 停止 (Bad option) |  無効 (unknown option)| 有効
+|2.1.8< ver. <2.1.9|有効| 停止 (Invalid option)| 停止 (Bad option) | 無効 (unknown option)|無効 (unknown option)
+|2.1.6<= ver. <=2.1.8|有効|有効| 停止 (Bad option) |  無効 (unknown option)|無効 (unknown option)
 
 ## 問題解決のヒント
 
@@ -195,9 +249,10 @@ markdownプラグインは存在しません。
 [Markdown plugin]: https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417 "https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417"
 [markdown_20120714.zip]: https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417&action=ATTACH&file=markdown%5F20120714%2Ezip "https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417&action=ATTACH&file=markdown%5F20120714%2Ezip"
 [Discount本家]: https://github.com/Orc/discount "https://github.com/Orc/discount"
-[Help/Markdown]: https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki "https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki"
+[Help/Markdown (FSWiki版)]: https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki "https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki"
+[Help/Markdown (HTML版)]: https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help_Markdown_for_FreeStyleWiki.htm "https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help_Markdown_for_FreeStyleWiki.htm"
 <!--
-[Help/Markdown]: https://raw.githubusercontent.com/KazKobara/kati_dark/main/docs/markdown/Help%2FMarkdown.wiki "https://raw.githubusercontent.com/KazKobara/kati_dark/main/docs/markdown/Help%2FMarkdown.wiki"
+[Help/Markdown (FSWiki版)]: https://raw.githubusercontent.com/KazKobara/kati_dark/main/docs/markdown/Help%2FMarkdown.wiki "https://raw.githubusercontent.com/KazKobara/kati_dark/main/docs/markdown/Help%2FMarkdown.wiki"
 -->
 [Text::Markdown]: https://metacpan.org/pod/Text::Markdown "https://metacpan.org/pod/Text::Markdown"
 [Text::Markdown::Discount]: https://metacpan.org/pod/Text::Markdown::Discount "https://metacpan.org/pod/Text::Markdown::Discount"
