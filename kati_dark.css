@@ -79,10 +79,25 @@ https://github.com/KazKobara/dockerfile_fswiki_local/blob/main/data/httpd-securi
 instead of inline styles ignored by default CSP settings. */
 
 /* Color */
-orange {color:orange;}   /* type selector */
-.orange {color:orange;}  /* class selector */
-#orange {color:orange;}  /* id selector */
+red {color:red;}   		/* type  selector */
+.red {color:red;}  		/* class selector */
+orange {color:orange;}   	/* type  selector */
+.orange {color:orange;}  	/* class selector */
+yellow {color:yellow;}   	/* type  selector */
+.yellow {color:yellow;}  	/* class selector */
+green {color:green;}   	/* type  selector */
+.green {color:green;}  	/* class selector */
+cyan {color:cyan;}   		/* type  selector */
+.cyan {color:cyan;}  		/* class selector */
+blue {color:blue;}   		/* type  selector */
+.blue {color:blue;}  		/* class selector */
+indigo {color:indigo;}   	/* type  selector */
+.indigo {color:indigo;}  	/* class selector */
+violet {color:violet;}   	/* type  selector */
+.violet {color:violet;}  	/* class selector */
 
+.highlight {background-color:yellow !important;}
+.darkhighlight {background-color:Maroon !important;}
 
 /* -------- Theme Specific Settings -------- */
 /* kati_dark.css v0.0.1 */
@@ -815,7 +830,7 @@ div.sidebar .calendar{
 	div.header,div.adminmenu,div.footer,div.form,div.sidebar,div.partedit,div.comment,form {display:none;}
 	div.day,div.body{border:none;}
 	div.main{margin-left: 0%;}
-	h1 {padding-left: 0px;}
+	h1,h1 A:link,h1 A:visited,h1 A:hover {padding-left: 0px; text-shadow: black 0px 0px 0.2em;}
 	h2,h3 { font-size: medium; }
 	a { text-decoration: none; }
 }
