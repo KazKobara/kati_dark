@@ -2,23 +2,29 @@
 
 !!ÀßÄê¤Î³ÎÇ§
 
-[Markdown plugin|https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417]¤Î¥¤¥ó¥¹¥È¡¼¥ë¤ÈÀßÄêÊýË¡¤Ï[¤³¤Á¤é|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]¤â¤´»²¾È²¼¤µ¤¤¡£
-
-* ¤³¤Î [[Help/Markdown]] ¤Ï2022Ç¯2·î14ÆüÈÇ¤Ç¤¹¡£
-** ºÇ¿·ÈÇ¤Ï¡ÊFSWkiËÜÂÎ¤Ë¼è¤ê¹þ¤Þ¤ì¤ë¤Þ¤Ç¤Ï¡Ë[¤³¤Á¤é|https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki]¤«¤é¤´Æþ¼ê¤¯¤À¤µ¤¤¡£
-* ËÜ¥Ú¡¼¥¸¤òÉ½¼¨¤·¤¿¾ì¹ç¤Ë CSP (Content-Security-Policy) ¤Î·Ù¹ð¤¬½Ð¤ë¤«¡¢°Ê²¼¤Î[Í×³ÎÇ§¡ª¡ª]¤¬»ç¿§¤ÇÉ½¼¨¤µ¤ì¤Æ¤¤¤ë¾ì¹ç
-** CSP¤ÎÀßÄê¤¬Í­¸ú¤Ë¤Ê¤Ã¤Æ¤¤¤Ê¤¤¤«¡¢Í­¸ú¤Ë¤Ê¤Ã¤Æ¤¤¤ë¤¬Ç¤°Õ¤Î¥¤¥ó¥é¥¤¥ó¥¹¥¯¥ê¥×¥È/¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë¤Î¼Â¹Ô¤¬²ÄÇ½¤Ë¤Ê¤Ã¤Æ¤¤¤Þ¤¹¡£
-** Á°¼Ô¤Î¾ì¹ç¤Ë¤ÏCSP¤Ê¤É¤ÎÀßÄê¤òÍ­¸ú¤Ë¤·¡¢¸å¼Ô¤Î¾ì¹ç¤Ë¤Ï 'unsafe-inline' ¤ò»ÈÍÑ¤·¤Ê¤¤¤è¤¦¤Ë¤·¤Þ¤¹¡£
+* ¤³¤Î [[Help/Markdown]] ¤Ï'''2022Ç¯3·î1ÆüÈÇ'''¤Ç¤¹¡£
+** ºÇ¿·ÈÇ¤Ï[¤³¤Á¤é|https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki]¤«¤é¤´Æþ¼ê¤¯¤À¤µ¤¤¡ÊFSWkiËÜÂÎ¤Ë¼è¤ê¹þ¤Þ¤ì¤ë¤Þ¤Ç¤Ï¡Ë¡£
+* [Markdown plugin|https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417]¤Î¥¤¥ó¥¹¥È¡¼¥ë¤ÈÀßÄêÊýË¡¤Ï[¤³¤Á¤é|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]¤â¤´»²¾È²¼¤µ¤¤¡£
 
 {{markdown
-<script type="text/javascript">alert('·Ù¹ð!! Ç¤°Õ¤Î¥¤¥ó¥é¥¤¥ó¥¹¥¯¥ê¥×¥È¤Î¼Â¹Ô¤¬²ÄÇ½¤Ë¤Ê¤Ã¤Æ¤¤¤Þ¤¹!! Web¥µ¡¼¥Ð¤Î CSP (Content-Security-Policy) ¤Ê¤É¤ÎÀßÄê¤ò¹Ô¤Ã¤Æ²¼¤µ¤¤¡£');</script>
+[¥ê¥ó¥¯](javascript:alert\('·Ù¹ð'\))
+
 }}
 
 {{markdown
-- <span style="color:RebeccaPurple;">[Í×³ÎÇ§¡ª¡ª] ¤³¤³¤¬»ç¿§¤ÇÉ½¼¨¤µ¤ì¤Æ¤¤¤ë¾ì¹ç</span>
-    - (CSP Hashes¤Ê¤É¤ÇËÜ¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë¤ò°Õ¿ÞÅª¤Ëµö²Ä¤·¤Æ¤¤¤Ê¤¤¤Î¤Ç¤¢¤ì¤Ð)Ç¤°Õ¤Î¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë¤¬¼Â¹Ô²ÄÇ½¤Ë¤Ê¤Ã¤Æ¤¤¤Þ¤¹¡£
-    - Web¥µ¡¼¥Ð¤Î CSP ¤Î style-src ¤Ê¤É¤ÎÀßÄê¤ò¹Ô¤¤¡¢'unsafe-inline' ¤ò»ÈÍÑ¤·¤Ê¤¤¤è¤¦¤Ë¤·¤Þ¤¹¡£
-    - ¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë¤ò»ÈÍÑ¤·¤Ê¤¤ÊýË¡¤Ï°Ê²¼¤Î[¥Æ¥­¥¹¥ÈÁõ¾þ ¥¹¥¿¥¤¥ë¤ÎÍøÍÑ](wiki.cgi?page=Help%2FMarkdown#p6)¤ÎÀá¤ò¤´»²¾È²¼¤µ¤¤¡£
+- °Ê²¼¤Ë³ºÅö¤¹¤ë¾ì¹ç¡¢ÀßÄê¤Î¸«Ä¾¤·¤¬É¬Í×¤Ç¤¹¡£
+    - ËÜ¥Ú¡¼¥¸¤òÉ½¼¨¤·¤¿¾ì¹ç¡¢CSP (Content-Security-Policy) ¤Î·Ù¹ð¤¬½Ð¤ë¡£
+    - <span style="color:DeepPink;">[Í×³ÎÇ§¡ª¡ª] ¤³¤³¤¬¥Ô¥ó¥¯¿§¤ÇÉ½¼¨¤µ¤ì¤Æ¤¤¤ë¡£</span>
+    - <a href="javascript:alert('·Ù¹ð!!¥¹¥¯¥ê¥×¥È¤Ø¤Î¥ê¥ó¥¯¤¬Í­¸ú¤Ë¤Ê¤Ã¤Æ¤¤¤Þ¤¹¡£')" title="javascript:alert()">[Í×³ÎÇ§¡ª¡ª] ËÜ¥ê¥ó¥¯¤ò¥¯¥ê¥Ã¥¯</a>¤¹¤ë¤È¡¢¡Ö¥¹¥¯¥ê¥×¥È¤Ø¤Î¥ê¥ó¥¯¤¬Í­¸ú¤Ë¤Ê¤Ã¤Æ¤¤¤Þ¤¹¡£¡×¤È¤Î·Ù¹ð¤¬É½¼¨¤µ¤ì¤ë¡£
+- ÀßÄê¸«Ä¾¤·ÊýË¡¤ÎÎã
+    - Web¥µ¡¼¥Ð¤Ê¤É¤Ë¤ª¤¤¤ÆCSP¤Ê¤É¤ÎÀßÄê¤¬Í­¸ú¤Ë¤Ê¤Ã¤Æ¤¤¤Ê¤¤¾ì¹ç¤ÏÍ­¸ú¤Ë¤·¤Þ¤¹¡£
+    - CSP¤¬´û¤ËÍ­¸ú¤Ë¤Ê¤Ã¤Æ¤¤¤ë¾ì¹ç¡¢ÀßÄê¤ò¸«Ä¾¤· 'unsafe-inline' ¤ò»ÈÍÑ¤·¤Ê¤¤¤è¤¦¤Ë¤·¤Þ¤¹¡£
+        - ¥¹¥¯¥ê¥×¥È¤ËÂÐ¤·¤Æ¤Ï `script-src`¡¢¥¹¥¿¥¤¥ë¤ËÂÐ¤·¤Æ¤Ï `style-src` ¤ÎÀßÄê¤Ê¤É¡£
+    - Raw html ¤ò»ÈÍÑ¤·¤Ê¤¤¾ì¹ç¤Ï¡¢Discount.pm Ãæ¤Î¥é¥ó¥¿¥¤¥à¥Õ¥é¥°¤Ë MKD_NOHTML ¤òÄÉ²Ã¤¹¤ë¤È¤¤¤¦ÊýË¡¤â²ÄÇ½¤Ç¤¹¡£
+    - ¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë¤ò»ÈÍÑ¤»¤º¤Ë¥Æ¥­¥¹¥È¤òÁõ¾þ¤¹¤ëÊýË¡¤Ë¤Ä¤­¤Þ¤·¤Æ¤Ï¡¢°Ê²¼¤Î[¥Æ¥­¥¹¥ÈÁõ¾þ ¥¹¥¿¥¤¥ë¤ÎÍøÍÑ](wiki.cgi?page=Help%2FMarkdown#p6)¤ÎÀá¤ò¤´»²¾È²¼¤µ¤¤¡£
+
+<!-- Do not remove!!  (Necessary to check the settings.) -->
+<script type="text/javascript">alert('·Ù¹ð!! Ç¤°Õ¤Î¥¤¥ó¥é¥¤¥ó¥¹¥¯¥ê¥×¥È¤Î¼Â¹Ô¤¬²ÄÇ½¤Ë¤Ê¤Ã¤Æ¤¤¤Þ¤¹!! Web¥µ¡¼¥Ð¤Î CSP (Content-Security-Policy) ¤Ê¤É¤ÎÀßÄê¤ò¹Ô¤Ã¤Æ²¼¤µ¤¤¡£');</script>
 }}
 
 !! Markdown¹½Ê¸¤ÎÂÐ±þ¾õ¶·
@@ -27,10 +33,11 @@
 
 , Ãí¼áµ­¹æ,  CPAN, Markdown to HTML converter ,Makefile.PL Ãæ¤Î ./configure.sh ¥ª¥×¥·¥ç¥ó, Discount.pm Ãæ¤Î¥é¥ó¥¿¥¤¥à¥Õ¥é¥°, È÷¹Í
 , *1, [Text::Markdown|https://metacpan.org/pod/Text::Markdown] 1.000031, Markdown.pl,-,-, 27 Dec 2015°Ê¹ß¹¹¿·Ìµ
-, *1, [Text::Markdown|https://metacpan.org/pod/Text::Markdown] 1.000031-3, Markdown.pl,-,-, apt-get -y install libtext-markdown-perl (Ubuntu 20.04) 
-, *2, [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] 0.12-1+b1, Discount 2.2.6-1,  --github-checkbox ,MKD_NOHEADER MKD_NOPANTS, apt-get -y install libtext-markdown-discount-perl (Ubuntu 20.04)
+, *1, [Text::Markdown|https://metacpan.org/pod/Text::Markdown] 1.000031-3, Markdown.pl,-,-, "apt-get -y install libtext-markdown-perl (Ubuntu 20.04, as of Feb. 2022)" 
+, *2, [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] 0.12-1, Discount 2.2.6-1, --github-checkbox ,MKD_NOHEADER MKD_NOPANTS, "apt-get -y install libtext-markdown-discount-perl (Ubuntu 20.04, as of Feb. 2022)"
 , *3, [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] 0.13 (357a2ef), Discount 2.1.7 + patches, --with-fenced-code --with-dl=both, MKD_NOHEADER MKD_NOPANTS, [ÀÈ¼åÀ­|https://github.com/Orc/discount/issues/189] ½¤Àµ¥³¥ß¥Ã¥È [b002a5a|https://github.com/Orc/discount/commit/b002a5a4db31e42dfb45451c059bc56941c17974]¤Ê¤É¤ò¼è¤ê¹þ¤àÉ¬Í×¤¬¤¢¤ë¤¿¤á¡¢*4 (0.14)°Ê¹ß¤ò»È¤¦Êý¤¬¤è¤¤¤Ç¤¹¡£
 , *4, [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] 0.14 ([pull requestÃæ|https://github.com/sekimura/text-markdown-discount/pull/25]), Discount 2.2.7 (v2maint 34a8ebb), --github-checkbox=input, MKD_NOHEADER MKD_NOPANTS MKD_FENCEDCODE MKD_DLEXTRA , Discount¤Î¥Ð¡¼¥¸¥ç¥ó¤È¥ª¥×¥·¥ç¥ó/¥Õ¥é¥°ÀßÄê¤Î´Ø·¸¤Ï¡¢[¤³¤Á¤é|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]¤Î¡ÖMarkdown¤Î³ÈÄ¥¹½Ê¸¤òÍ­¸ú¤Ë¤¹¤ëÊýË¡¤Î°ã¤¤¡×¤ò¤´»²¾È²¼¤µ¤¤¡£
+// apt list libtext-markdown-perl libtext-markdown-discount-perl discount
 
 // [¤³¤Á¤é|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]¤Î¡ÖDiscount Markdown ¤Î¥Ð¡¼¥¸¥ç¥ó¤Èµ¡Ç½ÁªÂòÊýË¡¤Î°ã¤¤¡×¤Ë°ÜÆ°¡£
 //
@@ -154,43 +161,71 @@ g^x¡¢g^x1Y2¡¢g^(¥µ¡¼¥«¥à¥Õ¥ì¥Ã¥¯¥¹¾åÉÕ¤­/È¾³Ñ±Ñ¿ô»ú°Ê³°¤¬´Þ¤Þ¤ì¤ë¾ì¹ç¤Ë¤Ï´Ý³ç¸Ì¤
  /* Cascading Style Sheets used in Markdown block of FSWiki */
  orange {color:orange;}    /* type selector */
  .orange {color:orange;}   /* class selector */
- #orange {color:orange;}  /* id selector */
 
 2. ÄêµÁ¤·¤¿¥¹¥¿¥¤¥ë¤òMarkdown¥Ö¥í¥Ã¥¯¤ÇÍøÍÑ¤·¤Þ¤¹¡£
 * ¤½¤ÎºÝ¡¢ÍøÍÑ¤·¤Æ¤¤¤ë¥Æ¡¼¥Þ¤Î¥¹¥¿¥¤¥ë¥·¡¼¥È ./theme/<ÍøÍÑ¤·¤Æ¤¤¤ë¥Æ¡¼¥ÞÌ¾>/<ÍøÍÑ¤·¤Æ¤¤¤ë¥Æ¡¼¥ÞÌ¾>.css °Ê³°¤Ë¾åµ­¤òÄÉ²Ã¤·¤¿¾ì¹ç¤Ë¤Ï¡¢¤½¤Î¥¹¥¿¥¤¥ë¥·¡¼¥È¤ò»²¾È¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡£
-* [kati_dark.css|https://raw.githubusercontent.com/KazKobara/kati_dark/main/kati_dark.css] ¤Î"Common Settings Among Themes"¤ÎÉôÊ¬¤Ë¾åµ­¤òÆþ¤ì¤Æ¤¢¤ê¤Þ¤¹¡£
+* [kati_dark.css|https://raw.githubusercontent.com/KazKobara/kati_dark/main/kati_dark.css] ¤Î"Common Settings Among Themes"¤ÎÉôÊ¬¤Ë¤¤¤¯¤Ä¤«Îã¤òÆþ¤ì¤Æ¤¢¤ê¤Þ¤¹¡£
 
- {{markdown
- - <orange>¥¹¥¿¥¤¥ë¥·¡¼¥È¤ÇÄêµÁ¤µ¤ì¤¿type¥»¥ì¥¯¥¿¤Ë¤è¤ëÃå¿§</orange>
- - <span type="text/css" class="orange">¥¹¥¿¥¤¥ë¥·¡¼¥È¤ÇÄêµÁ¤µ¤ì¤¿class¥»¥ì¥¯¥¿¤Ë¤è¤ëÃå¿§</span>
- - <span type="text/css" id="orange">¥¹¥¿¥¤¥ë¥·¡¼¥È¤ÇÄêµÁ¤µ¤ì¤¿id¥»¥ì¥¯¥¿¤Ë¤è¤ëÃå¿§</span>
- }}
+3. ¥¹¥¿¥¤¥ë¥·¡¼¥ÈÃæ¤ÇÄêµÁ¤µ¤ì¤¿¥»¥ì¥¯¥¿¤òÍÑ¤¤¤¿½¤¾þ¤ÎÎã¡§
+
+ - <orange>type¥»¥ì¥¯¥¿¤Ë¤è¤ëÃå¿§</orange>
+ - <span type="text/css" class="yellow">class¥»¥ì¥¯¥¿¤Ë¤è¤ëÃå¿§</span>
+ - <span type="text/css" class="green">class¥»¥ì¥¯¥¿<cyan>¤ª¤è¤Ó<violet>type¥»¥ì¥¯¥¿</violet>¤ÎÆþ¤ì»Ò</cyan>¤Ë¤è¤ëÃå¿§</span>
+ - class¥»¥ì¥¯¥¿¤Ë¤è¤ë<span type="text/css" class="darkhighlight">¥Ï¥¤¥é¥¤¥È</span>
 
 {{markdown
-- <orange>¥¹¥¿¥¤¥ë¥·¡¼¥È¤ÇÄêµÁ¤µ¤ì¤¿type¥»¥ì¥¯¥¿¤Ë¤è¤ëÃå¿§</orange>
-- <span type="text/css" class="orange">¥¹¥¿¥¤¥ë¥·¡¼¥È¤ÇÄêµÁ¤µ¤ì¤¿class¥»¥ì¥¯¥¿¤Ë¤è¤ëÃå¿§</span>
-- <span type="text/css" id="orange">¥¹¥¿¥¤¥ë¥·¡¼¥È¤ÇÄêµÁ¤µ¤ì¤¿id¥»¥ì¥¯¥¿¤Ë¤è¤ëÃå¿§</span>
+- <orange>type¥»¥ì¥¯¥¿¤Ë¤è¤ëÃå¿§</orange>
+- <span type="text/css" class="yellow">class¥»¥ì¥¯¥¿¤Ë¤è¤ëÃå¿§</span>
+- <span type="text/css" class="green">class¥»¥ì¥¯¥¿<cyan>¤ª¤è¤Ó<violet>type¥»¥ì¥¯¥¿</violet>¤ÎÆþ¤ì»Ò</cyan>¤Ë¤è¤ëÃå¿§</span>
+- class¥»¥ì¥¯¥¿¤Ë¤è¤ë<span type="text/css" class="darkhighlight">¥Ï¥¤¥é¥¤¥È</span>
 }}
+
 
 !Èó¿ä¾©
 
-°Ê²¼¤Î¤è¤¦¤Ê¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë¤ä¥¤¥ó¥é¥¤¥ó¤ÇÄêµÁ¤µ¤ì¤¿¥¹¥¿¥¤¥ë¤Ï¡¢
-¡ÊWeb¥µ¡¼¥Ð¤ÎCSP¤òÌµ¸ú¤Ë¤¹¤ë¤«¡¢CSP¤Î style-src ¤Ë 'unsafe-inline' ¤òÀßÄê¤¹¤ë¤³¤È¤Ë¤è¤êÍ­¸ú¤Ë¤Ï¤Ê¤ë¤Î¤Ç¤¹¤¬¡Ë
-¥»¥­¥å¥ê¥Æ¥£¾å'''Èó¿ä¾©'''¤Ç¤¹¡ª¡ª
-¤½¤Î¤è¤¦¤ÊÀßÄê¤ò¹Ô¤Ã¤Æ¤¤¤ë¾ì¹ç¤Ë¤Ï¡¢CSP¤Ê¤É¤òÍ­¸ú¤Ë¤·¡¢¤½¤ÎÀßÄê¤«¤é 'unsafe-inline' ¤òºï½ü¤·¤Æ¤¯¤À¤µ¤¤¡£
+HTML5¤Ç¤Ï¥µ¥Ý¡¼¥È¤µ¤ì¤Æ¤ª¤ê¤Þ¤»¤ó¡£
+
+ <font color="Red">Red</font>, 
+ <font color="Orange">Orange</font>,
+ <font color="Yellow">Yellow</font>,
+ <font color="Green">Green</font>,
+ <font color="Cyan">Cyan</font>,
+ <font color="Blue">Blue</font>,
+ <font color="Indigo">Indigo</font>,
+ <font color="Violet">Violet</font>
+
+{{markdown
+<font color="Red">Red</font>, 
+<font color="Orange">Orange</font>,
+<font color="Yellow">Yellow</font>,
+<font color="Green">Green</font>,
+<font color="Cyan">Cyan</font>,
+<font color="Blue">Blue</font>,
+<font color="Indigo">Indigo</font>,
+<font color="Violet">Violet</font>
+}}
+
+
+!Èó¿ä¾©
+
+* °Ê²¼¤Î¤è¤¦¤Ê¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë¤ä¥¤¥ó¥é¥¤¥ó¤ÇÄêµÁ¤µ¤ì¤¿¥¹¥¿¥¤¥ë¤Ï¡¢¡ÊWeb¥µ¡¼¥Ð¤ÎCSP¤òÌµ¸ú¤Ë¤¹¤ë¤«¡¢CSP¤Î style-src ¤Ë 'unsafe-inline' ¤òÀßÄê¤¹¤ë¤³¤È¤Ë¤è¤êÍ­¸ú¤Ë¤Ï¤Ê¤ë¤Î¤Ç¤¹¤¬¡Ë¥»¥­¥å¥ê¥Æ¥£¾å'''Èó¿ä¾©'''¤Ç¤¹¡ª¡ª
+** ¤½¤Î¤è¤¦¤ÊÀßÄê¤ò¹Ô¤Ã¤Æ¤¤¤ë¾ì¹ç¤Ë¤Ï¡¢CSP¤Ê¤É¤òÍ­¸ú¤Ë¤·¡¢¤½¤ÎÀßÄê¤«¤é 'unsafe-inline' ¤òºï½ü¤·¤Æ¤¯¤À¤µ¤¤¡£
+** MKD_NOSTYLE ¥é¥ó¥¿¥¤¥à¥Õ¥é¥°¤Ç¤Ï <style *></style>¤ÏÌµ¸ú¤Ë¤Ê¤ë¤Î¤Ç¤¹¤¬¡¢¾¯¤Ê¤¯¤È¤â v2.2.7 ¤Ç¤Ï style= ¤ÏÌµ¸ú¤Ë¤Ê¤ê¤Þ¤»¤ó¡£
 
  {{markdown
- - <span style="color:orange;">¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë¤Ë¤è¤ëÃå¿§¡Ê**[Ãí°Õ!!]**Ãå¿§¤µ¤ì¤Æ¤¤¤ë¾ì¹ç¤Ë¤ÏWeb¥µ¡¼¥Ð¤ÎCSPÅù¤ÎÀßÄê¤Ë¤è¤ê¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë(µÚ¤Ó¥¤¥ó¥é¥¤¥ó¥¹¥¯¥ê¥×¥È)¤ò¶Ø»ß¤·¤Æ¤¯¤À¤µ¤¤¡£¡Ë</span>
+ - <span style="color:DeepPink;">¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë¤Ë¤è¤ëÃå¿§¡Ê**[Ãí°Õ!!]**Ãå¿§¤µ¤ì¤Æ¤¤¤ë¾ì¹ç¤Ë¤ÏWeb¥µ¡¼¥Ð¤ÎCSPÅù¤ÎÀßÄê¤Ë¤è¤ê¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë(µÚ¤Ó¥¤¥ó¥é¥¤¥ó¥¹¥¯¥ê¥×¥È)¤ò¶Ø»ß¤·¤Æ¤¯¤À¤µ¤¤¡£¡Ë</span>
  
- <style type="text/css">.gold{color:gold;}</style>  
- - <span type="text/css" class="gold">¥¤¥ó¥é¥¤¥ó¤ÇÄêµÁ¤µ¤ì¤¿class¥»¥ì¥¯¥¿¤Ë¤è¤ëÃå¿§</span>¡Ê**[Ãí°Õ!!]**Ãå¿§¤µ¤ì¤Æ¤¤¤ë¾ì¹ç¤Ë¤ÏWeb¥µ¡¼¥Ð¤ÎCSPÅù¤ÎÀßÄê¤Ë¤è¤ê¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë(µÚ¤Ó¥¤¥ó¥é¥¤¥ó¥¹¥¯¥ê¥×¥È)¤ò¶Ø»ß¤·¤Æ¤¯¤À¤µ¤¤¡£¡Ë
+ <style type="text/css">.cyan{color:DeepPink;}</style>
+ 
+ - <span type="text/css" class="DeepPink">¥¤¥ó¥é¥¤¥ó¤ÇÄêµÁ¤µ¤ì¤¿class¥»¥ì¥¯¥¿¤Ë¤è¤ëÃå¿§</span>¡Ê**[Ãí°Õ!!]**Ãå¿§¤µ¤ì¤Æ¤¤¤ë¾ì¹ç¤Ë¤ÏWeb¥µ¡¼¥Ð¤ÎCSPÅù¤ÎÀßÄê¤Ë¤è¤ê¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë(µÚ¤Ó¥¤¥ó¥é¥¤¥ó¥¹¥¯¥ê¥×¥È)¤ò¶Ø»ß¤·¤Æ¤¯¤À¤µ¤¤¡£¡Ë
  }}
 
 {{markdown
-- <span style="color:gold;">¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë¤Ë¤è¤ëÃå¿§¡Ê**[Ãí°Õ!!]**Ãå¿§¤µ¤ì¤Æ¤¤¤ë¾ì¹ç¤Ë¤ÏWeb¥µ¡¼¥Ð¤ÎCSPÅù¤ÎÀßÄê¤Ë¤è¤ê¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë(µÚ¤Ó¥¤¥ó¥é¥¤¥ó¥¹¥¯¥ê¥×¥È)¤ò¶Ø»ß¤·¤Æ¤¯¤À¤µ¤¤¡£¡Ë</span>
+- <span style="color:DeepPink;">¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë¤Ë¤è¤ëÃå¿§¡Ê**[Ãí°Õ!!]**Ãå¿§¤µ¤ì¤Æ¤¤¤ë¾ì¹ç¤Ë¤ÏWeb¥µ¡¼¥Ð¤ÎCSPÅù¤ÎÀßÄê¤Ë¤è¤ê¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë(µÚ¤Ó¥¤¥ó¥é¥¤¥ó¥¹¥¯¥ê¥×¥È)¤ò¶Ø»ß¤·¤Æ¤¯¤À¤µ¤¤¡£¡Ë</span>
 
-<style type="text/css">.gold{color:gold;}</style>  
-- <span type="text/css" class="gold">¥¤¥ó¥é¥¤¥ó¤ÇÄêµÁ¤µ¤ì¤¿class¥»¥ì¥¯¥¿¤Ë¤è¤ëÃå¿§</span>¡Ê**[Ãí°Õ!!]**Ãå¿§¤µ¤ì¤Æ¤¤¤ë¾ì¹ç¤Ë¤ÏWeb¥µ¡¼¥Ð¤ÎCSPÅù¤ÎÀßÄê¤Ë¤è¤ê¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë(µÚ¤Ó¥¤¥ó¥é¥¤¥ó¥¹¥¯¥ê¥×¥È)¤ò¶Ø»ß¤·¤Æ¤¯¤À¤µ¤¤¡£¡Ë
+<style type="text/css">.DeepPink{color:DeepPink;}</style>
+
+- <span type="text/css" class="DeepPink">¥¤¥ó¥é¥¤¥ó¤ÇÄêµÁ¤µ¤ì¤¿class¥»¥ì¥¯¥¿¤Ë¤è¤ëÃå¿§</span>¡Ê**[Ãí°Õ!!]**Ãå¿§¤µ¤ì¤Æ¤¤¤ë¾ì¹ç¤Ë¤ÏWeb¥µ¡¼¥Ð¤ÎCSPÅù¤ÎÀßÄê¤Ë¤è¤ê¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë(µÚ¤Ó¥¤¥ó¥é¥¤¥ó¥¹¥¯¥ê¥×¥È)¤ò¶Ø»ß¤·¤Æ¤¯¤À¤µ¤¤¡£¡Ë
 }}
 
 
@@ -211,18 +246,24 @@ g^x¡¢g^x1Y2¡¢g^(¥µ¡¼¥«¥à¥Õ¥ì¥Ã¥¯¥¹¾åÉÕ¤­/È¾³Ñ±Ñ¿ô»ú°Ê³°¤¬´Þ¤Þ¤ì¤ë¾ì¹ç¤Ë¤Ï´Ý³ç¸Ì¤
 !!¼ÂÂÎ»²¾ÈÉä¹æ¤Ø¤Î¼«Æ°ÊÑ´¹
 
  ¡Ö&¡×¤È¡Ê¸å¤í¤Ë>¤¬Ìµ¤¤¡Ë¡Ö<¡×¤Ï¡¢¤½¤ì¤¾¤ì¡Ö&amp;¡×¤È¡Ö&lt;¡×¤ËÊÑ´¹¤µ¤ì¤Þ¤¹¡£
- ¡Ö"¡×¤Ï¡Ö&quot;¡×¤Ë¤ÏÊÑ´¹¤µ¤ì¤Þ¤»¤ó¡£
  >¹ÔÆ¬¤Î¡Ö>¡×¤ÏMarkdown¤Î°úÍÑ¹½Ê¸¤Î¤¿¤á`<blockquote></blockquote>`¤ËÊÑ´¹¤µ¤ì¤Þ¤¹¡£
   ¹ÔÆ¬°Ê³°¤Ç¤â¡Ö>¡×¤Ï¡Ö&gt;¡×¤Ë¤ÏÊÑ´¹¤µ¤ì¤Þ¤»¤ó¡£
+ ¡Ö"¡×¤Ï¡Ö&quot;¡×¤ä¡Ö\"¡×¤Ë¤ÏÊÑ´¹¤µ¤ì¤Þ¤»¤ó¡£
+ ¡Ö'¡×¤Ï¡Ö&#x27;¡×¤ä¡Ö\'¡×¤Ë¤ÏÊÑ´¹¤µ¤ì¤Þ¤»¤ó¡£
+ ¡Ö\¡×¤Ï¡Ö\\¡×¤Ë¤ÏÊÑ´¹¤µ¤ì¤Þ¤»¤ó¡£
 
 {{markdown
 ¡Ö&¡×¤È¡Ê¸å¤í¤Ë>¤¬Ìµ¤¤¡Ë¡Ö<¡×¤Ï¡¢¤½¤ì¤¾¤ì¡Ö&amp;¡×¤È¡Ö&lt;¡×¤ËÊÑ´¹¤µ¤ì¤Þ¤¹¡£
 
-¡Ö"¡×¤Ï¡Ö&quot;¡×¤Ë¤ÏÊÑ´¹¤µ¤ì¤Þ¤»¤ó¡£
-
 >¹ÔÆ¬¤Î¡Ö>¡×¤ÏMarkdown¤Î°úÍÑ¹½Ê¸¤Î¤¿¤á`<blockquote></blockquote>`¤ËÊÑ´¹¤µ¤ì¤Þ¤¹¡£
 
- ¹ÔÆ¬°Ê³°¤Ç¤â¡Ö>¡×¤Ï¡Ö&gt;¡×¤Ë¤ÏÊÑ´¹¤µ¤ì¤Þ¤»¤ó¡£
+¹ÔÆ¬°Ê³°¤Ç¤â¡Ö>¡×¤Ï¡Ö&gt;¡×¤Ë¤ÏÊÑ´¹¤µ¤ì¤Þ¤»¤ó¡£
+
+¡Ö"¡×¤Ï¡Ö&quot;¡×¤ä¡Ö\"¡×¤Ë¤ÏÊÑ´¹¤µ¤ì¤Þ¤»¤ó¡£
+
+¡Ö'¡×¤Ï¡Ö&#x27;¡×¤ä¡Ö\'¡×¤Ë¤ÏÊÑ´¹¤µ¤ì¤Þ¤»¤ó¡£
+
+¡Ö\¡×¤Ï¡Ö\\¡×¤Ë¤ÏÊÑ´¹¤µ¤ì¤Þ¤»¤ó¡£
 }}
 
 !!! ¥¨¥¹¥±¡¼¥×µ­¹æ"\"
@@ -436,7 +477,7 @@ z. ¹àÌÜ2
 
 4¥¹¥Ú¡¼¥¹¤º¤Ä¥¤¥ó¥Ç¥ó¥È¤µ¤»¤ë¤³¤È¤Ç¡¢³¬ÁØÅª¤Ê¥ê¥¹¥È¤òÉ½¸½¤Ç¤­¤Þ¤¹¡£
 
-¤Ê¤ª¡¢Discount markdown ¤Î¥¿¥ÖÉý¤Ï configure ¥ª¥×¥·¥ç¥ó¤Î --with-tabstop ¤ä¥é¥ó¥¿¥¤¥à¥Õ¥é¥° 'MKD_TABSTOP' ¤ÇÄ´À°¤Ç¤­¤Þ¤¹¡£
+¤Ê¤ª¡¢Discount markdown ¤Î¥¿¥ÖÉý¤Ï configure ¥ª¥×¥·¥ç¥ó¤Î --with-tabstop ¤ä MKD_TABSTOP ¥é¥ó¥¿¥¤¥à¥Õ¥é¥°¤ÇÄ´À°¤Ç¤­¤Þ¤¹¡£
 
 !! ³¬ÁØ¤È¥¤¥ó¥Ç¥ó¥ÈÉý¤Î´Ø·¸
 
@@ -755,7 +796,7 @@ Discount markdown ¤Ç configure.sh --github-checkbox=input ¤È¤·¤¿¾ì¹ç¤Ë¤Ï¡¢°Ê²¼¤Î
 
 // *3,*4¤Î´Ä¶­¤Ç¤Î¥ª¡¼¥È¥ê¥ó¥¯¤Ë¤Ï¥ª¥×¥·¥ç¥ó»ØÄê¤¬É¬Í× markdown($text, Text::Markdown::Discount::MKD_AUTOLINK)¡£¥³¥Þ¥ó¥É¥é¥¤¥ó¤Ç¤Ï -f autolink ¡£
 
- - address@example.com https://fswiki.osdn.jp/cgi-bin/wiki.cgi (¥ª¡¼¥È¥ê¥ó¥¯ \*1,\*2,(\*3,\*4¤Ï MKD_AUTOLINK ¤Î»ØÄê¤ÇÂÐ±þ²ÄÇ½¤Ç¤¹¡£))
+ - address@example.com https://fswiki.osdn.jp/cgi-bin/wiki.cgi (¥ª¡¼¥È¥ê¥ó¥¯ \*1,\*2,(\*3,\*4¤Ï MKD_AUTOLINK ¥é¥ó¥¿¥¤¥à¥Õ¥é¥°¤Î»ØÄê¤ÇÂÐ±þ²ÄÇ½¤Ç¤¹¡£))
  - <address@example.com> <https://fswiki.osdn.jp/cgi-bin/wiki.cgi>
  - [FSWiki¡Ê¿á¤­½Ð¤·Ìµ¡Ë](https://fswiki.osdn.jp/cgi-bin/wiki.cgi)
  - [FSWiki¡Ê""¤Ç¶´¤ó¤À¿á¤­½Ð¤·Í­¡Ë](https://fswiki.osdn.jp/cgi-bin/wiki.cgi "¿á ¤­ ½Ð ¤·")
@@ -764,12 +805,12 @@ Discount markdown ¤Ç configure.sh --github-checkbox=input ¤È¤·¤¿¾ì¹ç¤Ë¤Ï¡¢°Ê²¼¤Î
  - [FSWiki¡Ê"",'',()¤Î¤¤¤º¤ì¤Ç¤â¶´¤Þ¤ì¤Æ¤¤¤Ê¤¤Ê¸»úÎó¤¬()Æâ¤Ë¤¢¤ë¾ì¹ç¡Ë](https://fswiki.osdn.jp/cgi-bin/wiki.cgi Ê¸»úÎó) ¡Ê\*1,\*2,\*3,\*4 ¤Î´Ä¶­¤Ç¤Ï¡¢ºÇ½é¤ÎÊÄ¤¸³ç¸Ì¤Þ¤Ç¤¬¥ê¥ó¥¯¤È¤Ê¤ê¤Þ¤¹¡£¡Ë
 
 {{markdown
-- address@example.com https://fswiki.osdn.jp/cgi-bin/wiki.cgi (¥ª¡¼¥È¥ê¥ó¥¯ \*1,\*2,(\*3,\*4¤Ï MKD_AUTOLINK ¤Î»ØÄê¤ÇÂÐ±þ²ÄÇ½¤Ç¤¹¡£))
+- address@example.com https://fswiki.osdn.jp/cgi-bin/wiki.cgi (¥ª¡¼¥È¥ê¥ó¥¯ \*1,\*2,(\*3,\*4¤Ï MKD_AUTOLINK ¥é¥ó¥¿¥¤¥à¥Õ¥é¥°¤Î»ØÄê¤ÇÂÐ±þ²ÄÇ½¤Ç¤¹¡£))
 - <address@example.com> <https://fswiki.osdn.jp/cgi-bin/wiki.cgi>
 - [FSWiki¡Ê¿á¤­½Ð¤·Ìµ¡Ë](https://fswiki.osdn.jp/cgi-bin/wiki.cgi)
 - [FSWiki¡Ê""¤Ç¶´¤ó¤À¿á¤­½Ð¤·Í­¡Ë](https://fswiki.osdn.jp/cgi-bin/wiki.cgi "¿á ¤­ ½Ð ¤·")
 - [FSWiki¡Ê''¤Ç¶´¤ó¤À¿á¤­½Ð¤·Í­¡Ë](https://fswiki.osdn.jp/cgi-bin/wiki.cgi '¿á ¤­ ½Ð ¤·')
-- [FSWiki¡Ê()¤Ç¶´¤ó¤À¿á¤­½Ð¤·Í­¡Ë](https://fswiki.osdn.jp/cgi-bin/wiki.cgi (¿á¤­½Ð¤·)) \*1,\*2,\*3,\*4 ¡ÊºÇ½é¤ÎÊÄ¤¸³ç¸Ì¤Þ¤Ç¤¬¥ê¥ó¥¯¤È¤Ê¤ê¤Þ¤¹¡£¡Ë
+- [FSWiki¡Ê()¤Ç¶´¤ó¤À¿á¤­½Ð¤·Í­¡Ë](https://fswiki.osdn.jp/cgi-bin/wiki.cgi (¿á¤­½Ð¤·\)) \*1,\*2,\*3,\*4 ¡ÊºÇ½é¤ÎÊÄ¤¸³ç¸Ì¤Þ¤Ç¤¬¥ê¥ó¥¯¤È¤Ê¤ê¤Þ¤¹¡£¡Ë
 - [FSWiki¡Ê"",'',()¤Î¤¤¤º¤ì¤Ë¤â¶´¤Þ¤ì¤Æ¤¤¤Ê¤¤Ê¸»úÎó¤¬()Æâ¤Ë¤¢¤ë¾ì¹ç¡Ë](https://fswiki.osdn.jp/cgi-bin/wiki.cgi Ê¸»úÎó) ¡Ê\*1,\*2,\*3,\*4 ¤Î´Ä¶­¤Ç¤Ï¡¢ºÇ½é¤ÎÊÄ¤¸³ç¸Ì¤Þ¤Ç¤¬¥ê¥ó¥¯¤È¤Ê¤ê¤Þ¤¹¡£¡Ë
 }}
 
@@ -1348,3 +1389,11 @@ this block is set aside for printing via mkd_style().
 -->
 }}
 
+!!! ´ûÃÎ¤ÎÉÔ¶ñ¹ç
+
+* PDF¥×¥é¥°¥¤¥ó¤Ç¤Ï¡¢¥Þ¡¼¥¯¥À¥¦¥ó¥Ö¥í¥Ã¥¯Æâ¤Îµ­½Ò¤ÏÌµ»ë¤µ¤ì¤Þ¤¹¡£
+** Web¥Ö¥é¥¦¥¶¤Ê¤É¤Ç PDF ¤Ë¤´ÊÑ´¹²¼¤µ¤¤¡£
+
+// °õºþ»þ¤ÎÀßÄêÎã¡§
+// ¡ÖPDF¤È¤·¤ÆÊÝÂ¸¡×¡¢¡Ö¥ì¥¤¥¢¥¦¥È:½Ä¡×¡¢¡Ö¤½¤ÎÂ¾¤ÎÀßÄê¡×¡¢¡Ö³ÈÂç/½Ì¾®(%): FireFox 80, Chrome/Edge 120¡×¡¢¡ÖÍ¾Çò: ¤Ê¤·¡×¡Ö ÇØ·Ê¥°¥é¥Õ¥£¥¯¥¹¡× 
+// ¤Ê¤ª¡¢FireFox 97 ¤ÇºîÀ®¤·¤¿ PDF ¤ò  Acrobat Reader DC 2021.011 64¥Ó¥Ã¥È¤Ç³«¤¯¤È¡¢¥ê¥ó¥¯¤Î¥Ú¡¼¥¸ÊÕ¤ê¤Ç¡ÖÊ¸½ñ¤òÆÉ¤ß¼è¤êÃæ¤ËÌäÂê¤¬È¯À¸¤·¤Þ¤·¤¿(14)¡£¡×¤¬É½¼¨¤µ¤ì¤ë¡£Æ±¤¸ PDF ¤¬¡¢Chrome/Edge ¤Ç¤ÏÀµ¾ï¤ËÉ½¼¨¤µ¤ì¤ë¡£ 

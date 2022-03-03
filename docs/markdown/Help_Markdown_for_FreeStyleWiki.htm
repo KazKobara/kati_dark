@@ -1,54 +1,83 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- saved from url=(0051)./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=Help%2FMarkdown -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
-
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'">;
+    
+    
+    
+    
+    
     <meta http-equiv="Content-Style-Type" content="text/css">
     
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?action=RSS">
+
     
-      <link rel="stylesheet" type="text/css" href="./../../kati_dark.css">
+    
+      <link rel="stylesheet" type="text/css" href="../../kati_dark.css">
+    
+    
+    
       <style type="text/css">
       </style>
+    
     
     <title>Help/Markdown - FreeStyleWiki</title>
   </head>
   <body>
   
-  <h1><a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?word=Help%2FMarkdown&amp;action=SEARCH">Help/Markdown</a></h1>
-
+  <h1><a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?action=SEARCH&amp;word=Help%2FMarkdown">Help/Markdown</a></h1>
+  
+  
     <div class="main">
+  
+  
+  
     
+  
+  
   <div class="day">
     <div class="body">
       <div class="section">
         <h2><a name="p0"> </a><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417">Markdown plugin</a></h2>
 <h3><a name="p1"><span class="sanchor">&nbsp;</span>設定の確認</a></h3>
-<p><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417">Markdown plugin</a>のインストールと設定方法は<a href="https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md">こちら</a>もご参照下さい。</p>
 <ul>
-<li> この <a href="#p0" class="wikipage">Help/Markdown</a> は2022年2月14日版です。<ul>
+<li> この <a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=Help%2FMarkdown" class="wikipage">Help/Markdown</a> は<strong>2022年3月4日版</strong>です。<ul>
 <li> 最新版は（FSWki本体に取り込まれるまでは）<a href="https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki">こちら</a>からご入手ください。</li>
 </ul>
 </li>
-<li> 本ページを表示した場合に CSP (Content-Security-Policy) の警告が出るか、以下の[要確認！！]が紫色で表示されている場合<ul>
-<li> CSPの設定が有効になっていないか、有効になっているが任意のインラインスクリプト/インラインスタイルの実行が可能になっています。</li>
-<li> 前者の場合にはCSPなどの設定を有効にし、後者の場合には 'unsafe-inline' を使用しないようにします。</li>
+<li> <a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417">Markdown plugin</a>のインストールと設定方法は<a href="https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md">こちら</a>もご参照下さい。</li>
+</ul>
+<ul>
+<li>以下に該当する場合、設定の見直しが必要です。
+
+<ul>
+<li>本ページを表示した場合、CSP (Content-Security-Policy) の警告が出る。</li>
+<li><span style="color:DeepPink;">[要確認！！] ここがピンク色で表示されている。</span></li>
+<li><a href="javascript:alert(&#39;警告!!スクリプトへのリンクが有効になっています。&#39;)" title="javascript:alert()">[要確認！！] 本リンクをクリック</a>すると、「スクリプトへのリンクが有効になっています。」との警告が表示される。</li>
+<li><a href="javascript:alert(&#39;%B7%D9%B9%F0!!%A5%B9%A5%AF%A5%EA%A5%D7%A5%C8%A4%D8%A4%CE%A5%EA%A5%F3%A5%AF%A4%AC%CD%AD%B8%FA%A4%CB%A4%CA%A4%C3%A4%C6%A4%A4%A4%DE%A4%B9%A1%A3&#39;)" title="javascript:alert()">[要確認！！] ここがリンクとなっており、かつ、クリック</a>すると、「スクリプトへのリンクが有効になっています。」との警告が表示される。</li>
+</ul>
+</li>
+<li>設定見直し方法の例
+
+<ul>
+<li>WebサーバなどにおいてCSPなどの設定が有効になっていない場合は有効にします。</li>
+<li>CSPが既に有効になっているが 'unsafe-inline' が使用されている場合、'unsafe-inline' を使用しないようにします。代わりに、
+
+<ul>
+<li>スクリプトを有効にするには、CSP Hash などを使います。</li>
+<li>テキストを装飾する方法につきましては、以下の<a href="#p6">テキスト装飾 スタイルの利用</a>の節をご参照下さい。</li>
+</ul>
+</li>
+<li>Raw html を使用しない場合は、Discount.pm 中のランタイムフラグに MKD_NOHTML と MKD_SAFELINK を追加するという方法も可能です。
+
+<ul>
+<li>なお、MKD_SAFELINK はMarkdownのリンク構文で使用可能なプロトコルを (v.2.2.7時点で <a href="https://github.com/Orc/discount/blob/v2maint/generate.c">generate.c</a> において) https, http, news, ftp に限定しますが、href でのリンクには適用されません。</li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+
+
 <script type="text/javascript">alert('警告!! 任意のインラインスクリプトの実行が可能になっています!! Webサーバの CSP (Content-Security-Policy) などの設定を行って下さい。');</script>
-
-<ul>
-<li><span style="color:RebeccaPurple;">[要確認！！] ここが紫色で表示されている場合</span>
-
-<ul>
-<li>(CSP Hashesなどで本インラインスタイルを意図的に許可していないのであれば)任意のインラインスタイルが実行可能になっています。</li>
-<li>Webサーバの CSP の style-src などの設定を行い、'unsafe-inline' を使用しないようにします。</li>
-<li>インラインスタイルを使用しない方法は以下の<a href="#p6">テキスト装飾 スタイルの利用</a>の節をご参照下さい。</li>
-</ul>
-</li>
-</ul>
 
 <h3><a name="p2"><span class="sanchor">&nbsp;</span> Markdown構文の対応状況</a></h3>
 <p>以下の表の最左列の注釈記号がついている Markdown 構文は、その行の構成では未対応です。</p>
@@ -75,15 +104,15 @@
 <td colspan="1">Markdown.pl</td>
 <td colspan="1">-</td>
 <td colspan="1">-</td>
-<td colspan="1">apt-get -y install libtext-markdown-perl (Ubuntu 20.04) </td>
+<td colspan="1">apt-get -y install libtext-markdown-perl (Ubuntu 20.04, as of Feb. 2022)</td>
 </tr>
 <tr>
 <td colspan="1">*2</td>
-<td colspan="1"><a href="https://metacpan.org/pod/Text::Markdown::Discount">Text::Markdown::Discount</a> 0.12-1+b1</td>
+<td colspan="1"><a href="https://metacpan.org/pod/Text::Markdown::Discount">Text::Markdown::Discount</a> 0.12-1</td>
 <td colspan="1">Discount 2.2.6-1</td>
 <td colspan="1">--github-checkbox </td>
 <td colspan="1">MKD_NOHEADER MKD_NOPANTS</td>
-<td colspan="1">apt-get -y install libtext-markdown-discount-perl (Ubuntu 20.04)</td>
+<td colspan="1">apt-get -y install libtext-markdown-discount-perl (Ubuntu 20.04, as of Feb. 2022)</td>
 </tr>
 <tr>
 <td colspan="1">*3</td>
@@ -184,62 +213,96 @@ g^x、g^x1Y2、g^(サーカムフレックス上付き/半角英数字以外が�
 <pre>/* Cascading Style Sheets used in Markdown block of FSWiki */
 orange {color:orange;}    /* type selector */
 .orange {color:orange;}   /* class selector */
-#orange {color:orange;}  /* id selector */
 </pre>
 <p>2. 定義したスタイルをMarkdownブロックで利用します。</p>
 <ul>
 <li> その際、利用しているテーマのスタイルシート ./theme/&lt;利用しているテーマ名&gt;/&lt;利用しているテーマ名&gt;.css 以外に上記を追加した場合には、そのスタイルシートを参照する必要があります。</li>
-<li> <a href="https://raw.githubusercontent.com/KazKobara/kati_dark/main/kati_dark.css">kati_dark.css</a> の"Common Settings Among Themes"の部分に上記を入れてあります。</li>
+<li> <a href="https://raw.githubusercontent.com/KazKobara/kati_dark/main/kati_dark.css">kati_dark.css</a> の"Common Settings Among Themes"の部分にいくつか例を入れてあります。</li>
 </ul>
-<pre>{{markdown
-- &lt;orange&gt;スタイルシートで定義されたtypeセレクタによる着色&lt;/orange&gt;
-- &lt;span type="text/css" class="orange"&gt;スタイルシートで定義されたclassセレクタによる着色&lt;/span&gt;
-- &lt;span type="text/css" id="orange"&gt;スタイルシートで定義されたidセレクタによる着色&lt;/span&gt;
-}}
+<p>3. スタイルシート中で定義されたセレクタを用いた修飾の例：</p>
+<pre>- &lt;orange&gt;typeセレクタによる着色&lt;/orange&gt;
+- &lt;span type="text/css" class="yellow"&gt;classセレクタによる着色&lt;/span&gt;
+- &lt;span type="text/css" class="green"&gt;classセレクタ&lt;cyan&gt;および&lt;violet&gt;typeセレクタ&lt;/violet&gt;の入れ子&lt;/cyan&gt;による着色&lt;/span&gt;
+- classセレクタによる&lt;span type="text/css" class="darkhighlight"&gt;ハイライト&lt;/span&gt;
 </pre>
 <ul>
-<li><orange>スタイルシートで定義されたtypeセレクタによる着色</orange></li>
-<li><span type="text/css" class="orange">スタイルシートで定義されたclassセレクタによる着色</span></li>
-<li><span type="text/css" id="orange">スタイルシートで定義されたidセレクタによる着色</span></li>
+<li><orange>typeセレクタによる着色</orange></li>
+<li><span type="text/css" class="yellow">classセレクタによる着色</span></li>
+<li><span type="text/css" class="green">classセレクタ<cyan>および<violet>typeセレクタ</violet>の入れ子</cyan>による着色</span></li>
+<li>classセレクタによる<span type="text/css" class="darkhighlight">ハイライト</span></li>
 </ul>
 
 <h4><a name="p8">非推奨</a></h4>
-<p>以下のようなインラインスタイルやインラインで定義されたスタイルは、（WebサーバのCSPを無効にするか、CSPの style-src に 'unsafe-inline' を設定することにより有効にはなるのですが）セキュリティ上<strong>非推奨</strong>です！！そのような設定を行っている場合には、CSPなどを有効にし、その設定から 'unsafe-inline' を削除してください。</p>
+<p>HTML5ではサポートされておりません。</p>
+<pre>&lt;font color="Red"&gt;Red&lt;/font&gt;,
+&lt;font color="Orange"&gt;Orange&lt;/font&gt;,
+&lt;font color="Yellow"&gt;Yellow&lt;/font&gt;,
+&lt;font color="Green"&gt;Green&lt;/font&gt;,
+&lt;font color="Cyan"&gt;Cyan&lt;/font&gt;,
+&lt;font color="Blue"&gt;Blue&lt;/font&gt;,
+&lt;font color="Indigo"&gt;Indigo&lt;/font&gt;,
+&lt;font color="Violet"&gt;Violet&lt;/font&gt;
+</pre>
+<p><font color="Red">Red</font>,
+<font color="Orange">Orange</font>,
+<font color="Yellow">Yellow</font>,
+<font color="Green">Green</font>,
+<font color="Cyan">Cyan</font>,
+<font color="Blue">Blue</font>,
+<font color="Indigo">Indigo</font>,
+<font color="Violet">Violet</font></p>
+<h4><a name="p9">非推奨</a></h4>
+<ul>
+<li> 以下のようなインラインスタイルやインラインで定義されたスタイルは、（WebサーバのCSPを無効にするか、CSPの style-src に 'unsafe-inline' を設定することにより有効にはなるのですが）セキュリティ上<strong>非推奨</strong>です！！<ul>
+<li> そのような設定を行っている場合には、CSPなどを有効にし、その設定から 'unsafe-inline' を削除してください。</li>
+<li> MKD_NOSTYLE ランタイムフラグでは &lt;style *&gt;&lt;/style&gt;は無効になるのですが、少なくとも v2.2.7 では style= は無効になりません。</li>
+</ul>
+</li>
+</ul>
 <pre>{{markdown
-- &lt;span style="color:orange;"&gt;インラインスタイルによる着色（**[注意!!]**着色されている場合にはWebサーバのCSP等の設定によりインラインスタイル(及びインラインスクリプト)を禁止してください。）&lt;/span&gt;
+- &lt;span style="color:DeepPink;"&gt;インラインスタイルによる着色（**[注意!!]**着色されている場合にはWebサーバのCSP等の設定によりインラインスタイル(及びインラインスクリプト)を禁止してください。）&lt;/span&gt;
 
-&lt;style type="text/css"&gt;.gold{color:gold;}&lt;/style&gt;  
-- &lt;span type="text/css" class="gold"&gt;インラインで定義されたclassセレクタによる着色&lt;/span&gt;（**[注意!!]**着色されている場合にはWebサーバのCSP等の設定によりインラインスタイル(及びインラインスクリプト)を禁止してください。）
+&lt;style type="text/css"&gt;.cyan{color:DeepPink;}&lt;/style&gt;
+
+- &lt;span type="text/css" class="DeepPink"&gt;インラインで定義されたclassセレクタによる着色&lt;/span&gt;（**[注意!!]**着色されている場合にはWebサーバのCSP等の設定によりインラインスタイル(及びインラインスクリプト)を禁止してください。）
 }}
 </pre>
 <ul>
-<li><span style="color:gold;">インラインスタイルによる着色（<strong>[注意!!]</strong>着色されている場合にはWebサーバのCSP等の設定によりインラインスタイル(及びインラインスクリプト)を禁止してください。）</span></li>
+<li><span style="color:DeepPink;">インラインスタイルによる着色（<strong>[注意!!]</strong>着色されている場合にはWebサーバのCSP等の設定によりインラインスタイル(及びインラインスクリプト)を禁止してください。）</span></li>
 </ul>
 
 
 
 
-<p>
-- <span type="text/css" class="gold">インラインで定義されたclassセレクタによる着色</span>（<strong>[注意!!]</strong>着色されている場合にはWebサーバのCSP等の設定によりインラインスタイル(及びインラインスクリプト)を禁止してください。）</p>
-<h2><a name="p9"> 実体参照符号</a></h2>
+<ul>
+<li><span type="text/css" class="DeepPink">インラインで定義されたclassセレクタによる着色</span>（<strong>[注意!!]</strong>着色されている場合にはWebサーバのCSP等の設定によりインラインスタイル(及びインラインスクリプト)を禁止してください。）</li>
+</ul>
+
+<h2><a name="p10"> 実体参照符号</a></h2>
 <p>実体参照符号の一覧は、例えば、<a href="https://www.scollabo.com/banban/apply/ap8.html">こちら</a>や<a href="https://www.w3schools.com/charsets/ref_html_symbols.asp">こちら</a>などにあります。</p>
 <pre>&amp;copy; &amp;reg; &amp;trade; &amp;Delta; &amp;pi; &amp;euro; &amp;rArr; &amp;spades; &amp;clubs; &amp;hearts; &amp;diams; &amp;sum; &amp;radic; &amp;infin;
 </pre>
 <p>&#169; &#174; &#8482; Δ π &#8364; ⇒ &#9824; &#9827; &#9829; &#9830; ∑ √</p>
-<h3><a name="p10"><span class="sanchor">&nbsp;</span>実体参照符号への自動変換</a></h3>
+<h3><a name="p11"><span class="sanchor">&nbsp;</span>実体参照符号への自動変換</a></h3>
 <pre>「&amp;」と（後ろに&gt;が無い）「&lt;」は、それぞれ「&amp;amp;」と「&amp;lt;」に変換されます。
-「"」は「&amp;quot;」には変換されません。
 &gt;行頭の「&gt;」はMarkdownの引用構文のため`&lt;blockquote&gt;&lt;/blockquote&gt;`に変換されます。
  行頭以外でも「&gt;」は「&amp;gt;」には変換されません。
+「"」は「&amp;quot;」や「\"」には変換されません。
+「'」は「&amp;#x27;」や「\'」には変換されません。
+「\」は「\\」には変換されません。
 </pre>
 <p>「&amp;」と（後ろに&gt;が無い）「&lt;」は、それぞれ「&amp;」と「&lt;」に変換されます。</p>
 
-<p>「"」は「"」には変換されません。</p>
-
 <blockquote><p>行頭の「&gt;」はMarkdownの引用構文のため<code>&lt;blockquote&gt;&lt;/blockquote&gt;</code>に変換されます。</p></blockquote>
 
-<p> 行頭以外でも「&gt;」は「&gt;」には変換されません。</p>
-<h2><a name="p11"> エスケープ記号"\"</a></h2>
+<p>行頭以外でも「&gt;」は「&gt;」には変換されません。</p>
+
+<p>「"」は「"」や「\"」には変換されません。</p>
+
+<p>「'」は「'」や「\'」には変換されません。</p>
+
+<p>「\」は「\」には変換されません。</p>
+<h2><a name="p12"> エスケープ記号"\"</a></h2>
 <pre>エスケープされていない3つのアスタリスクで挟まれているため***ボールドイタリック***
 \*\*\*アスタリスクで挟まれた通常の文字\*\*\*
 エスケープされる記号  \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \! \\ 
@@ -248,8 +311,8 @@ orange {color:orange;}    /* type selector */
 
 <p>***アスタリスクで挟まれた通常の文字***</p>
 
-<p>エスケープされる記号  ` * _ { } \[ \] \( \) # + - . ! \</p>
-<h2><a name="p12"> 改行</a></h2>
+<p>エスケープされる記号  ` * _ { } [ ] ( ) # + - . ! \</p>
+<h2><a name="p13"> 改行</a></h2>
 <pre>行末に2以上のスペースを入れると、  
 改行されます。
 
@@ -261,11 +324,11 @@ orange {color:orange;}    /* type selector */
 
 <p>行末に2以上のスペースが入っていないと、
 改行されません。</p>
-<h2><a name="p13"> 引用</a></h2>
+<h2><a name="p14"> 引用</a></h2>
 <pre>&gt; 引用
 </pre>
 <blockquote><p>引用</p></blockquote>
-<h3><a name="p14"><span class="sanchor">&nbsp;</span> 引用の詳細</a></h3>
+<h3><a name="p15"><span class="sanchor">&nbsp;</span> 引用の詳細</a></h3>
 <pre>&gt; コードブロックとは異なり、  
 前行末の２スペース改行を含め、__構文__ や &lt;span type="text/css" class="orange"&gt;タグ&lt;/span&gt; は有効です。
 &gt;&gt; 入れ子も可能です。
@@ -285,8 +348,8 @@ orange {color:orange;}    /* type selector */
 入れ子の入れ子。</p></blockquote></blockquote>
 
 <p>入れ子から抜けるには、空行を入れます。</p></blockquote>
-<h2><a name="p15"> リスト</a></h2>
-<h3><a name="p16"><span class="sanchor">&nbsp;</span> 順序無しリスト</a></h3>
+<h2><a name="p16"> リスト</a></h2>
+<h3><a name="p17"><span class="sanchor">&nbsp;</span> 順序無しリスト</a></h3>
 <pre>- 項目1
 * 項目2
 + 項目3
@@ -297,7 +360,7 @@ orange {color:orange;}    /* type selector */
 <li>項目3</li>
 </ul>
 
-<h3><a name="p17"><span class="sanchor">&nbsp;</span> 順序有りリスト</a></h3>
+<h3><a name="p18"><span class="sanchor">&nbsp;</span> 順序有りリスト</a></h3>
 <pre>1. 項目1
 1. 項目2
 1. 項目3
@@ -308,7 +371,7 @@ orange {color:orange;}    /* type selector */
 <li>項目3</li>
 </ol>
 
-<h4><a name="p18"> 順序有りリストの詳細</a></h4>
+<h4><a name="p19"> 順序有りリストの詳細</a></h4>
 <pre>555. 項目1。値が何であれ「整数.」で始まると「1.」から始まる順序有りリストになります。（標準的なMarkdown構文とは異なり、先頭の値からの順序にはなりません。）
 -3. 項目2。（標準的なMarkdown構文とは異なり、負の整数も受け付けます。）
  
@@ -322,7 +385,7 @@ orange {color:orange;}    /* type selector */
 <li>項目4。（標準的なMarkdown構文とは異なり、リストの型が異なっても連続したリストになります。）</li>
 </ol>
 
-<h3><a name="p19"><span class="sanchor">&nbsp;</span> アルファベットリスト Discount 拡張構文</a></h3>
+<h3><a name="p20"><span class="sanchor">&nbsp;</span> アルファベットリスト Discount 拡張構文</a></h3>
 <pre>a. 項目1
 a. 項目2
 a. 項目3
@@ -333,7 +396,7 @@ a. 項目3
 <li>項目3</li>
 </ol>
 
-<h4><a name="p20"> アルファベットリストの詳細</a></h4>
+<h4><a name="p21"> アルファベットリストの詳細</a></h4>
 <pre>y. 項目1。文字が何であれ「アルファベット.」で始まると「a.」から始まるアルファベットリストになります。
 z. 項目2
  
@@ -347,7 +410,7 @@ z. 項目2
 <li>項目4。（標準的なMarkdown構文とは異なり、リストの型が異なっても連続したリストになります。）</li>
 </ol>
 
-<h3><a name="p21"><span class="sanchor">&nbsp;</span> リスト間に空行が入る場合の不具合</a></h3>
+<h3><a name="p22"><span class="sanchor">&nbsp;</span> リスト間に空行が入る場合の不具合</a></h3>
 <p><a href="#p2" class="wikipage">*3</a>の環境（<a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a>の環境では未確認）では、以下のように項目と項目との間に空行が入ると</p>
 <pre>{{markdown
 10. I
@@ -410,10 +473,10 @@ z. 項目2
 <li> III</li>
 <li> IV</li>
 </ol>
-<h2><a name="p22"> 階層リスト 拡張構文</a></h2>
+<h2><a name="p23"> 階層リスト 拡張構文</a></h2>
 <p>4スペースずつインデントさせることで、階層的なリストを表現できます。</p>
-<p>なお、Discount markdown のタブ幅は configure オプションの --with-tabstop やランタイムフラグ 'MKD_TABSTOP' で調整できます。</p>
-<h3><a name="p23"><span class="sanchor">&nbsp;</span> 階層とインデント幅の関係</a></h3>
+<p>なお、Discount markdown のタブ幅は configure オプションの --with-tabstop や MKD_TABSTOP ランタイムフラグで調整できます。</p>
+<h3><a name="p24"><span class="sanchor">&nbsp;</span> 階層とインデント幅の関係</a></h3>
 <p>必要なスペース幅は環境依存のようです。</p>
 <ul>
 <li> <a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a>の環境では２階層目は1〜4スペース、３層目は5〜8スペース、i層目は4(i-1)-3〜4(i-1)スペースインデント。</li>
@@ -463,7 +526,7 @@ z. 項目2
 </li>
 </ul>
 
-<h3><a name="p24"><span class="sanchor">&nbsp;</span> 順序無し階層リスト</a></h3>
+<h3><a name="p25"><span class="sanchor">&nbsp;</span> 順序無し階層リスト</a></h3>
 <pre>- 項目1
     - 項目1-1
     - 項目1-2
@@ -506,7 +569,7 @@ z. 項目2
 </li>
 </ul>
 
-<h3><a name="p25"><span class="sanchor">&nbsp;</span> 順序有り階層リスト</a></h3>
+<h3><a name="p26"><span class="sanchor">&nbsp;</span> 順序有り階層リスト</a></h3>
 <pre>1. 番号付き項目1
     1. 番号付き項目1-1
     1. 番号付き項目1-2
@@ -549,7 +612,7 @@ z. 項目2
 <li>番号付き項目3</li>
 </ol>
 
-<h2><a name="p26"> 混合リスト</a></h2>
+<h2><a name="p27"> 混合リスト</a></h2>
 <p><a href="#p2" class="wikipage">*3</a>の環境では、2番目以降の項目の型は1番目の項目の型と同じになります。（<a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a>の環境では未確認）</p>
 <pre>{{markdown
 - 順序無し項目
@@ -585,7 +648,7 @@ z. 項目2
 <ul>
 <li> FSWiki順序無し項目</li>
 </ul>
-<h4><a name="p27"> 階層混合リストの場合</a></h4>
+<h4><a name="p28"> 階層混合リストの場合</a></h4>
 <p>FSWiki と Discount Markdown とでは階層混合リストを実現する際の HTML の記述が異なります。例えば、FSWiki では以下のように階層毎に独立したリストとして実現されます。</p>
 <pre>* FSWiki順序無し項目
 ++ FSWiki順序有り項目
@@ -687,7 +750,7 @@ z. 項目2
 </ol>
 </ol>
 </ol>
-<h2><a name="p28"> タスクリスト github 拡張構文 </a><a href="#p2" class="wikipage">*1</a></h2>
+<h2><a name="p29"> タスクリスト github 拡張構文 </a><a href="#p2" class="wikipage">*1</a></h2>
 <p>タスク未完了の場合の角括弧 '[ ]' の中にはスペースが必要です。</p>
 <pre>- [ ] タスク未完了
 - [x] タスク完了
@@ -709,8 +772,8 @@ z. 項目2
 <li class="github_checkbox"><input disabled="" type="checkbox" checked="checked"> タスク完了</li>
 </ul>
 
-<h2><a name="p29"> 説明 (定義リスト)</a></h2>
-<h3><a name="p30"><span class="sanchor">&nbsp;</span>行頭コロンスペース定義リスト Discount 2.0.4/PHP 拡張構文 </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
+<h2><a name="p30"> 説明 (定義リスト)</a></h2>
+<h3><a name="p31"><span class="sanchor">&nbsp;</span>行頭コロンスペース定義リスト Discount 2.0.4/PHP 拡張構文 </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
 <pre>項目
 : 説明文。コロンの後ろにはスペースが必要です。
 </pre>
@@ -718,7 +781,7 @@ z. 項目2
 <dt>項目</dt>
 <dd>説明文。コロンの後ろにはスペースが必要です。</dd>
 </dl>
-<h4><a name="p31"> 行頭コロンスペース定義リストの詳細</a></h4>
+<h4><a name="p32"> 行頭コロンスペース定義リストの詳細</a></h4>
 <pre>項目
 : 説明文を複数行で記述する場合は、
 : 行頭をコロンスペースで開始するか、  
@@ -739,7 +802,7 @@ z. 項目2
 <dt>別名２</dt>
 <dd>項目に別名を付けることもできます。</dd>
 </dl>
-<h3><a name="p32"><span class="sanchor">&nbsp;</span> 等号挟み定義リスト Discount 1.2.3 拡張構文 </a><a href="#p2" class="wikipage">*1</a></h3>
+<h3><a name="p33"><span class="sanchor">&nbsp;</span> 等号挟み定義リスト Discount 1.2.3 拡張構文 </a><a href="#p2" class="wikipage">*1</a></h3>
 <pre>=項目=
     説明文。説明文の前にはスペースが４つ以上必要です。  
 </pre>
@@ -747,7 +810,7 @@ z. 項目2
 <dt>項目</dt>
 <dd>説明文。説明文の前にはスペースが４つ以上必要です。</dd>
 </dl>
-<h4><a name="p33"> 等号挟み定義リストの詳細</a></h4>
+<h4><a name="p34"> 等号挟み定義リストの詳細</a></h4>
 <pre>=項目=
     説明文を複数行で記述する場合は、  
 前行の最後にスペースを２つ付け改行します。
@@ -766,8 +829,8 @@ z. 項目2
 <dt>別名２</dt>
 <dd>項目に別名を付けることもできます。</dd>
 </dl>
-<h2><a name="p34"> リンク</a></h2>
-<pre>- address@example.com https://fswiki.osdn.jp/cgi-bin/wiki.cgi (オートリンク \*1,\*2,(\*3,\*4は MKD_AUTOLINK の指定で対応可能です。))
+<h2><a name="p35"> リンク</a></h2>
+<pre>- address@example.com https://fswiki.osdn.jp/cgi-bin/wiki.cgi (オートリンク \*1,\*2,(\*3,\*4は MKD_AUTOLINK ランタイムフラグの指定で対応可能です。))
 - &lt;address@example.com&gt; &lt;https://fswiki.osdn.jp/cgi-bin/wiki.cgi&gt;
 - [FSWiki（吹き出し無）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi)
 - [FSWiki（""で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi "吹 き 出 し")
@@ -776,12 +839,12 @@ z. 項目2
 - [FSWiki（"",'',()のいずれでも挟まれていない文字列が()内にある場合）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi 文字列) （\*1,\*2,\*3,\*4 の環境では、最初の閉じ括弧までがリンクとなります。）
 </pre>
 <ul>
-<li>address@example.com https://fswiki.osdn.jp/cgi-bin/wiki.cgi (オートリンク *1,*2,(*3,*4は MKD_AUTOLINK の指定で対応可能です。))</li>
+<li><a href="mailto:address@example.com">address@example.com</a> <a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi">https://fswiki.osdn.jp/cgi-bin/wiki.cgi</a> (オートリンク *1,*2,(*3,*4は MKD_AUTOLINK ランタイムフラグの指定で対応可能です。))</li>
 <li><a href="mailto:address@example.com">address@example.com</a> <a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi">https://fswiki.osdn.jp/cgi-bin/wiki.cgi</a></li>
 <li><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi">FSWiki（吹き出し無）</a></li>
 <li><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi" title="吹 き 出 し">FSWiki（""で挟んだ吹き出し有）</a></li>
 <li><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi" title="吹 き 出 し">FSWiki（''で挟んだ吹き出し有）</a></li>
-<li><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi%20(%BF%E1%A4%AD%BD%D0%A4%B7">FSWiki（()で挟んだ吹き出し有）</a>) *1,*2,*3,*4 （最初の閉じ括弧までがリンクとなります。）</li>
+<li><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi%20(%BF%E1%A4%AD%BD%D0%A4%B7)">FSWiki（()で挟んだ吹き出し有）</a> *1,*2,*3,*4 （最初の閉じ括弧までがリンクとなります。）</li>
 <li><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi%20%CA%B8%BB%FA%CE%F3">FSWiki（"",'',()のいずれにも挟まれていない文字列が()内にある場合）</a> （*1,*2,*3,*4 の環境では、最初の閉じ括弧までがリンクとなります。）</li>
 </ul>
 
@@ -791,8 +854,8 @@ z. 項目2
 }}
 </pre>
 <p>しかしながら、Markdownブロック内では、Wikiページ（例えば Help、FrontPage、Menuなど）へのリンクは自動生成されません。</p>
-<h2><a name="p35"> 内部リンク</a></h2>
-<h3><a name="p36"><span class="sanchor">&nbsp;</span> (#見出し)形式での内部リンク </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a><a href="#p2" class="wikipage">*3</a><a href="#p2" class="wikipage">*4</a></h3>
+<h2><a name="p36"> 内部リンク</a></h2>
+<h3><a name="p37"><span class="sanchor">&nbsp;</span> (#見出し)形式での内部リンク </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a><a href="#p2" class="wikipage">*3</a><a href="#p2" class="wikipage">*4</a></h3>
 <p>以下の(#見出し)形式での内部リンクでは、「本ページのURLの後ろに(#見出し)が付けられた URL」へリンクが張られます。(ただし、プレビュー時には引数(?より右側)が取り除かれたURLとなり、<a href="#p2" class="wikipage">*2</a><a href="#p2" class="wikipage">*3</a>の環境では「URLエンコードされた(#見出し)」が付けられた URLへリンクが張られます。）</p>
 <p>しかしながら、FSWiki では見出しへのリンクは「#p」の後に何番目の見出しであるかを表す数字から１を引いた数字で指定しなければならないため、本リンクをクリックしても見出しへは移動しません。</p>
 <pre>- [見出しへの内部リンク（吹き出し無）](#見出し)
@@ -803,17 +866,17 @@ z. 項目2
 <li><a href="#%B8%AB%BD%D0%A4%B7" title="吹き出し">見出しへの内部リンク（吹き出し有）</a></li>
 </ul>
 
-<h3><a name="p37"><span class="sanchor">&nbsp;</span> ページ名と見出し番号を指定した内部リンク</a></h3>
+<h3><a name="p38"><span class="sanchor">&nbsp;</span> ページ名と見出し番号を指定した内部リンク</a></h3>
 <p>上記の理由により、ページ名と見出し番号を直接記述すれば見出しへのリンクは実現可能です。ただし、リンクできるのは、Wikiの見出しのみで、Markdown ブロック内の見出しへはリンクを張れません。</p>
 <pre>- [Help/Markdownページの4番目の見出しへのリンク（URLコーディング無）](wiki.cgi?page=Help/Markdown#p3 "URLコーディング無")
 - [Help/Markdownページの5番目の見出しへのリンク（URLコーディングで記述）](wiki.cgi?page=Help%2FMarkdown#p4 'URLコーディングで記述')
 </pre>
 <ul>
-<li><a href="#p3" title="URLコーディング無">Help/Markdownページの4番目の見出しへのリンク（URLコーディング無）</a></li>
+<li><a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=Help/Markdown#p3" title="URLコーディング無">Help/Markdownページの4番目の見出しへのリンク（URLコーディング無）</a></li>
 <li><a href="#p4" title="URLコーディングで記述">Help/Markdownページの5番目の見出しへのリンク（URLコーディングで記述）</a></li>
 </ul>
 
-<h2><a name="p38"> 集約リンク</a></h2>
+<h2><a name="p39"> 集約リンク</a></h2>
 <p>同じリンク先を繰り返し利用する場合は、リンク先を [ラベル]: の後ろに記述し、[ラベル]または[表示名][ラベル]でリンクを張ります。 </p>
 <pre>{{markdown
 - [FSWiki URL]による[FSWiki URL]のための[FSWikiのURL][FSWiki URL]。
@@ -847,16 +910,16 @@ z. 項目2
 </ul>
 
 
-<p>[[角括弧挟みラベル]]: https://fswiki.osdn.jp/cgi-bin/wiki.cgi "この行はリンク先の定義ではなく通常の文字列と見なされます。"</p>
-<h2><a name="p39"> 注釈 拡張構文 </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a><a href="#p2" class="wikipage">*3</a><a href="#p2" class="wikipage">*4</a></h2>
+<p>[[角括弧挟みラベル]]: <a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi">https://fswiki.osdn.jp/cgi-bin/wiki.cgi</a> "この行はリンク先の定義ではなく通常の文字列と見なされます。"</p>
+<h2><a name="p40"> 注釈 拡張構文 </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a><a href="#p2" class="wikipage">*3</a><a href="#p2" class="wikipage">*4</a></h2>
 <pre>注釈される文書。[^1]
 
 [^1]: 注釈文。
 </pre>
 <p>注釈される文書。<a href="./Help_Markdown_for_FreeStyleWiki_files/%C3%ED%BC%E1%CA%B8%A1%A3">^1</a></p>
-<h2><a name="p40"> 画像</a></h2>
+<h2><a name="p41"> 画像</a></h2>
 <p>外部のWebサーバの画像を表示させる場合は、Webサーバの設定で Content-Security-Policy (CSP) の img-src にそのサーバのURLを追加する必要があります。</p>
-<pre>- ![CSP img-srcに'self'を追加する必要があります!!](http://localhost:8366/favicon.ico "ローカルサーバ上の画像")
+<pre>- ![CSP img-srcに'self'を追加する必要があります!!](./Help_Markdown_for_FreeStyleWiki_files/favicon.ico "ローカルサーバ上の画像")
 - ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&amp;page=FrontPage&amp;action=ATTACH "別のサーバ上の画像")
 </pre>
 <ul>
@@ -864,9 +927,10 @@ z. 項目2
 <li><img src="./Help_Markdown_for_FreeStyleWiki_files/fswiki.png" title="別のサーバ上の画像" alt="CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!"></li>
 </ul>
 
-<h3><a name="p41"><span class="sanchor">&nbsp;</span> サイズ指定画像 Discount 拡張構文</a></h3>
+
+<h3><a name="p42"><span class="sanchor">&nbsp;</span> サイズ指定画像 Discount 拡張構文</a></h3>
 <p>URL の後ろに '=widthxheight' を付けることで画像サイズを変更できます。</p>
-<pre>- ![CSP img-srcに'self'を追加する必要があります!!](http://localhost:8366/favicon.ico =16x16 "ローカルサーバ上の画像16x16")
+<pre>- ![CSP img-srcに'self'を追加する必要があります!!](./Help_Markdown_for_FreeStyleWiki_files/favicon.ico =16x16 "ローカルサーバ上の画像16x16")
 - ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&amp;page=FrontPage&amp;action=ATTACH 75x70 "別のサーバ上の画像75x70")
 </pre>
 <ul>
@@ -874,12 +938,12 @@ z. 項目2
 <li><img src="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi" title="別のサーバ上の画像75x70" alt="CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!"></li>
 </ul>
 
-<h2><a name="p42"> コメント</a></h2>
+<h2><a name="p43"> コメント</a></h2>
 <pre>&lt;!--ここは表示されません。--&gt;
 </pre>
 <!--ここは表示されません。-->
 
-<h2><a name="p43"> 水平線</a></h2>
+<h2><a name="p44"> 水平線</a></h2>
 <p>スペースとタブを無視して「-」、「_」、「*」のいずれかの記号が３個以上連続する行は水平線になります。（ただし、行頭が4スペース以上開くとコードブロックと解釈されます。）</p>
 <pre>---
 -----
@@ -923,7 +987,7 @@ _    _		_
 <hr>
 
 <hr>
-<h2><a name="p44"> テーブル 拡張構文 </a><a href="#p2" class="wikipage">*1</a></h2>
+<h2><a name="p45"> テーブル 拡張構文 </a><a href="#p2" class="wikipage">*1</a></h2>
 <pre>| 左寄せ列 | 中央寄せ列 | 右寄せ列 |
 |:---------|:----------:|---------:|
 | 1-1      |    1-2     |      1-3 |
@@ -952,7 +1016,7 @@ _    _		_
 </tbody>
 </table>
 
-<h3><a name="p45"><span class="sanchor">&nbsp;</span> Discount/PHP 拡張構文</a></h3>
+<h3><a name="p46"><span class="sanchor">&nbsp;</span> Discount/PHP 拡張構文</a></h3>
 <pre>左寄せ列 | 中央寄せ列 | 右寄せ列
 :--------|:----------:|---------:
 1-1      |    1-2     |      1-3
@@ -981,12 +1045,12 @@ _    _		_
 </tbody>
 </table>
 
-<h3><a name="p46"><span class="sanchor">&nbsp;</span> 中央寄せ Discount 拡張構文</a></h3>
+<h3><a name="p47"><span class="sanchor">&nbsp;</span> 中央寄せ Discount 拡張構文</a></h3>
 <p>中央寄せが有効になっていない場合は、以下の節の注意点をご参照下さい。</p>
 <pre>-&gt;中央寄せ&lt;-
 </pre>
 <p style="text-align:center;">中央寄せ</p>
-<h3><a name="p47"><span class="sanchor">&nbsp;</span> 左寄せ、中央寄せ、右寄せを有効にする際の注意点</a></h3>
+<h3><a name="p48"><span class="sanchor">&nbsp;</span> 左寄せ、中央寄せ、右寄せを有効にする際の注意点</a></h3>
 <p><a href="#p2" class="wikipage">*2</a><a href="#p2" class="wikipage">*3</a><a href="#p2" class="wikipage">*4</a>の環境はテーブル表示に対応しているのですが、中央寄せ、右寄せのスタイルが以下のようにインラインで出力されます。</p>
 <pre>&lt;th style="text-align:left;"&gt; 左寄せ列 &lt;/th&gt;
 &lt;th style="text-align:center;"&gt; 中央寄せ列 &lt;/th&gt;
@@ -1018,8 +1082,8 @@ _    _		_
 </pre>
 <p>しかしながら、この修正は Markdown to HTML Converter とスタイルシートの両方を修正する必要があります。</p>
 <p>汎用的かつ暫定的な妥協策としては CSPの style-src に 'unsafe-hashes'  と、上記のインラインスタイルのハッシュ値を追加するという方法があります。具体的には、<a href="https://raw.githubusercontent.com/KazKobara/dockerfile_fswiki_local/main/data/httpd-security-fswiki-local.conf">httpd-security-fswiki-local.conf</a> の Next-recommended CSP  のような設定を有効にします。</p>
-<h2><a name="p48"> 整形済テキスト 拡張構文</a></h2>
-<h3><a name="p49"><span class="sanchor">&nbsp;</span> 文書中のコード</a></h3>
+<h2><a name="p49"> 整形済テキスト 拡張構文</a></h2>
+<h3><a name="p50"><span class="sanchor">&nbsp;</span> 文書中のコード</a></h3>
 <p>同じ長さのバッククオートで挟まれた箇所は、そのまま表示されます。  </p>
 <pre>{{markdown
 マークダウンブロック内の文章：  
@@ -1030,7 +1094,7 @@ _    _		_
 <p>マークダウンブロック内の文章：<br>
 挟まれていない場合「&#169; &lt; <em>イタリック</em>」は変換されます。<br>
 挟まれている場合「<code>&amp;copy; &amp;lt; _イタリック_</code>」は変換されません。</p>
-<h4><a name="p50"> 連続するバッククオートをコードブロック内に含める場合</a></h4>
+<h4><a name="p51"> 連続するバッククオートをコードブロック内に含める場合</a></h4>
 <p>それより長いバッククオートで挟みます。</p>
 <pre>{{markdown
 マークダウンブロック内の文章：  
@@ -1041,7 +1105,7 @@ _    _		_
 <p>マークダウンブロック内の文章：<br>
 挟まれていない場合「<code>鍵括弧内のバッククオートは表示されません。</code>」、<br>
 挟まれている場合<code>「```鍵括弧内のバッククオートは表示されます。```」</code>。</p>
-<h3><a name="p51"><span class="sanchor">&nbsp;</span> コードブロック(三重バッククオート上下挟み) </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
+<h3><a name="p52"><span class="sanchor">&nbsp;</span> コードブロック(三重バッククオート上下挟み) </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
 <p><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a>の環境では、改行は半角スペースに変換され、文書中のコードとして解釈されます。</p>
 <pre>{{markdown
 コードブロック外では「&amp;copy; &amp;lt; _イタリック_」は変換されます。
@@ -1074,7 +1138,7 @@ echo "２行目。コードブロック内に空行を含む場合でも「&amp;
 
 echo "２行目。コードブロック内に空行を含む場合でも「&amp;copy; &amp;lt; _イタリック_」は変換されてはなりません。"
 </code></pre>
-<h3><a name="p52"><span class="sanchor">&nbsp;</span> コードブロック(三重チルダ上下挟み) </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
+<h3><a name="p53"><span class="sanchor">&nbsp;</span> コードブロック(三重チルダ上下挟み) </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
 <pre>{{markdown
 コードブロック外では「&amp;copy; &amp;lt; _イタリック_」は変換されます。
 
@@ -1091,7 +1155,7 @@ echo "２行目。コードブロック内に空行を含む場合でも「&amp;
 
 echo "２行目。コードブロック内に空行を含む場合でも「&amp;copy; &amp;lt; _イタリック_」は変換されてはなりません。"
 </code></pre>
-<h3><a name="p53"><span class="sanchor">&nbsp;</span> タグによるコードブロック</a></h3>
+<h3><a name="p54"><span class="sanchor">&nbsp;</span> タグによるコードブロック</a></h3>
 <p>preタグとcodeタグを使います。ただし、&lt;code&gt;タグ後の改行と&lt;/code&gt;後の改行は、それぞれ&lt;pre&gt;&lt;/pre&gt;内の最初と最後の改行と解釈されます。また、実体参照符号へは自動変換されないため、手動で変換しなければなりません。</p>
 <pre>{{markdown
 &lt;pre&gt;&lt;code&gt;
@@ -1123,7 +1187,7 @@ echo "2行目。&amp;lt;/code&amp;gt;タグ後に改行がある場合。"
 echo "2行目。&lt;/code&gt;タグ後に改行がある場合。"
 </code></pre>
 
-<h3><a name="p54"><span class="sanchor">&nbsp;</span> コードブロック（4スペース以上のインデント）</a></h3>
+<h3><a name="p55"><span class="sanchor">&nbsp;</span> コードブロック（4スペース以上のインデント）</a></h3>
 <pre>{{markdown
 コードブロック外では「&amp;copy; &amp;lt; _イタリック_」は変換されます。
 
@@ -1134,7 +1198,7 @@ echo "2行目。&lt;/code&gt;タグ後に改行がある場合。"
 
 <pre><code>echo "コードブロック内（4スペース以上インデントされた行）では「&amp;copy; &amp;lt; _イタリック_」は変換されません。"
 </code></pre>
-<h4><a name="p55"> インデント幅とコードブロック範囲の関係</a></h4>
+<h4><a name="p56"> インデント幅とコードブロック範囲の関係</a></h4>
 <p>スペース又はタブのみからなる行と空行を無視して、4スペース以上のインデントの行が連続する範囲がコードブロックと見なされます。</p>
 <pre>{{markdown
  echo "1スペースインデント。--------------- ここは本文 ---------------"
@@ -1178,7 +1242,7 @@ echo "4スペースインデント。前行は1タブスペース"
 
 echo "4スペースインデント。前行は1スペース。------ ここまでコードブロック ------"
 </code></pre>
-<h3><a name="p56"><span class="sanchor">&nbsp;</span> コードブロックの入れ子 </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
+<h3><a name="p57"><span class="sanchor">&nbsp;</span> コードブロックの入れ子 </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
 <p>３個以降連続する`及び３個以降連続する~の内、コードブロック内で使用されていないもので上下を挟むか、インデントでのコードブロックを使用します。</p>
 <pre>{{markdown
 ````` text
@@ -1216,7 +1280,7 @@ echo "入れ子４段目"
 ~~~
 ````
 </code></pre>
-<h2><a name="p57"> LaTeX埋込 拡張構文  </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a><a href="#p2" class="wikipage">*3</a></h2>
+<h2><a name="p58"> LaTeX埋込 拡張構文  </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a><a href="#p2" class="wikipage">*3</a></h2>
 <ul>
 <li> 本構文を利用するには、Discount.pm 中のランタイムフラグに MKD_LATEX() を追加する必要があります。<ul>
 <li> v2maint 2.2.3以降で利用可能です。</li>
@@ -1241,20 +1305,29 @@ $$
 </pre>
 <p>$$
 \begin{eqnarray}
-\alpha &amp;&lt;&amp; \sum_{i=1}^n i \\
+\alpha &amp;&lt;&amp; \sum_{i=1}^n i \
           &amp;=&amp; \frac{n (n+1)}{2}
 \end{eqnarray}
 $$</p>
 
-<p>\[\frac{\sqrt{x^2+1}}{c_4} \]</p>
+<p>[\frac{\sqrt{x<sup>2</sup>+1}}{c_4} ]</p>
 
-<p>\( \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \)</p>
+<p>( \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} )</p>
+<h2><a name="p59"> 既知の不具合</a></h2>
+<h4><a name="p60"> FSWikiのPDFプラグインでは、マークダウンブロック内の記述は表示されません。</a></h4>
+<ul>
+<li> [解決策] PDFへはWebブラウザなどを用いてご変換下さい。</li>
+<li> [設定例] 印刷で「PDFとして保存」、「レイアウト:縦」を選択し、「その他の設定」で「拡大/縮小(%)」を  FireFox の場合は 80 辺り, ChromeやEdgeの場合は 120 辺り、「余白: なし」に設定し、「 背景グラフィクス」にチェックを入れます。<ul>
+<li> なお、FireFox 97 で作成した PDF を  Acrobat Reader DC 2021.011 64ビットで開くと、リンクのページ辺りで「文書を読み取り中に問題が発生しました(14)。」が表示されます（Chrome や Edge では正常に表示されます）。 </li>
+</ul>
+</li>
+</ul>
 
       </div>
-    </div>
-  </div>
-    </div>
-    <div class="sidebar">
+</div>
+</div>
+</div>
+<div class="sidebar">
 <h4> outline</h4>
 <ul class="outline">
 <li><a href="#p0"> Markdown plugin</a></li>
@@ -1270,93 +1343,99 @@ $$</p>
 <ul class="outline">
 <li><a href="#p7">推奨</a></li>
 <li><a href="#p8">非推奨</a></li>
+<li><a href="#p9">非推奨</a></li>
 </ul>
 </ul>
-<li><a href="#p9"> 実体参照符号</a></li>
+<li><a href="#p10"> 実体参照符号</a></li>
 <ul class="outline">
-<li><a href="#p10">実体参照符号への自動変換</a></li>
+<li><a href="#p11">実体参照符号への自動変換</a></li>
 </ul>
-<li><a href="#p11"> エスケープ記号"\"</a></li>
-<li><a href="#p12"> 改行</a></li>
-<li><a href="#p13"> 引用</a></li>
+<li><a href="#p12"> エスケープ記号"\"</a></li>
+<li><a href="#p13"> 改行</a></li>
+<li><a href="#p14"> 引用</a></li>
 <ul class="outline">
-<li><a href="#p14"> 引用の詳細</a></li>
+<li><a href="#p15"> 引用の詳細</a></li>
 </ul>
-<li><a href="#p15"> リスト</a></li>
+<li><a href="#p16"> リスト</a></li>
 <ul class="outline">
-<li><a href="#p16"> 順序無しリスト</a></li>
-<li><a href="#p17"> 順序有りリスト</a></li>
+<li><a href="#p17"> 順序無しリスト</a></li>
+<li><a href="#p18"> 順序有りリスト</a></li>
 <ul class="outline">
-<li><a href="#p18"> 順序有りリストの詳細</a></li>
+<li><a href="#p19"> 順序有りリストの詳細</a></li>
 </ul>
-<li><a href="#p19"> アルファベットリスト Discount 拡張構文</a></li>
+<li><a href="#p20"> アルファベットリスト Discount 拡張構文</a></li>
 <ul class="outline">
-<li><a href="#p20"> アルファベットリストの詳細</a></li>
+<li><a href="#p21"> アルファベットリストの詳細</a></li>
 </ul>
-<li><a href="#p21"> リスト間に空行が入る場合の不具合</a></li>
+<li><a href="#p22"> リスト間に空行が入る場合の不具合</a></li>
 </ul>
-<li><a href="#p22"> 階層リスト 拡張構文</a></li>
+<li><a href="#p23"> 階層リスト 拡張構文</a></li>
 <ul class="outline">
-<li><a href="#p23"> 階層とインデント幅の関係</a></li>
-<li><a href="#p24"> 順序無し階層リスト</a></li>
-<li><a href="#p25"> 順序有り階層リスト</a></li>
+<li><a href="#p24"> 階層とインデント幅の関係</a></li>
+<li><a href="#p25"> 順序無し階層リスト</a></li>
+<li><a href="#p26"> 順序有り階層リスト</a></li>
 </ul>
-<li><a href="#p26"> 混合リスト</a></li>
+<li><a href="#p27"> 混合リスト</a></li>
 <ul class="outline">
 <ul class="outline">
-<li><a href="#p27"> 階層混合リストの場合</a></li>
+<li><a href="#p28"> 階層混合リストの場合</a></li>
 </ul>
 </ul>
-<li><a href="#p28"> タスクリスト github 拡張構文 *1</a></li>
-<li><a href="#p29"> 説明 (定義リスト)</a></li>
+<li><a href="#p29"> タスクリスト github 拡張構文 *1</a></li>
+<li><a href="#p30"> 説明 (定義リスト)</a></li>
 <ul class="outline">
-<li><a href="#p30">行頭コロンスペース定義リスト Discount 2.0.4/PHP 拡張構文 *1*2</a></li>
+<li><a href="#p31">行頭コロンスペース定義リスト Discount 2.0.4/PHP 拡張構文 *1*2</a></li>
 <ul class="outline">
-<li><a href="#p31"> 行頭コロンスペース定義リストの詳細</a></li>
+<li><a href="#p32"> 行頭コロンスペース定義リストの詳細</a></li>
 </ul>
-<li><a href="#p32"> 等号挟み定義リスト Discount 1.2.3 拡張構文 *1</a></li>
+<li><a href="#p33"> 等号挟み定義リスト Discount 1.2.3 拡張構文 *1</a></li>
 <ul class="outline">
-<li><a href="#p33"> 等号挟み定義リストの詳細</a></li>
+<li><a href="#p34"> 等号挟み定義リストの詳細</a></li>
 </ul>
 </ul>
-<li><a href="#p34"> リンク</a></li>
-<li><a href="#p35"> 内部リンク</a></li>
+<li><a href="#p35"> リンク</a></li>
+<li><a href="#p36"> 内部リンク</a></li>
 <ul class="outline">
-<li><a href="#p36"> (#見出し)形式での内部リンク *1*2*3*4</a></li>
-<li><a href="#p37"> ページ名と見出し番号を指定した内部リンク</a></li>
+<li><a href="#p37"> (#見出し)形式での内部リンク *1*2*3*4</a></li>
+<li><a href="#p38"> ページ名と見出し番号を指定した内部リンク</a></li>
 </ul>
-<li><a href="#p38"> 集約リンク</a></li>
-<li><a href="#p39"> 注釈 拡張構文 *1*2*3*4</a></li>
-<li><a href="#p40"> 画像</a></li>
+<li><a href="#p39"> 集約リンク</a></li>
+<li><a href="#p40"> 注釈 拡張構文 *1*2*3*4</a></li>
+<li><a href="#p41"> 画像</a></li>
 <ul class="outline">
-<li><a href="#p41"> サイズ指定画像 Discount 拡張構文</a></li>
+<li><a href="#p42"> サイズ指定画像 Discount 拡張構文</a></li>
 </ul>
-<li><a href="#p42"> コメント</a></li>
-<li><a href="#p43"> 水平線</a></li>
-<li><a href="#p44"> テーブル 拡張構文 *1</a></li>
+<li><a href="#p43"> コメント</a></li>
+<li><a href="#p44"> 水平線</a></li>
+<li><a href="#p45"> テーブル 拡張構文 *1</a></li>
 <ul class="outline">
-<li><a href="#p45"> Discount/PHP 拡張構文</a></li>
-<li><a href="#p46"> 中央寄せ Discount 拡張構文</a></li>
-<li><a href="#p47"> 左寄せ、中央寄せ、右寄せを有効にする際の注意点</a></li>
+<li><a href="#p46"> Discount/PHP 拡張構文</a></li>
+<li><a href="#p47"> 中央寄せ Discount 拡張構文</a></li>
+<li><a href="#p48"> 左寄せ、中央寄せ、右寄せを有効にする際の注意点</a></li>
 </ul>
-<li><a href="#p48"> 整形済テキスト 拡張構文</a></li>
+<li><a href="#p49"> 整形済テキスト 拡張構文</a></li>
 <ul class="outline">
-<li><a href="#p49"> 文書中のコード</a></li>
+<li><a href="#p50"> 文書中のコード</a></li>
 <ul class="outline">
-<li><a href="#p50"> 連続するバッククオートをコードブロック内に含める場合</a></li>
+<li><a href="#p51"> 連続するバッククオートをコードブロック内に含める場合</a></li>
 </ul>
-<li><a href="#p51"> コードブロック(三重バッククオート上下挟み) *1*2</a></li>
-<li><a href="#p52"> コードブロック(三重チルダ上下挟み) *1*2</a></li>
-<li><a href="#p53"> タグによるコードブロック</a></li>
-<li><a href="#p54"> コードブロック（4スペース以上のインデント）</a></li>
+<li><a href="#p52"> コードブロック(三重バッククオート上下挟み) *1*2</a></li>
+<li><a href="#p53"> コードブロック(三重チルダ上下挟み) *1*2</a></li>
+<li><a href="#p54"> タグによるコードブロック</a></li>
+<li><a href="#p55"> コードブロック（4スペース以上のインデント）</a></li>
 <ul class="outline">
-<li><a href="#p55"> インデント幅とコードブロック範囲の関係</a></li>
+<li><a href="#p56"> インデント幅とコードブロック範囲の関係</a></li>
 </ul>
-<li><a href="#p56"> コードブロックの入れ子 *1*2</a></li>
+<li><a href="#p57"> コードブロックの入れ子 *1*2</a></li>
 </ul>
-<li><a href="#p57"> LaTeX埋込 拡張構文  *1*2*3</a></li>
+<li><a href="#p58"> LaTeX埋込 拡張構文  *1*2*3</a></li>
+<li><a href="#p59"> 既知の不具合</a></li>
+<ul class="outline">
+<ul class="outline">
+<li><a href="#p60"> FSWikiのPDFプラグインでは、マークダウンブロック内の記述は表示されません。</a></li>
+</ul>
+</ul>
 </ul>
 
     </div>
-
 </body></html>
