@@ -1,10 +1,10 @@
-# [FreeStyleWiki (FSWiki)](https://fswiki.osdn.jp/cgi-bin/wiki.cgi) で Markdown を使う方法のまとめ
+# [FreeStyleWiki (FSWiki)](https://fswiki.osdn.jp/cgi-bin/wiki.cgi) で Markdown や MathJax などを使う方法のまとめ
 
 ## はじめに
 
-FSWiki に Markdown Plugin を入れると以下のスクリーンショットのように markdown block 内に記述した Markdown 構文を表示できるようになります。
+FSWiki に Markdown Plugin を入れると以下のスクリーンショットのように Markdown 構文を表示できるようになります。Markdown block 内に記述した LaTeX または MathML 形式の数式などを [MathJax](https://github.com/mathjax/MathJax/) を用いて綺麗に表示させることも可能になります。
 
-ただし、Markdown Plugin として入れる構成要素により利用できる Markdown 構文が変わり、また、セキュリティを含めた設定にもひと工夫が必要ですので、このページにまとめておきます。
+ただし、構成により利用できる Markdown 構文が変わり、また、セキュリティを含めた設定にもひと工夫が必要ですので、このページにまとめておきます。
 
 ## スクリーンショット
 
@@ -12,7 +12,7 @@ FSWiki に Markdown Plugin を入れると以下のスクリーンショット�
 
 <!-- ![markdown_screenshot](./markdown_screenshot_jp.png "screenshot") -->
 
-このスクリーンショットは以下の Markdown 文書を [kati_dark] テーマで表示させたものです。[その他のテーマ]でも使えると思います。（ただし、一部の機能は、必要に応じて [kati_dark.css] 上部の「Common Settings Among Themes」の部分をコピーする必要がある場合があります。）
+このスクリーンショットは以下の Markdown 文書を [kati_dark] テーマで表示させたものです。[その他のテーマ]でも使えると思います。（ただし、一部の機能は、必要に応じて [kati_dark.css] 上部の「Common Settings Among Themes」の部分をコピーする必要がある場合があります。詳しくは以下の Help/Markdown をご参照下さい。）
 
 ````markdown
 # マークダウンプラグインとCSP
@@ -20,7 +20,7 @@ FSWiki に Markdown Plugin を入れると以下のスクリーンショット�
 ## マークダウンセキュリティ
 
 1. **インライン_スクリプト_**と_**意図していない**インラインスタイル_の実行~~が可能です~~はCSPにより禁止します。
-    - <span type="text/css" class="orange">色付け</span>などはインラインスタイルは使わず、スタイルシートで事前に定義された{type, class, id}などのセレクタで実現します。
+    - <span type="text/css" class="orange">色付け</span>などはインラインスタイルは使わず、スタイルシートで事前に定義された{type, class}などのセレクタで実現します。
 
 ## 構文
 
@@ -46,6 +46,16 @@ CSP
 git clone https://github.com/KazKobara/dockerfile_fswiki_local.git
 cd dockerfile_fswiki_local
 ```
+
+### MathJax を用いた \\( \LaTeX \\) (およびMathML)表示
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+数式等を綺麗に表示できます。例えば、
+\\( \sin^{2} \theta + \cos^{2} \theta = 1 \\),
+\\( \tan \theta = \frac{\sin \theta}{\cos \theta} \\) や以下などのように
+\\[ \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \\]
+
 ````
 
 対応している Markdown 構文は、 [Help/Markdown (FSWiki版)] や [Help/Markdown (HTML版)] にまとめてあります。
@@ -65,7 +75,7 @@ cd dockerfile_fswiki_local
 
 ### FSWikiを使われていない場合
 
-- FSWiki やその Markdown Plugin などは、[ローカルユース用 Docker FSWiki]でも試すことができます。
+- FSWiki やその Markdown Plugin 、MathJax による LaTeX (および MathML)表示などは、[ローカルユース用 Docker FSWiki]でも試すことができます。
   - デフォルトで CSP の設定なども有効になっております。
 
 ### FSWikiを使われている場合
@@ -132,7 +142,7 @@ cd dockerfile_fswiki_local
             make test
             ```
 
-            - 上記 make 時に ./discount/ 内で Discount の `make test` (上記の `make test` とは異なることに注意!)も行われるのですが、 diff コマンドが `c` オプションに対応していない場合(Alpine 3.15 (BusyBox v1.34.1)など)、`discount/tools/checkbits.sh` から `c` オプションを削除し `make clean` 後に `perl Makefile.PL` からやり直して下さい。
+            - 上記 make 時に ./discount/ 内で Discount の `make test` (上記の `make test` とは異なることに注意!)も行われるのですが、 diff コマンドが `-c` オプションに対応していない場合(Alpine 3.15 (BusyBox v1.34.1)など)、`discount/tools/checkbits.sh` から `c` オプションを削除し `make clean` 後に `perl Makefile.PL` からやり直して下さい。
 
                 ```shell
                 # diff -c -bw in.markdown.h in.mkdio.h
@@ -159,11 +169,11 @@ cd dockerfile_fswiki_local
 
         > 2022年1月時点での注意点:
 
-        - Ubuntu/Debian が提供するパッケージを利用する場合、2022年1月時点では Text::Markdown::Discount Ver. 0.12-1+b1 with libmarkdown2:amd64 (2.2.6-1) がインストールされます。
+        - Ubuntu/Debian が提供するパッケージを利用する場合、 Text::Markdown::Discount Ver. 0.12-1+b1 with libmarkdown2:amd64 (2.2.6-1) がインストールされます。
             - この版は、コードブロックやコロン行頭定義リストなどに対応しておりません。
             - 後継の[libtext-markdown-discount-perl]の準備も進んでいるようですので、将来的には Linux distributor が提供するパッケージを利用することでよくなると思われます。
 
-## 古いインストール方法の備忘録
+### 古いインストール方法の備忘録
 
 1. git版 Text::Markdown::Discount Ver. 0.13 を clone し、そのフォルダへ移動
 
@@ -186,17 +196,66 @@ cd dockerfile_fswiki_local
         - [Discount本家]のVer.2保守ブランチ `v2maint` の2022年1月時点の最新版は v2.2.7 (34a8ebb) で、v2.1.7との間に脆弱性修正のコミット b002a5a が行われているため、少なくともそれは取り込んでおく必要があります。
         - 今後、前述の Discount Markdown V2保守ブランチ 'v2maint' の最新版を使うための [pull request](https://github.com/sekimura/text-markdown-discount/pull/25) が取り込まれましたら、この cherry-pick 作業は不要となります。
 
-## 設定
+## Markdown Plugin のための設定
 
 1. Webサーバで CSP などを設定しインラインスクリプトやインラインスタイルなどを禁止
 
-    - 詳しくは [Help/Markdown (FSWiki版)] や [httpd の場合の設定例](https://github.com/KazKobara/dockerfile_fswiki_local/blob/main/data/httpd-security-fswiki-local.conf "https://github.com/KazKobara/dockerfile_fswiki_local/blob/main/data/httpd-security-fswiki-local.conf") をご参照下さい。
+    - 詳しくは [Help/Markdown (FSWiki版)] や [httpd の場合の設定例](https://github.com/KazKobara/dockerfile_fswiki_local/blob/main/data/httpd-security-fswiki-local.conf) をご参照下さい。
 
 1. FSWikiの設定
 
     - FSWiki 画面の [管理] -> [プラグイン設定 ] で markdown にチェックを入れます。
     - 上記の「[Help/Markdown (FSWiki版)] の閲覧方法」に従い [Help/Markdown (FSWiki版)] などをFSWikiで表示させCSPやMarkdown Pluginの設定を確認
     - 信頼できない第三者が Markdown を入力・編集できる場合には、Webサーバの Content Security Policy (CSP)などを設定し、インラインスクリプトやインラインスタイルを禁止して下さい。
+
+## MathJax で LaTeX および MathML を表示させる設定
+
+1. Discount 2.2.3以降を用いている Discount.pm 中のランタイムフラグに MKD_LATEX() を追加
+1. CSP（およびスタイルシート）の設定
+    1. FireFox 97, Chrome 99, Edge 99 共通の設定 ([参考](https://github.com/KazKobara/dockerfile_fswiki_local/blob/main/data/httpd-security-fswiki-local.conf ))
+        - script-src に `https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js` を追加
+        - font-src に `https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/` を追加
+    1. Chrome 99, Edge 99 での追加設定
+        - style-src に `https://cdn.jsdelivr.net/npm/mathjax@3/es5/` と一時的に `'unsafe-inline'` を追加
+        - Chrome (またはEdge)の画面を右クリックし「名前を付けて保存」->「ウェブページ、完全」でページをファイルに保存し、htm ファイルに追加されている `<style>`と`</style>` に挟まれている範囲を、そのページが読み込むスタイルシートに追加
+            - その際、`.CtxtMenu`で始まるクラスの追加は不要（MathJax メニューは以下の `'unsafe-inline'` の削除により使えなくなるか使いづらいものになるため）
+        - style-src の `'unsafe-inline'` (および `https://cdn.jsdelivr.net/npm/mathjax@3/es5/`) を削除し、Webサーバを再起動するなどして設定を反映
+        - 新たな LaTeX 表現を追加する度に上記の追加設定を繰り返します。
+            > なお、信頼できるエンティティしか使えない環境であれば、上記追加設定の一ポツのみを行うことを検討するという方法もあります。
+    1. FireFox 97, Chrome 99, Edge 99 共通の設定
+        - LaTeX(まはたMathML)を埋込を含むページに以下を追加
+
+            ```html
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            ```
+
+    - 表示された数式の右クリックが有効な環境(FireFox 97など)では、「Copy to Clipboard」を選択することでMathML 形式を得ることができます。
+
+        <!-- ![mathjax_clip](./mathjax_clip.png "to clipboard") -->
+        ![mathjax_clip](https://raw.githubusercontent.com/KazKobara/kati_dark/main/docs/markdown/mathjax_clip.png "to clipboard")
+
+    > 注意:
+      - 設定の変更をブラウザ表示に反映させるためには、ブラウザの閲覧履歴を一旦削除する必要がある場合があります。
+          - ブラウザ閲覧履歴の削除は、Chrome ブラウザの場合、右上の「︙」->「その他のツール」->「閲覧履歴を削除…」などで行えます。
+
+## MathJax の version と種類
+
+- MathJax の version は上記の `mathjax@3` を変更することで変えられます。例えば、`mathjax@3.2.0` とするなど。
+  - ただし、対応するURLが存在している必要があります。
+  - Versionの候補は、[MathJax githubレポジトリ](https://github.com/mathjax/MathJax) において `[master]` -> Tags などで調べられます。
+
+<!--
+同じファイルは cdnjs.cloudflare.com などからも提供されてます。3.2.0 の場合は
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"
+
+- MathJax の種類には、tex-mml-chtml.js 以外に SVG で出力させる tex-mml-svg.js tex-svg.js tex-svg-full.js などもあります。
+  - しかしながら、MathJax の種類および version、ならびにブラウザとの組み合わせにより以下の表に示すような不具合があります。
+
+MathJax の version と種類 | FireFox (ver.) | Chrome (ver.) | Edge (ver.) | 備考またはNGの説明
+---|---|---|---|---
+3.2.0 tex-mml-chtml.js tex-chtml-full.js | OK (v97) | OK (v99) | OK (v99) | ChromeとEdgeでは前述のスタイルの追加が必要
+3.2.0 tex-mml-svg.js tex-svg.js tex-svg-full.js | NG (v97) | NG (v99) | NG (v99) | SVGとHTMLの両方が表示されます。
+-->
 
 ## Markdownの拡張構文を有効にする方法の違い
 
@@ -206,7 +265,7 @@ cd dockerfile_fswiki_local
 - 行頭を「: 」にすることによる定義リスト（行頭コロンスペース定義リスト）
 - タスクリスト(checkbox)）
 
-を `./configure.sh` のオプションで指定しなければならないのか、`Discount.pm` 中のランタイムフラグとして指定しなければならないのかについてまとめたものになります。
+を `./configure.sh` のオプションと `Discount.pm` 中のランタイムフラグのいずれで指定すべきかについてまとめたものになります。
 
 - 表中の `--*` が `./configure.sh` のオプション、`MKD_*` がDiscount.pm 中のランタイムフラグになります。
 - 「停止」は、そのオプションやフラグを指定すると ./configure.sh やコマンドが停止することを意味します。

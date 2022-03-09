@@ -2,26 +2,24 @@
 
 !!ÀßÄê¤Î³ÎÇ§
 
-* ¤³¤Î [[Help/Markdown]] ¤Ï'''2022Ç¯3·î1ÆüÈÇ'''¤Ç¤¹¡£
-** ºÇ¿·ÈÇ¤Ï[¤³¤Á¤é|https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki]¤«¤é¤´Æþ¼ê¤¯¤À¤µ¤¤¡ÊFSWkiËÜÂÎ¤Ë¼è¤ê¹þ¤Þ¤ì¤ë¤Þ¤Ç¤Ï¡Ë¡£
+* ¤³¤Î [[Help/Markdown]] ¤Ï'''2022Ç¯3·î9ÆüÈÇ'''¤Ç¤¹¡£
+** ºÇ¿·ÈÇ¤Ï¡ÊFSWkiËÜÂÎ¤Ë¼è¤ê¹þ¤Þ¤ì¤ë¤Þ¤Ç¤Ï¡Ë[¤³¤Á¤é|https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki]¤«¤é¤´Æþ¼ê¤¯¤À¤µ¤¤¡£
 * [Markdown plugin|https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417]¤Î¥¤¥ó¥¹¥È¡¼¥ë¤ÈÀßÄêÊýË¡¤Ï[¤³¤Á¤é|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]¤â¤´»²¾È²¼¤µ¤¤¡£
-
-{{markdown
-[¥ê¥ó¥¯](javascript:alert\('·Ù¹ð'\))
-
-}}
 
 {{markdown
 - °Ê²¼¤Ë³ºÅö¤¹¤ë¾ì¹ç¡¢ÀßÄê¤Î¸«Ä¾¤·¤¬É¬Í×¤Ç¤¹¡£
     - ËÜ¥Ú¡¼¥¸¤òÉ½¼¨¤·¤¿¾ì¹ç¡¢CSP (Content-Security-Policy) ¤Î·Ù¹ð¤¬½Ð¤ë¡£
     - <span style="color:DeepPink;">[Í×³ÎÇ§¡ª¡ª] ¤³¤³¤¬¥Ô¥ó¥¯¿§¤ÇÉ½¼¨¤µ¤ì¤Æ¤¤¤ë¡£</span>
     - <a href="javascript:alert('·Ù¹ð!!¥¹¥¯¥ê¥×¥È¤Ø¤Î¥ê¥ó¥¯¤¬Í­¸ú¤Ë¤Ê¤Ã¤Æ¤¤¤Þ¤¹¡£')" title="javascript:alert()">[Í×³ÎÇ§¡ª¡ª] ËÜ¥ê¥ó¥¯¤ò¥¯¥ê¥Ã¥¯</a>¤¹¤ë¤È¡¢¡Ö¥¹¥¯¥ê¥×¥È¤Ø¤Î¥ê¥ó¥¯¤¬Í­¸ú¤Ë¤Ê¤Ã¤Æ¤¤¤Þ¤¹¡£¡×¤È¤Î·Ù¹ð¤¬É½¼¨¤µ¤ì¤ë¡£
+    - [\[Í×³ÎÇ§¡ª¡ª\] ¤³¤³¤¬¥ê¥ó¥¯¤È¤Ê¤Ã¤Æ¤ª¤ê¡¢¤«¤Ä¡¢¥¯¥ê¥Ã¥¯](javascript:alert\('·Ù¹ð!!¥¹¥¯¥ê¥×¥È¤Ø¤Î¥ê¥ó¥¯¤¬Í­¸ú¤Ë¤Ê¤Ã¤Æ¤¤¤Þ¤¹¡£'\)
+"javascript:alert\(\)")¤¹¤ë¤È¡¢¡Ö¥¹¥¯¥ê¥×¥È¤Ø¤Î¥ê¥ó¥¯¤¬Í­¸ú¤Ë¤Ê¤Ã¤Æ¤¤¤Þ¤¹¡£¡×¤È¤Î·Ù¹ð¤¬É½¼¨¤µ¤ì¤ë¡£
 - ÀßÄê¸«Ä¾¤·ÊýË¡¤ÎÎã
     - Web¥µ¡¼¥Ð¤Ê¤É¤Ë¤ª¤¤¤ÆCSP¤Ê¤É¤ÎÀßÄê¤¬Í­¸ú¤Ë¤Ê¤Ã¤Æ¤¤¤Ê¤¤¾ì¹ç¤ÏÍ­¸ú¤Ë¤·¤Þ¤¹¡£
-    - CSP¤¬´û¤ËÍ­¸ú¤Ë¤Ê¤Ã¤Æ¤¤¤ë¾ì¹ç¡¢ÀßÄê¤ò¸«Ä¾¤· 'unsafe-inline' ¤ò»ÈÍÑ¤·¤Ê¤¤¤è¤¦¤Ë¤·¤Þ¤¹¡£
-        - ¥¹¥¯¥ê¥×¥È¤ËÂÐ¤·¤Æ¤Ï `script-src`¡¢¥¹¥¿¥¤¥ë¤ËÂÐ¤·¤Æ¤Ï `style-src` ¤ÎÀßÄê¤Ê¤É¡£
-    - Raw html ¤ò»ÈÍÑ¤·¤Ê¤¤¾ì¹ç¤Ï¡¢Discount.pm Ãæ¤Î¥é¥ó¥¿¥¤¥à¥Õ¥é¥°¤Ë MKD_NOHTML ¤òÄÉ²Ã¤¹¤ë¤È¤¤¤¦ÊýË¡¤â²ÄÇ½¤Ç¤¹¡£
-    - ¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë¤ò»ÈÍÑ¤»¤º¤Ë¥Æ¥­¥¹¥È¤òÁõ¾þ¤¹¤ëÊýË¡¤Ë¤Ä¤­¤Þ¤·¤Æ¤Ï¡¢°Ê²¼¤Î[¥Æ¥­¥¹¥ÈÁõ¾þ ¥¹¥¿¥¤¥ë¤ÎÍøÍÑ](wiki.cgi?page=Help%2FMarkdown#p6)¤ÎÀá¤ò¤´»²¾È²¼¤µ¤¤¡£
+    - CSP¤¬´û¤ËÍ­¸ú¤Ë¤Ê¤Ã¤Æ¤¤¤ë¤¬ 'unsafe-inline' ¤¬»ÈÍÑ¤µ¤ì¤Æ¤¤¤ë¾ì¹ç¡¢'unsafe-inline' ¤ò»ÈÍÑ¤·¤Ê¤¤¤è¤¦¤Ë¤·¤Þ¤¹¡£Âå¤ï¤ê¤Ë¡¢
+        - ¥¹¥¯¥ê¥×¥È¤òÍ­¸ú¤Ë¤¹¤ë¤Ë¤Ï¡¢CSP Hash ¤Ê¤É¤ò»È¤¤¤Þ¤¹¡£
+        - ¥Æ¥­¥¹¥È¤òÁõ¾þ¤¹¤ëÊýË¡¤Ë¤Ä¤­¤Þ¤·¤Æ¤Ï¡¢°Ê²¼¤Î[¥Æ¥­¥¹¥ÈÁõ¾þ ¥¹¥¿¥¤¥ë¤ÎÍøÍÑ](wiki.cgi?page=Help%2FMarkdown#p6)¤ÎÀá¤ò¤´»²¾È²¼¤µ¤¤¡£
+    - Raw html ¤ò»ÈÍÑ¤·¤Ê¤¤¾ì¹ç¤Ï¡¢Discount.pm Ãæ¤Î¥é¥ó¥¿¥¤¥à¥Õ¥é¥°¤Ë MKD_NOHTML ¤È MKD_SAFELINK ¤òÄÉ²Ã¤¹¤ë¤È¤¤¤¦ÊýË¡¤â²ÄÇ½¤Ç¤¹¡£
+        - ¤Ê¤ª¡¢MKD_SAFELINK ¤ÏMarkdown¤Î¥ê¥ó¥¯¹½Ê¸¤Ç»ÈÍÑ²ÄÇ½¤Ê¥×¥í¥È¥³¥ë¤ò (v.2.2.7»þÅÀ¤Ç [generate.c](https://github.com/Orc/discount/blob/v2maint/generate.c) ¤Ë¤ª¤¤¤Æ) https, http, news, ftp ¤Ë¸ÂÄê¤·¤Þ¤¹¤¬¡¢href ¤Ç¤Î¥ê¥ó¥¯¤Ë¤ÏÅ¬ÍÑ¤µ¤ì¤Þ¤»¤ó¡£
 
 <!-- Do not remove!!  (Necessary to check the settings.) -->
 <script type="text/javascript">alert('·Ù¹ð!! Ç¤°Õ¤Î¥¤¥ó¥é¥¤¥ó¥¹¥¯¥ê¥×¥È¤Î¼Â¹Ô¤¬²ÄÇ½¤Ë¤Ê¤Ã¤Æ¤¤¤Þ¤¹!! Web¥µ¡¼¥Ð¤Î CSP (Content-Security-Policy) ¤Ê¤É¤ÎÀßÄê¤ò¹Ô¤Ã¤Æ²¼¤µ¤¤¡£');</script>
@@ -36,10 +34,10 @@
 , *1, [Text::Markdown|https://metacpan.org/pod/Text::Markdown] 1.000031-3, Markdown.pl,-,-, "apt-get -y install libtext-markdown-perl (Ubuntu 20.04, as of Feb. 2022)" 
 , *2, [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] 0.12-1, Discount 2.2.6-1, --github-checkbox ,MKD_NOHEADER MKD_NOPANTS, "apt-get -y install libtext-markdown-discount-perl (Ubuntu 20.04, as of Feb. 2022)"
 , *3, [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] 0.13 (357a2ef), Discount 2.1.7 + patches, --with-fenced-code --with-dl=both, MKD_NOHEADER MKD_NOPANTS, [ÀÈ¼åÀ­|https://github.com/Orc/discount/issues/189] ½¤Àµ¥³¥ß¥Ã¥È [b002a5a|https://github.com/Orc/discount/commit/b002a5a4db31e42dfb45451c059bc56941c17974]¤Ê¤É¤ò¼è¤ê¹þ¤àÉ¬Í×¤¬¤¢¤ë¤¿¤á¡¢*4 (0.14)°Ê¹ß¤ò»È¤¦Êý¤¬¤è¤¤¤Ç¤¹¡£
-, *4, [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] 0.14 ([pull requestÃæ|https://github.com/sekimura/text-markdown-discount/pull/25]), Discount 2.2.7 (v2maint 34a8ebb), --github-checkbox=input, MKD_NOHEADER MKD_NOPANTS MKD_FENCEDCODE MKD_DLEXTRA , Discount¤Î¥Ð¡¼¥¸¥ç¥ó¤È¥ª¥×¥·¥ç¥ó/¥Õ¥é¥°ÀßÄê¤Î´Ø·¸¤Ï¡¢[¤³¤Á¤é|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]¤Î¡ÖMarkdown¤Î³ÈÄ¥¹½Ê¸¤òÍ­¸ú¤Ë¤¹¤ëÊýË¡¤Î°ã¤¤¡×¤ò¤´»²¾È²¼¤µ¤¤¡£
+, *4, [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] 0.14 ([pull requestÃæ|https://github.com/sekimura/text-markdown-discount/pull/25]), Discount 2.2.7 (v2maint 34a8ebb), --github-checkbox=input, MKD_NOHEADER MKD_NOPANTS MKD_FENCEDCODE MKD_DLEXTRA , Discount¤Îversion¤È¥ª¥×¥·¥ç¥ó/¥Õ¥é¥°ÀßÄê¤Î´Ø·¸¤Ï¡¢[¤³¤Á¤é|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]¤Î¡ÖMarkdown¤Î³ÈÄ¥¹½Ê¸¤òÍ­¸ú¤Ë¤¹¤ëÊýË¡¤Î°ã¤¤¡×¤ò¤´»²¾È²¼¤µ¤¤¡£
 // apt list libtext-markdown-perl libtext-markdown-discount-perl discount
 
-// [¤³¤Á¤é|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]¤Î¡ÖDiscount Markdown ¤Î¥Ð¡¼¥¸¥ç¥ó¤Èµ¡Ç½ÁªÂòÊýË¡¤Î°ã¤¤¡×¤Ë°ÜÆ°¡£
+// [¤³¤Á¤é|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]¤Î¡ÖDiscount Markdown ¤Îversion¤Èµ¡Ç½ÁªÂòÊýË¡¤Î°ã¤¤¡×¤Ë°ÜÆ°¡£
 //
 //* °Ê²¼¤ÎÉ½¤Ë¤ª¤¤¤Æ¡¢¡ÖÄä»ß¡×¤Ï ./configure.sh ¤ä¥³¥Þ¥ó¥É¤¬Ää»ß¤¹¤ë¤³¤È¤ò°ÕÌ£¤·¤Þ¤¹¡£¡ÖÌµ¸ú¡×¤Ï¤½¤ì¤é¤ÏÄä»ß¤·¤Ê¤¤¤¬¡¢»ØÄê¤·¤¿µ¡Ç½¤ÏÍ­¸ú¤Ë¤Ê¤é¤Ê¤¤¤³¤È¤ò°ÕÌ£¤·¤Þ¤¹¡£
 //
@@ -65,6 +63,9 @@
  {{markdown
  ¤³¤³¤Ë Markdown ¤òµ­½Ò¡£
  }}
+
+Æó½Å¤ÎÊÄ¤¸ÇÈ³ç¸Ì¡Ö}}¡×¤ÎÄ¾¸å¤Ï²þ¹Ô¤Ç¤Ê¤±¤ì¤Ð¤Ê¤ê¤Þ¤»¤ó¡£
+¥¹¥Ú¡¼¥¹¤¬Æþ¤Ã¤Æ¤¤¤ë¤Ê¤É¡¢²þ¹Ô¤Ç¤Ê¤¤¾ì¹ç¤ÏMarkdown¥Ö¥í¥Ã¥¯¤¬Â³¤¤¤Æ¤¤¤ë¤È²ò¼á¤µ¤ì¤Þ¤¹¡£
 
 !!!¸«½Ð¤·
 
@@ -185,7 +186,7 @@ g^x¡¢g^x1Y2¡¢g^(¥µ¡¼¥«¥à¥Õ¥ì¥Ã¥¯¥¹¾åÉÕ¤­/È¾³Ñ±Ñ¿ô»ú°Ê³°¤¬´Þ¤Þ¤ì¤ë¾ì¹ç¤Ë¤Ï´Ý³ç¸Ì¤
 
 HTML5¤Ç¤Ï¥µ¥Ý¡¼¥È¤µ¤ì¤Æ¤ª¤ê¤Þ¤»¤ó¡£
 
- <font color="Red">Red</font>, 
+ <font color="Red">Red</font>,
  <font color="Orange">Orange</font>,
  <font color="Yellow">Yellow</font>,
  <font color="Green">Green</font>,
@@ -215,7 +216,7 @@ HTML5¤Ç¤Ï¥µ¥Ý¡¼¥È¤µ¤ì¤Æ¤ª¤ê¤Þ¤»¤ó¡£
  {{markdown
  - <span style="color:DeepPink;">¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë¤Ë¤è¤ëÃå¿§¡Ê**[Ãí°Õ!!]**Ãå¿§¤µ¤ì¤Æ¤¤¤ë¾ì¹ç¤Ë¤ÏWeb¥µ¡¼¥Ð¤ÎCSPÅù¤ÎÀßÄê¤Ë¤è¤ê¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë(µÚ¤Ó¥¤¥ó¥é¥¤¥ó¥¹¥¯¥ê¥×¥È)¤ò¶Ø»ß¤·¤Æ¤¯¤À¤µ¤¤¡£¡Ë</span>
  
- <style type="text/css">.cyan{color:DeepPink;}</style>
+ <style type="text/css">.DeepPink {color:DeepPink;}</style>
  
  - <span type="text/css" class="DeepPink">¥¤¥ó¥é¥¤¥ó¤ÇÄêµÁ¤µ¤ì¤¿class¥»¥ì¥¯¥¿¤Ë¤è¤ëÃå¿§</span>¡Ê**[Ãí°Õ!!]**Ãå¿§¤µ¤ì¤Æ¤¤¤ë¾ì¹ç¤Ë¤ÏWeb¥µ¡¼¥Ð¤ÎCSPÅù¤ÎÀßÄê¤Ë¤è¤ê¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë(µÚ¤Ó¥¤¥ó¥é¥¤¥ó¥¹¥¯¥ê¥×¥È)¤ò¶Ø»ß¤·¤Æ¤¯¤À¤µ¤¤¡£¡Ë
  }}
@@ -223,7 +224,7 @@ HTML5¤Ç¤Ï¥µ¥Ý¡¼¥È¤µ¤ì¤Æ¤ª¤ê¤Þ¤»¤ó¡£
 {{markdown
 - <span style="color:DeepPink;">¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë¤Ë¤è¤ëÃå¿§¡Ê**[Ãí°Õ!!]**Ãå¿§¤µ¤ì¤Æ¤¤¤ë¾ì¹ç¤Ë¤ÏWeb¥µ¡¼¥Ð¤ÎCSPÅù¤ÎÀßÄê¤Ë¤è¤ê¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë(µÚ¤Ó¥¤¥ó¥é¥¤¥ó¥¹¥¯¥ê¥×¥È)¤ò¶Ø»ß¤·¤Æ¤¯¤À¤µ¤¤¡£¡Ë</span>
 
-<style type="text/css">.DeepPink{color:DeepPink;}</style>
+<style type="text/css">.DeepPink { color:DeepPink;}</style>
 
 - <span type="text/css" class="DeepPink">¥¤¥ó¥é¥¤¥ó¤ÇÄêµÁ¤µ¤ì¤¿class¥»¥ì¥¯¥¿¤Ë¤è¤ëÃå¿§</span>¡Ê**[Ãí°Õ!!]**Ãå¿§¤µ¤ì¤Æ¤¤¤ë¾ì¹ç¤Ë¤ÏWeb¥µ¡¼¥Ð¤ÎCSPÅù¤ÎÀßÄê¤Ë¤è¤ê¥¤¥ó¥é¥¤¥ó¥¹¥¿¥¤¥ë(µÚ¤Ó¥¤¥ó¥é¥¤¥ó¥¹¥¯¥ê¥×¥È)¤ò¶Ø»ß¤·¤Æ¤¯¤À¤µ¤¤¡£¡Ë
 }}
@@ -1087,13 +1088,13 @@ HTML¤Îth¥¿¥°¤Ètd¥¿¥°¤¬¤½¤ì¤¾¤ì°Ê²¼¤Î¤è¤¦¤Ë½ÐÎÏ¤µ¤ì¤ë¤è¤¦¤Ë Markdown to HTML Conv
 Æ±¤¸Ä¹¤µ¤Î¥Ð¥Ã¥¯¥¯¥ª¡¼¥È¤Ç¶´¤Þ¤ì¤¿²Õ½ê¤Ï¡¢¤½¤Î¤Þ¤ÞÉ½¼¨¤µ¤ì¤Þ¤¹¡£  
 
  {{markdown
- ¥Þ¡¼¥¯¥À¥¦¥ó¥Ö¥í¥Ã¥¯Æâ¤ÎÊ¸¾Ï¡§  
+ Markdown¥Ö¥í¥Ã¥¯Æâ¤ÎÊ¸¾Ï¡§  
  ¶´¤Þ¤ì¤Æ¤¤¤Ê¤¤¾ì¹ç¡Ö&copy; &lt; _¥¤¥¿¥ê¥Ã¥¯_¡×¤ÏÊÑ´¹¤µ¤ì¤Þ¤¹¡£  
  ¶´¤Þ¤ì¤Æ¤¤¤ë¾ì¹ç¡Ö`&copy; &lt; _¥¤¥¿¥ê¥Ã¥¯_`¡×¤ÏÊÑ´¹¤µ¤ì¤Þ¤»¤ó¡£
  }}
 
 {{markdown
-¥Þ¡¼¥¯¥À¥¦¥ó¥Ö¥í¥Ã¥¯Æâ¤ÎÊ¸¾Ï¡§  
+Markdown¥Ö¥í¥Ã¥¯Æâ¤ÎÊ¸¾Ï¡§  
 ¶´¤Þ¤ì¤Æ¤¤¤Ê¤¤¾ì¹ç¡Ö&copy; &lt; _¥¤¥¿¥ê¥Ã¥¯_¡×¤ÏÊÑ´¹¤µ¤ì¤Þ¤¹¡£  
 ¶´¤Þ¤ì¤Æ¤¤¤ë¾ì¹ç¡Ö`&copy; &lt; _¥¤¥¿¥ê¥Ã¥¯_`¡×¤ÏÊÑ´¹¤µ¤ì¤Þ¤»¤ó¡£
 }}
@@ -1103,13 +1104,13 @@ HTML¤Îth¥¿¥°¤Ètd¥¿¥°¤¬¤½¤ì¤¾¤ì°Ê²¼¤Î¤è¤¦¤Ë½ÐÎÏ¤µ¤ì¤ë¤è¤¦¤Ë Markdown to HTML Conv
 ¤½¤ì¤è¤êÄ¹¤¤¥Ð¥Ã¥¯¥¯¥ª¡¼¥È¤Ç¶´¤ß¤Þ¤¹¡£
 
  {{markdown
- ¥Þ¡¼¥¯¥À¥¦¥ó¥Ö¥í¥Ã¥¯Æâ¤ÎÊ¸¾Ï¡§  
+ Markdown¥Ö¥í¥Ã¥¯Æâ¤ÎÊ¸¾Ï¡§  
  ¶´¤Þ¤ì¤Æ¤¤¤Ê¤¤¾ì¹ç¡Ö```¸°³ç¸ÌÆâ¤Î¥Ð¥Ã¥¯¥¯¥ª¡¼¥È¤ÏÉ½¼¨¤µ¤ì¤Þ¤»¤ó¡£```¡×¡¢  
  ¶´¤Þ¤ì¤Æ¤¤¤ë¾ì¹ç````¡Ö```¸°³ç¸ÌÆâ¤Î¥Ð¥Ã¥¯¥¯¥ª¡¼¥È¤ÏÉ½¼¨¤µ¤ì¤Þ¤¹¡£```¡×````¡£
  }}
 
 {{markdown
-¥Þ¡¼¥¯¥À¥¦¥ó¥Ö¥í¥Ã¥¯Æâ¤ÎÊ¸¾Ï¡§  
+Markdown¥Ö¥í¥Ã¥¯Æâ¤ÎÊ¸¾Ï¡§  
 ¶´¤Þ¤ì¤Æ¤¤¤Ê¤¤¾ì¹ç¡Ö```¸°³ç¸ÌÆâ¤Î¥Ð¥Ã¥¯¥¯¥ª¡¼¥È¤ÏÉ½¼¨¤µ¤ì¤Þ¤»¤ó¡£```¡×¡¢  
 ¶´¤Þ¤ì¤Æ¤¤¤ë¾ì¹ç````¡Ö```¸°³ç¸ÌÆâ¤Î¥Ð¥Ã¥¯¥¯¥ª¡¼¥È¤ÏÉ½¼¨¤µ¤ì¤Þ¤¹¡£```¡×````¡£
 }}
@@ -1335,35 +1336,139 @@ echo "Æþ¤ì»Ò£´ÃÊÌÜ"
 
 !!! LaTeXËä¹þ ³ÈÄ¥¹½Ê¸  [[*1|#p2]][[*2|#p2]][[*3|#p2]]
 
-* ËÜ¹½Ê¸¤òÍøÍÑ¤¹¤ë¤Ë¤Ï¡¢Discount.pm Ãæ¤Î¥é¥ó¥¿¥¤¥à¥Õ¥é¥°¤Ë MKD_LATEX() ¤òÄÉ²Ã¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡£
-** v2maint 2.2.3°Ê¹ß¤ÇÍøÍÑ²ÄÇ½¤Ç¤¹¡£
-** ¤µ¤é¤Ë¡¢LaTeX ¤È¤·¤Æ½ÐÎÏ¤¹¤ë¤¿¤á¤Ë¤Ï¡¢LaTeX renderer ¤Ç¤ÎÄÉ²Ã½èÍý([mathjax|https://github.com/mathjax/MathJax/]¤Ê¤É)¤¬É¬Í×¤Ë¤Ê¤ê¤Þ¤¹¡£
-* $$¡Ä$$, \[¡Ä\], and \(¡Ä\)¤Ç°Ï¤Þ¤ì¤Æ¤¤¤ëÉôÊ¬¤Ï(¡Ö<¡×¡¢¡Ö&¡×¤Î¼ÂÂÎ»²¾ÈÉä¹æ²½¡¢²þ¹Ô¡¢¥¹¥Ú¡¼¥¹¤Îºï½ü¤ò½ü¤¤¤Æ)°Ï¤ßµ­¹æ¤ò´Þ¤á¤Æ¡¢¤½¤Î¤Þ¤Þ½ÐÎÏ¤µ¤ì¤Þ¤¹¡£
-** ¤¿¤À¤·¡¢Æ±¤¸ÃÊÍîÆâ¤ÇÊÄ¤¸¤é¤ì¤Æ¤¤¤Ê¤¤¡Ö\[¡×¡¢¡Ö \(¡× ¤Î±ßµ­¹æ¤Ï¥¨¥¹¥±¡¼¥×µ­¹æ¤È²ò¼á¤µ¤ìº¸³ç¸Ì¤¬¤½¤Î¤Þ¤Þ½ÐÎÏ¤µ¤ì¤Þ¤¹¡£
+ËÜ¹½Ê¸¤òÍøÍÑ¤¹¤ë¤Ë¤Ï¡¢¤Þ¤º Discount 2.2.3°Ê¹ß¤ò»ÈÍÑ¤·¤Æ¤¤¤ë Discount.pm Ãæ¤Î¥é¥ó¥¿¥¤¥à¥Õ¥é¥°¤Ë MKD_LATEX() ¤òÄÉ²Ã¤·¤Þ¤¹¡£
 
- $$
- \begin{eqnarray}
- \alpha &<& \sum_{i=1}^n i \\
-           &=& \frac{n (n+1)}{2}
- \end{eqnarray}
- $$
- 
- \[\frac{\sqrt{x^2+1}}{c_4} \]  
- 
- \( \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \)
+ ¤³¤ì¤Ë¤è¤ê¡¢$$¡Ä$$¡¢\[¡Ä\]¡¢\(¡Ä\) ¤Î¤¤¤º¤ì¤«¤Ç¶´¤Þ¤ì¤Æ¤¤¤ëÃæ¿È¤Ï
+ ¡ÊÁ°½Ò¤Î¼ÂÂÎ»²¾ÈÉä¹æ²½¤ò½ü¤¤¤Æ¡Ë¤½¤Î¤Þ¤Þ½ÐÎÏ¤µ¤ì¤ë¤è¤¦¤Ë¤Ê¤ê¤Þ¤¹¡£
+ ¤¿¤À¤·¡¢°Ê²¼¤ÎÃí°Õ¤¬É¬Í×¤Ç¤¹¡£
+ ¡¦´Ö¤Ë¶õ¹Ô¤òÆþ¤ì¤é¤ì¤Þ¤»¤ó¡£
+ ¡¦Markdown¥Ö¥í¥Ã¥¯Ãæ¤Ëµ­½Ò¤¹¤ëºÝ¤Ë¤Ï \\[¡Ä\\] ¤Þ¤¿¤Ï \\(¡Ä\\)¡Ë¤È¤·¡¢
+    LaTeX¤Ç²þ¹Ô¤ò°ÕÌ£¤¹¤ë¡Ö\\¡×¤Ï¡Ö\\\\¡×¤ËÊÑ¹¹¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡£
+
+¤µ¤é¤Ë¡¢LaTeX ¤È¤·¤Æ½ÐÎÏ¤¹¤ë¤¿¤á¤Ë¤Ï¡¢ [MathJax|https://github.com/mathjax/MathJax/] ¤Ê¤É¤ÎÀßÄê¤ò¹Ô¤¦É¬Í×¤¬¤¢¤ê¤Þ¤¹¡£
+¾Ü¤·¤¯¤Ï ¡¢[¤³¤Á¤é|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]¤Î MathJax ¤ÎÀßÄê¤Ë´Ø¤¹¤ëµ­½Ò¤ò¤´»²¾È²¼¤µ¤¤¡£
+
+! Markdown¥Ö¥í¥Ã¥¯Æâ¤Ç¤Îµ­½Ò
+
+ <!-- MathJax¤ÇÉ½¼¨¤¹¤ë¥Ú¡¼¥¸¤Ë°Ê²¼¤òÄÉ²Ã¤·¤Þ¤¹¡£CSP¤Ç¤Îµö²Ä¤âËº¤ì¤º¤Ë! -->
+ <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 {{markdown
-$$
-\begin{eqnarray}
-\alpha &<& \sum_{i=1}^n i \\
-          &=& \frac{n (n+1)}{2}
-\end{eqnarray}
-$$
-
-\[\frac{\sqrt{x^2+1}}{c_4} \]  
-
-\( \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \)
+<!-- MathJax¤ÇÉ½¼¨¤¹¤ë¥Ú¡¼¥¸¤Ë°Ê²¼¤òÄÉ²Ã¤·¤Þ¤¹¡£CSP¤Ç¤Îµö²Ä¤âËº¤ì¤º¤Ë! -->
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 }}
+
+¹ÔÆâ¤Ë\( \LaTeX \)¤òÉ½¼¨¤µ¤»¤ë¾ì¹ç
+
+ `\\(` ¤È `\\)` ¤Ç(¶õ¹Ô¤òÆþ¤ì¤º)¶´¤ß¤Þ¤¹¡£
+ Îã¤¨¤Ð¡¢ \\( \sin^{2} \theta + \cos^{2} \theta = 1 \\) ¤Î¤è¤¦¤Ë¡£
+
+{{markdown
+Îã¤¨¤Ð¡¢ \\( \sin^{2} \theta + \cos^{2} \theta = 1 \\) ¤Î¤è¤¦¤Ë¡£
+}}
+
+ `\\[` ¤È `\\]`¡¢¤Þ¤¿¤Ï¡¢`$$` ¤È `$$` ¤Ç(¶õ¹Ô¤òÆþ¤ì¤º)¶´¤à¾ì¹ç¡¢
+ 
+ °Ê²¼¤Î
+ \\[ \tan \theta = \frac{\sin \theta}{\cos \theta} \\] ¤ª¤è¤Ó
+ $$ \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} $$ ¤Î¿ô¼°¤Ï¡¢
+ £±¹Ô¤Çµ­½Ò¤·¤¿¤È¤·¤Æ¤âÆÈÎ©¤·¤¿¹Ô¤ËÉ½¼¨¤µ¤ì¤Þ¤¹¡£
+
+{{markdown
+°Ê²¼¤Î
+\\[ \tan \theta = \frac{\sin \theta}{\cos \theta} \\] ¤ª¤è¤Ó
+$$ \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} $$ ¤Î¿ô¼°¤Ï¡¢
+£±¹Ô¤Çµ­½Ò¤·¤¿¤È¤·¤Æ¤âÆÈÎ©¤·¤¿¹Ô¤ËÉ½¼¨¤µ¤ì¤Þ¤¹¡£
+}}
+
+ `\begin` `\end` ¤Ç¶´¤Þ¤ì¤Æ¤¤¤ì¤Ð¡¢`$$¡Ä$$, \\[¡Ä\\], \\(¡Ä\\) ` ¤ÏÉÔÍ×¤Ç¤¹¡£
+ ¤Þ¤¿¡¢LaTeX ¤Ç²þ¹Ô¤ò°ÕÌ£¤¹¤ë¡Ö\\¡×¤Ï¡Ö\\\\¡×¤ËÊÑ¹¹¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡£
+ 
+ \begin{eqnarray}
+ x & = & \sum_{i=1}^n i \\\\
+    & = & \frac{n (n+1)}{2} \\\\
+    & \leq & \alpha
+ \end{eqnarray}
+
+{{markdown
+\begin{eqnarray}
+x & = & \sum_{i=1}^n i \\\\
+   & = & \frac{n (n+1)}{2} \\\\
+   & \leq & \alpha
+\end{eqnarray}
+}}
+
+MathML¤Îµ­½Ò¤Ï¤½¤Î¤Þ¤Þ Markdown¥Ö¥í¥Ã¥¯Æâ¤ËÄ¥¤êÉÕ¤±¤Þ¤¹¡£
+
+ {{markdown
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+   <mfrac>
+     <mn>4</mn>
+     <mn>3</mn>
+   </mfrac>
+   <mi>&#x3C0;</mi>
+   <msup>
+     <mi>r</mi>
+     <mn>3</mn>
+   </msup>
+ </math>
+ }}
+
+{{markdown
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mfrac>
+    <mn>4</mn>
+    <mn>3</mn>
+  </mfrac>
+  <mi>&#x3C0;</mi>
+  <msup>
+    <mi>r</mi>
+    <mn>3</mn>
+  </msup>
+</math>
+}}
+
+FireFox¡¢¤Þ¤¿¤Ï¡¢[¤³¤Á¤é|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]¤Î MathJax ¤Ë´Ø¤¹¤ëÄÉ²ÃÀßÄê¤ò¹Ô¤Ã¤¿ Chrome ¤ä Edge ¤Ê¤É¤Ç¤Ï¡¢É½¼¨¤µ¤ì¤¿¿ô¼°¤ò±¦¥¯¥ê¥Ã¥¯¤·¡¢¡ÖCopy to Clipboard¡×¤òÁªÂò¤¹¤ë¤³¤È¤Ç MathML ¤Ë¤è¤ëµ­½Ò¤òÆÀ¤ë¤³¤È¤¬¤Ç¤­¤Þ¤¹¡£
+
+
+! Markdown¥Ö¥í¥Ã¥¯³°¤Ç¤Îµ­½Ò
+
+¾åµ­¤Î script ¥¿¥°¤¬ÄÉ²Ã¤µ¤ì¤¿¥Ú¡¼¥¸¤Ï¡¢Markdown¥Ö¥í¥Ã¥¯³°¤Ë¤ª¤¤¤Æ¤â¡ÊÀ°·ÁºÑ¥Æ¥­¥¹¥È¤ÎÈÏ°Ï¤ò½ü¤¤¤Æ¡Ë\( \LaTeX \)(¤Þ¤Ï¤¿MathML)¤¬Ëä¤á¹þ¤Þ¤ì¤ë¤è¤¦¤Ë¤Ê¤ê¤Þ¤¹¡£
+
+Markdown¥Ö¥í¥Ã¥¯Æâ¤È¤Î°ã¤¤¤Ï°Ê²¼¤Î¤È¤ª¤ê¤Ç¤¹¡£
+
+¹ÔÆâ¤ËÉ½¼¨¤µ¤»¤ë¾ì¹ç
+
+ - `\\(` ¤È `\\)` ¤ÎÂå¤ï¤ê¤Ë `\(` ¤È `\)` ¤ò»È¤¤¤Þ¤¹¡£¤¿¤À¤·¡¢¹ÔÆ¬¤Ç¤Ï»È¤¨¤Þ¤»¤ó¡£
+ Îã¤¨¤Ð¡¢\( a_2 x^2 + a_1 x + a_0 = \frac{1}{2} \) ¤Î¤è¤¦¤Ë»È¤¤¤Þ¤¹¡£
+
+Îã¤¨¤Ð¡¢\( a_2 x^2 + a_1 x + a_0 = \frac{1}{2} \) ¤Î¤è¤¦¤Ë»È¤¤¤Þ¤¹¡£
+
+ÆÈÎ©¤·¤¿¹Ô¤ËÉ½¼¨¤µ¤»¤ë¾ì¹ç
+
+ - `\\[` ¤È `\\]` ¤ÎÂå¤ï¤ê¤Ë `\[` ¤È `\]` ¤ò»È¤¤¤Þ¤¹¡£¤¿¤À¤·¡¢¹ÔÆ¬¤Ç¤Ï»È¤¨¤Þ¤»¤ó¡£
+ - `$$` ¤È `$$` ¤Ï¹ÔÆ¬¤Ç¤â»È¤¨¤Þ¤¹¡£
+ 
+ Îã¤¨¤Ð¡¢
+ $$ \frac{4}{3} \pi r^3 $$¤Î¤è¤¦¤Ë¡£
+ ¹ÔÆ¬°Ê³°¤Ç¤Ï \[ \frac{\sqrt{(x^{2}+1)}}{c_4} \] ¤Ê¤É¤Îµ­½Ò¤â²ÄÇ½¤Ç¤¹¡£
+
+Îã¤¨¤Ð¡¢
+$$ \frac{4}{3} \pi r^3 $$¤Î¤è¤¦¤Ë¡£
+¹ÔÆ¬°Ê³°¤Ç¤Ï \[ \frac{\sqrt{(x^{2}+1)}}{c_4} \] ¤Ê¤É¤Îµ­½Ò¤â²ÄÇ½¤Ç¤¹¡£
+
+ - `\begin`¡¢`\end` ¤Î½ñ¼°¤Ï `$$` ¤È `$$` ¤Ç¶´¤ß¡¢¹ÔÆ¬¤¬¥¹¥Ú¡¼¥¹¤ä `\` ¤Ë¤Ê¤é¤Ê¤¤¤è¤¦¤Ë¤·¤Þ¤¹¡£
+ - LaTeX ¤Ç²þ¹Ô¤ò°ÕÌ£¤¹¤ë¡Ö\\¡×¤ò¡Ö\\\\¡×¤ËÊÑ¹¹¤¹¤ëÉ¬Í×¤Ï¤¢¤ê¤Þ¤»¤ó¡£
+
+ $$ \begin{pmatrix}
+ a & b \\
+ c & d \end{pmatrix} $$
+
+$$ \begin{pmatrix}
+a & b \\
+c & d \end{pmatrix} $$
+
+¤Ê¤ª¡¢Markdown¥Ö¥í¥Ã¥¯³°¤Ç¤Î¤ß LaTeX ¤òÉ½¼¨¤µ¤»¤ë¤Î¤Ç¤¢¤ì¤Ð [tex2jax ¤Î¸å·Ñ|http://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dwiki%2F352] ¤ò¸¡Æ¤¤¹¤ë¤È¤¤¤¦ÊýË¡¤â¤¢¤ê¤Þ¤¹¡£
 
 //!!! ¤½¤ÎÂ¾¤Î Discount ³ÈÄ¥¹½Ê¸
 //
@@ -1391,9 +1496,8 @@ this block is set aside for printing via mkd_style().
 
 !!! ´ûÃÎ¤ÎÉÔ¶ñ¹ç
 
-* PDF¥×¥é¥°¥¤¥ó¤Ç¤Ï¡¢¥Þ¡¼¥¯¥À¥¦¥ó¥Ö¥í¥Ã¥¯Æâ¤Îµ­½Ò¤ÏÌµ»ë¤µ¤ì¤Þ¤¹¡£
-** Web¥Ö¥é¥¦¥¶¤Ê¤É¤Ç PDF ¤Ë¤´ÊÑ´¹²¼¤µ¤¤¡£
+! FSWiki¤ÎPDF¥×¥é¥°¥¤¥ó¤Ç¤Ï¡¢Markdown¥Ö¥í¥Ã¥¯Æâ¤Îµ­½Ò¤ÏÉ½¼¨¤µ¤ì¤Þ¤»¤ó¡£
 
-// °õºþ»þ¤ÎÀßÄêÎã¡§
-// ¡ÖPDF¤È¤·¤ÆÊÝÂ¸¡×¡¢¡Ö¥ì¥¤¥¢¥¦¥È:½Ä¡×¡¢¡Ö¤½¤ÎÂ¾¤ÎÀßÄê¡×¡¢¡Ö³ÈÂç/½Ì¾®(%): FireFox 80, Chrome/Edge 120¡×¡¢¡ÖÍ¾Çò: ¤Ê¤·¡×¡Ö ÇØ·Ê¥°¥é¥Õ¥£¥¯¥¹¡× 
-// ¤Ê¤ª¡¢FireFox 97 ¤ÇºîÀ®¤·¤¿ PDF ¤ò  Acrobat Reader DC 2021.011 64¥Ó¥Ã¥È¤Ç³«¤¯¤È¡¢¥ê¥ó¥¯¤Î¥Ú¡¼¥¸ÊÕ¤ê¤Ç¡ÖÊ¸½ñ¤òÆÉ¤ß¼è¤êÃæ¤ËÌäÂê¤¬È¯À¸¤·¤Þ¤·¤¿(14)¡£¡×¤¬É½¼¨¤µ¤ì¤ë¡£Æ±¤¸ PDF ¤¬¡¢Chrome/Edge ¤Ç¤ÏÀµ¾ï¤ËÉ½¼¨¤µ¤ì¤ë¡£ 
+* [²ò·èºö] PDF¤Ø¤ÏWeb¥Ö¥é¥¦¥¶¤Ê¤É¤òÍÑ¤¤¤Æ¤´ÊÑ´¹²¼¤µ¤¤¡£
+* [ÀßÄêÎã] °õºþ¤Ç¡ÖPDF¤È¤·¤ÆÊÝÂ¸¡×¡¢¡Ö¥ì¥¤¥¢¥¦¥È:½Ä¡×¤òÁªÂò¤·¡¢¡Ö¤½¤ÎÂ¾¤ÎÀßÄê¡×¤Ç¡Ö³ÈÂç/½Ì¾®(%)¡×¤ò  FireFox ¤Î¾ì¹ç¤Ï 80 ÊÕ¤ê, Chrome¤äEdge¤Î¾ì¹ç¤Ï 120 ÊÕ¤ê¡¢¡ÖÍ¾Çò: ¤Ê¤·¡×¤ËÀßÄê¤·¡¢¡Ö ÇØ·Ê¥°¥é¥Õ¥£¥¯¥¹¡×¤Ë¥Á¥§¥Ã¥¯¤òÆþ¤ì¤Þ¤¹¡£
+** ¤Ê¤ª¡¢FireFox 97 ¤ÇºîÀ®¤·¤¿ PDF ¤ò  Acrobat Reader DC 2021.011 64¥Ó¥Ã¥È¤Ç³«¤¯¤È¡¢¥ê¥ó¥¯¤Î¥Ú¡¼¥¸ÊÕ¤ê¤Ç¡ÖÊ¸½ñ¤òÆÉ¤ß¼è¤êÃæ¤ËÌäÂê¤¬È¯À¸¤·¤Þ¤·¤¿(14)¡£¡×¤¬É½¼¨¤µ¤ì¤Þ¤¹¡ÊChrome ¤ä Edge ¤Ç¤ÏÀµ¾ï¤ËÉ½¼¨¤µ¤ì¤Þ¤¹¡Ë¡£ 

@@ -12,7 +12,7 @@
 
 /*** To fit textarea width for edit with browser ***/
 textarea.edit {
-	width: 100%;
+	width: 100% !important;
 }
 
 /*** For plugin/markdown/Markdown.pm ***/
