@@ -1,14 +1,18 @@
 # FSWiki 用ダークテーマ kati_dark
 
 FSWiki に標準で含まれております kitta 氏の [kati](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dtheme%2F4) theme をダークに変換したものです。
-[Markdown Plugin や Content Security Policy (CSP) のための修正](https://kazkobara.github.io/kati_dark/docs/markdown/markdown_plugin_for_fswiki.html "https://kazkobara.github.io/kati_dark/docs/markdown/markdown_plugin_for_fswiki.html") も加えてます。
-
-動作や見た目は自分の使っている範囲でしか確認できていないのと、画像などのパーツは改良の余地がありますので、有志の方々に
-改良してもらえることを期待して(本体に取り込まれるまでは)こちらで公開してメンテナンスすることに致しました。
 
 ## スクリーンショット
 
-![スクリーンショット](./docs/screenshot.png)
+![スクリーンショット](./docs/screenshot.png "kati_dark screenshot")
+
+Markdown Plugin や Content Security Policy (CSP) のための修正も加えてます。
+以下の画像のように、Markdownブロック内外で、MathJax を用いて LaTeX と MathML を表示させる方法の検討も行っております。詳しくは[こちら](https://kazkobara.github.io/kati_dark/docs/markdown/markdown_plugin_for_fswiki.html "https://kazkobara.github.io/kati_dark/docs/markdown/markdown_plugin_for_fswiki.html")をご参照下さい。
+
+![markdown_screenshot](https://raw.githubusercontent.com/KazKobara/kati_dark/main/docs/markdown/markdown_screenshot_jp.png "Markdown Screenshot")
+
+動作や見た目は自分の使っている範囲でしか確認できていないのと、画像などのパーツは改良の余地がありますので、有志の方々に
+改良してもらえることを期待して(本体に取り込まれるまでは)こちらで公開してメンテナンスすることに致しました。
 
 ## 適用方法
 

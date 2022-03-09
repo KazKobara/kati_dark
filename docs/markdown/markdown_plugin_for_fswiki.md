@@ -75,7 +75,7 @@ cd dockerfile_fswiki_local
 
 ### FSWikiを使われていない場合
 
-- FSWiki やその Markdown Plugin 、MathJax による LaTeX (および MathML)表示などは、[ローカルユース用 Docker FSWiki]でも試すことができます。
+- FSWiki やその Markdown Plugin 、MathJax による LaTeX および MathML 表示などは、[ローカルユース用 Docker FSWiki]でも試すことができます。
   - デフォルトで CSP の設定なども有効になっております。
 
 ### FSWikiを使われている場合
