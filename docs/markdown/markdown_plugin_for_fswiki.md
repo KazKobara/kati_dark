@@ -80,6 +80,22 @@ cd dockerfile_fswiki_local
 
 ### FSWikiを使われている場合
 
+  1. [Help/Markdown (FSWiki版)]の raw ファイルをダウンロード
+
+        ```console
+        curl -O https://raw.githubusercontent.com/KazKobara/kati_dark/main/docs/markdown/Help%252FMarkdown.wiki
+        ```
+
+        > 注意:
+
+        - [Help/Markdown (FSWiki版)]をWebブラウザの画面からコピー＆ペーストすると、いくつかの改行が削除され FSWiki 上で意図した表示となりません。
+        - また、raw ファイルをWebブラウザの画面からコピー＆ペーストすると文字化けします。
+
+  1. ダウンロードした `Help%2FMarkdown.wiki` をFSWikiの `data` フォルダに置き、`log/pagelist.cache` に `Help/Markdown` を追加するか、`log/pagelist.cache` を一旦削除
+
+<!--
+以下の方法だと、後半の改行が削除されますので、FSWikiで意図した表示となりません。
+
   1. FSWiki の「新規」メニューボタンを押します。
   1. 現れるページ名入力用のテキストエリアに「Help/Markdown」を入力し「作成」ボタンを押します。
   1. 続いて現れる内容入力用のテキストエリアに[Help/Markdown (FSWiki版)]のテキストを貼り付けます。
@@ -88,10 +104,11 @@ cd dockerfile_fswiki_local
   1. 「プレビュー」（または「保存」）で閲覧します。
      - Markdown Plugin が入っていない状態では markdown block 部分は、FSWikiの構文で処理されます。
      > なお、ｌFSWikiの ./data フォルダに Help%2FMarkdown.wiki を直接置くだけでは「一覧」に表示されません。 ./log/pagelist.cache に Help/Markdown を追加するか、./log/pagelist.cache を一旦削除すると表示されるようになります。
+-->
 
 ## [Markdown plugin]のインストール方法
 
-1. FSWikiの `./plugin/` フォルダに移動し、`./plugin/markdown/` の下に `Install.pm` と `Markdown.pm` を配置します。具体的には、
+1. FSWikiの `plugin/` フォルダに移動し、`plugin/markdown/` の下に `Install.pm` と `Markdown.pm` を配置します。具体的には、
 
     - [markdown_20120714.zip] を展開（[gist版はこちら](https://gist.github.com/ctyo/3106157 "https://gist.github.com/ctyo/3106157")）
 
@@ -211,28 +228,29 @@ cd dockerfile_fswiki_local
 ## MathJax で LaTeX および MathML を表示させる設定
 
 1. Discount 2.2.3以降を用いている Discount.pm 中のランタイムフラグに MKD_LATEX() を追加
+    - [pull request](https://github.com/sekimura/text-markdown-discount/pull/25) が取り込まれるまでは[こちら](https://github.com/KazKobara/text-markdown-discount/blob/discount-2.2.7/lib/Text/Markdown/Discount.pm)をご参照下さい。
 1. CSP（およびスタイルシート）の設定
-    1. FireFox 97, Chrome 99, Edge 99 共通の設定 ([参考](https://github.com/KazKobara/dockerfile_fswiki_local/blob/main/data/httpd-security-fswiki-local.conf ))
+    1. Firefox, Chrome 99, Edge 99 共通の設定 ([参考](https://github.com/KazKobara/dockerfile_fswiki_local/blob/main/data/httpd-security-fswiki-local.conf )) <!--Firefox は 97,98 で確認-->
         - script-src に `https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js` を追加
         - font-src に `https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/` を追加
     1. Chrome 99, Edge 99 での追加設定
         - style-src に `https://cdn.jsdelivr.net/npm/mathjax@3/es5/` と一時的に `'unsafe-inline'` を追加
+            - この時点で、MathJaxにより表示された数式を右クリックし「Copy to Clipboard」を選択すると MathML 形式(または LaTeX 形式)の記述を得ることができます。
+
+                <!-- ![mathjax_clip](./mathjax_clip.png "to clipboard") -->
+                ![mathjax_clip](https://raw.githubusercontent.com/KazKobara/kati_dark/main/docs/markdown/mathjax_clip.png "to clipboard")
+
         - Chrome (またはEdge)の画面を右クリックし「名前を付けて保存」->「ウェブページ、完全」でページをファイルに保存し、htm ファイルに追加されている `<style>`と`</style>` に挟まれている範囲を、そのページが読み込むスタイルシートに追加
             - その際、`.CtxtMenu`で始まるクラスの追加は不要（MathJax メニューは以下の `'unsafe-inline'` の削除により使えなくなるか使いづらいものになるため）
         - style-src の `'unsafe-inline'` (および `https://cdn.jsdelivr.net/npm/mathjax@3/es5/`) を削除し、Webサーバを再起動するなどして設定を反映
         - 新たな LaTeX 表現を追加する度に上記の追加設定を繰り返します。
             > なお、信頼できるエンティティしか使えない環境であれば、上記追加設定の一ポツのみを行うことを検討するという方法もあります。
-    1. FireFox 97, Chrome 99, Edge 99 共通の設定
+    1. Firefox, Chrome 99, Edge 99 共通の設定
         - LaTeX(まはたMathML)を埋込を含むページに以下を追加
 
             ```html
             <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             ```
-
-    - 表示された数式の右クリックが有効な環境(FireFox 97など)では、「Copy to Clipboard」を選択することでMathML 形式を得ることができます。
-
-        <!-- ![mathjax_clip](./mathjax_clip.png "to clipboard") -->
-        ![mathjax_clip](https://raw.githubusercontent.com/KazKobara/kati_dark/main/docs/markdown/mathjax_clip.png "to clipboard")
 
     > 注意:
       - 設定の変更をブラウザ表示に反映させるためには、ブラウザの閲覧履歴を一旦削除する必要がある場合があります。
@@ -251,7 +269,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"
 - MathJax の種類には、tex-mml-chtml.js 以外に SVG で出力させる tex-mml-svg.js tex-svg.js tex-svg-full.js などもあります。
   - しかしながら、MathJax の種類および version、ならびにブラウザとの組み合わせにより以下の表に示すような不具合があります。
 
-MathJax の version と種類 | FireFox (ver.) | Chrome (ver.) | Edge (ver.) | 備考またはNGの説明
+MathJax の version と種類 | Firefox (ver.) | Chrome (ver.) | Edge (ver.) | 備考またはNGの説明
 ---|---|---|---|---
 3.2.0 tex-mml-chtml.js tex-chtml-full.js | OK (v97) | OK (v99) | OK (v99) | ChromeとEdgeでは前述のスタイルの追加が必要
 3.2.0 tex-mml-svg.js tex-svg.js tex-svg-full.js | NG (v97) | NG (v99) | NG (v99) | SVGとHTMLの両方が表示されます。

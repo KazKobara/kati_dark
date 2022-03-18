@@ -1,43 +1,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- This HTML file requires "style-src 'unsafe-inline'" since the MathJax style is saved in the 'style=' form of mjx-containers while online web pages do not require it (as long as CSS provides necessary styles on Chrome or Edge). -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js;  style-src 'self' 'unsafe-inline';  font-src 'self' https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/;">
-    
-    
-    
-    
-    
-    <meta http-equiv="Content-Style-Type" content="text/css">
-    
-
-    
-    
-      <link rel="stylesheet" type="text/css" href="../../kati_dark.css">
-<title>Help/Markdown - FreeStyleWiki</title>
-
-
-
+<html><head>
+  <!-- This HTML file requires "style-src 'unsafe-inline'" since the MathJax style is saved in the 'style=' form of mjx-containers while online web pages do not require it (as long as CSS provides necessary styles on Chrome or Edge). -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js;  style-src 'self' 'unsafe-inline';  font-src 'self' https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/;">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link rel="stylesheet" type="text/css" href="./../../kati_dark.css">
+  <title>Help/Markdown - FreeStyleWiki</title>
 </head>
-  <body>
-
-
+<body>
 <h1><a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?word=Help%2FMarkdown&amp;action=SEARCH">Help/Markdown</a></h1>
-  
-  
-    <div class="main">
-  
-  
-  
-    
-  
-  
+<div class="main">
   <div class="day">
     <div class="body">
       <div class="section">
         <h2><a name="p0"> </a><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417">Markdown plugin</a></h2>
-<h3><a name="p1"><span class="sanchor">&nbsp;</span>設定の確認</a></h3>
+<h3><a name="p1"><span class="sanchor">&nbsp;</span> 設定の確認</a></h3>
 <ul>
-<li> この <a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=Help%2FMarkdown" class="wikipage">Help/Markdown</a> は<strong>2022年3月9日版</strong>です。<ul>
+<li> この <a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=Help%2FMarkdown" class="wikipage">Help/Markdown</a> は<strong>2022年3月18日版</strong>です。<ul>
 <li> 最新版は（FSWki本体に取り込まれるまでは）<a href="https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki">こちら</a>からご入手ください。</li>
 </ul>
 </li>
@@ -123,7 +102,7 @@
 <td colspan="1"><a href="https://metacpan.org/pod/Text::Markdown::Discount">Text::Markdown::Discount</a> 0.14 (<a href="https://github.com/sekimura/text-markdown-discount/pull/25">pull request中</a>)</td>
 <td colspan="1">Discount 2.2.7 (v2maint 34a8ebb)</td>
 <td colspan="1">--github-checkbox=input</td>
-<td colspan="1">MKD_NOHEADER MKD_NOPANTS MKD_FENCEDCODE MKD_DLEXTRA </td>
+<td colspan="1">MKD_NOHEADER MKD_NOPANTS MKD_FENCEDCODE MKD_DLEXTRA MKD_SAFELINK MKD_LATEX</td>
 <td colspan="1">Discountのversionとオプション/フラグ設定の関係は、<a href="https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md">こちら</a>の「Markdownの拡張構文を有効にする方法の違い」をご参照下さい。</td>
 </tr>
 </tbody></table>
@@ -133,7 +112,7 @@
 }}
 </pre>
 <p>二重の閉じ波括弧「}}」の直後は改行でなければなりません。スペースが入っているなど、改行でない場合はMarkdownブロックが続いていると解釈されます。</p>
-<h2><a name="p4">見出し</a></h2>
+<h2><a name="p4"> 見出し</a></h2>
 <pre>等号下線題目
 ========
 
@@ -205,7 +184,7 @@ g^x、g^x1Y2、g^(サーカムフレックス上付き/半角英数字以外が�
 </pre>
 <p>==二重等号挟みハイライト== *1,*2,*3,*4 (<a href="https://github.com/Orc/discount/pull/238">こちらの pull request</a> で検討と対応が進んでいるようです。)</p>
 <h3><a name="p6"><span class="sanchor">&nbsp;</span> テキスト装飾 スタイルの利用</a></h3>
-<h4><a name="p7">推奨</a></h4>
+<h4><a name="p7"> 推奨</a></h4>
 <p>1. 利用する定義（例えば以下など）をスタイルシートに入れます。</p>
 <pre>/* Cascading Style Sheets used in Markdown block of FSWiki */
 orange {color:orange;}    /* type selector */
@@ -229,7 +208,7 @@ orange {color:orange;}    /* type selector */
 <li>classセレクタによる<span type="text/css" class="darkhighlight">ハイライト</span></li>
 </ul>
 
-<h4><a name="p8">非推奨</a></h4>
+<h4><a name="p8"> 非推奨</a></h4>
 <p>HTML5ではサポートされておりません。</p>
 <pre>&lt;font color="Red"&gt;Red&lt;/font&gt;,
 &lt;font color="Orange"&gt;Orange&lt;/font&gt;,
@@ -248,7 +227,7 @@ orange {color:orange;}    /* type selector */
 <font color="Blue">Blue</font>,
 <font color="Indigo">Indigo</font>,
 <font color="Violet">Violet</font></p>
-<h4><a name="p9">非推奨</a></h4>
+<h4><a name="p9"> 非推奨</a></h4>
 <ul>
 <li> 以下のようなインラインスタイルやインラインで定義されたスタイルは、（WebサーバのCSPを無効にするか、CSPの style-src に 'unsafe-inline' を設定することにより有効にはなるのですが）セキュリティ上<strong>非推奨</strong>です！！<ul>
 <li> そのような設定を行っている場合には、CSPなどを有効にし、その設定から 'unsafe-inline' を削除してください。</li>
@@ -280,7 +259,7 @@ orange {color:orange;}    /* type selector */
 <pre>&amp;copy; &amp;reg; &amp;trade; &amp;Delta; &amp;pi; &amp;euro; &amp;rArr; &amp;spades; &amp;clubs; &amp;hearts; &amp;diams; &amp;sum; &amp;radic; &amp;infin;
 </pre>
 <p>&#169; &#174; &#8482; Δ π &#8364; ⇒ &#9824; &#9827; &#9829; &#9830; ∑ √</p>
-<h3><a name="p11"><span class="sanchor">&nbsp;</span>実体参照符号への自動変換</a></h3>
+<h3><a name="p11"><span class="sanchor">&nbsp;</span> 実体参照符号への自動変換</a></h3>
 <pre>「&amp;」と（後ろに&gt;が無い）「&lt;」は、それぞれ「&amp;amp;」と「&amp;lt;」に変換されます。
 &gt;行頭の「&gt;」はMarkdownの引用構文のため`&lt;blockquote&gt;&lt;/blockquote&gt;`に変換されます。
  行頭以外でも「&gt;」は「&amp;gt;」には変換されません。
@@ -408,7 +387,7 @@ z. 項目2
 </ol>
 
 <h3><a name="p22"><span class="sanchor">&nbsp;</span> リスト間に空行が入る場合の不具合</a></h3>
-<p><a href="#p2" class="wikipage">*3</a>の環境（<a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a>の環境では未確認）では、以下のように項目と項目との間に空行が入ると</p>
+<p><a href="#p2" class="wikipage">*3</a><a href="#p2" class="wikipage">*4</a>の環境（<a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a>の環境では未確認）では、以下のように項目と項目との間に空行が入ると</p>
 <pre>{{markdown
 10. I
 20. II
@@ -423,7 +402,7 @@ z. 項目2
 &lt;li&gt;&lt;p&gt; III&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt; IV&lt;/li&gt;
 </pre>
-<p>そのためスタイルシートで div.section p などの設定を行っていた場合、それが空行の前後の項目にも反映されその項目が他と異なって表示されます。この問題は、div.section li p を設定することで div.section p の設定を元に戻すことにより解消します。</p>
+<p>そのためスタイルシートで div.section p などの設定を行っていた場合、それが空行の前後の項目にも反映されるため、その項目が他と異なって表示されます。この問題は、div.section li p を設定することで div.section p の設定を元に戻すことにより解消できます。</p>
 <ol>
 <li>I</li>
 <li><p>II</p></li>
@@ -477,7 +456,7 @@ z. 項目2
 <p>必要なスペース幅は環境依存のようです。</p>
 <ul>
 <li> <a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a>の環境では２階層目は1〜4スペース、３層目は5〜8スペース、i層目は4(i-1)-3〜4(i-1)スペースインデント。</li>
-<li> <a href="#p2" class="wikipage">*3</a>の環境では1階層目は0〜3スペース、2層目は4〜7スペース、i層目は4i-4〜4i-1スペースインデント。</li>
+<li> <a href="#p2" class="wikipage">*3</a><a href="#p2" class="wikipage">*4</a>の環境では1階層目は0〜3スペース、2層目は4〜7スペース、i層目は4i-4〜4i-1スペースインデント。</li>
 </ul>
 <pre>- 0スペースインデント
  - 1スペースインデント
@@ -610,7 +589,7 @@ z. 項目2
 </ol>
 
 <h2><a name="p27"> 混合リスト</a></h2>
-<p><a href="#p2" class="wikipage">*3</a>の環境では、2番目以降の項目の型は1番目の項目の型と同じになります。（<a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a>の環境では未確認）</p>
+<p><a href="#p2" class="wikipage">*3</a><a href="#p2" class="wikipage">*4</a>の環境では、2番目以降の項目の型は1番目の項目の型と同じになります。（<a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a>の環境では未確認）</p>
 <pre>{{markdown
 - 順序無し項目
 1. 順序有り項目
@@ -770,7 +749,7 @@ z. 項目2
 </ul>
 
 <h2><a name="p30"> 説明 (定義リスト)</a></h2>
-<h3><a name="p31"><span class="sanchor">&nbsp;</span>行頭コロンスペース定義リスト Discount 2.0.4/PHP 拡張構文 </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
+<h3><a name="p31"><span class="sanchor">&nbsp;</span> 行頭コロンスペース定義リスト Discount 2.0.4/PHP 拡張構文 </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
 <pre>項目
 : 説明文。コロンの後ろにはスペースが必要です。
 </pre>
@@ -1070,8 +1049,8 @@ _    _		_
 <pre>&lt;th type="text/css" class="text-left"&gt; 左寄せ列 &lt;/th&gt;
 &lt;th type="text/css" class="text-center"&gt; 中央寄せ列 &lt;/th&gt;
 &lt;th type="text/css" class="text-right"&gt; 右寄せ列 &lt;/th&gt;
-</pre>
-<pre>&lt;td type="text/css" class="text-left"&gt; 1-1 &lt;/td&gt;
+
+&lt;td type="text/css" class="text-left"&gt; 1-1 &lt;/td&gt;
 &lt;td type="text/css" class="text-center"&gt;  1-2  &lt;/td&gt;
 &lt;td type="text/css" class="text-right"&gt;    1-3 &lt;/td&gt;
 </pre>
@@ -1101,7 +1080,7 @@ Markdownブロック内の文章：
 挟まれていない場合「<code>鍵括弧内のバッククオートは表示されません。</code>」、<br>
 挟まれている場合<code>「```鍵括弧内のバッククオートは表示されます。```」</code>。</p>
 <h3><a name="p52"><span class="sanchor">&nbsp;</span> コードブロック(三重バッククオート上下挟み) </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
-<p><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a>の環境では、改行は半角スペースに変換され、文書中のコードとして解釈されます。</p>
+<p><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a>の環境では、文書中（インライン）のコードとして解釈され、改行は半角スペースに変換されます。</p>
 <pre>{{markdown
 コードブロック外では「&amp;copy; &amp;lt; _イタリック_」は変換されます。
 
@@ -1134,6 +1113,7 @@ echo "２行目。コードブロック内に空行を含む場合でも「&amp;
 echo "２行目。コードブロック内に空行を含む場合でも「&amp;copy; &amp;lt; _イタリック_」は変換されてはなりません。"
 </code></pre>
 <h3><a name="p53"><span class="sanchor">&nbsp;</span> コードブロック(三重チルダ上下挟み) </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
+<p>開始の三重チルダの前に空行が入っていないと、文書中（インライン）と解釈され二重チルダ挟み打消しになります。</p>
 <pre>{{markdown
 コードブロック外では「&amp;copy; &amp;lt; _イタリック_」は変換されます。
 
@@ -1168,7 +1148,7 @@ echo "2行目。&lt;/code&gt;タグ後に改行がある場合。"
 </code>
 </pre>
 
-<p>そのため、以下のように記述すると囲み内の最初と最後の改行は行われなくなります。</p>
+<p>以下のように記述すると囲み内の最初と最後の改行は行われなくなります。</p>
 <pre>{{markdown
 &lt;pre&gt;
 &lt;code&gt;echo "1行目。&amp;lt;code&amp;gt;タグ後に改行がある場合。"
@@ -1183,6 +1163,7 @@ echo "2行目。&lt;/code&gt;タグ後に改行がある場合。"
 </code></pre>
 
 <h3><a name="p55"><span class="sanchor">&nbsp;</span> コードブロック（4スペース以上のインデント）</a></h3>
+<p>空行に続く4スペース以上のインデントはコードブロックになります。</p>
 <pre>{{markdown
 コードブロック外では「&amp;copy; &amp;lt; _イタリック_」は変換されます。
 
@@ -1279,44 +1260,55 @@ echo "入れ子４段目"
 <p>本構文を利用するには、まず Discount 2.2.3以降を使用している Discount.pm 中のランタイムフラグに MKD_LATEX() を追加します。</p>
 <pre>これにより、$$…$$、\[…\]、\(…\) のいずれかで挟まれている中身は
 （前述の実体参照符号化を除いて）そのまま出力されるようになります。
-ただし、以下の注意が必要です。
-・間に空行を入れられません。
-・Markdownブロック中に記述する際には \\[…\\] または \\(…\\)）とし、
-   LaTeXで改行を意味する「\\」は「\\\\」に変更する必要があります。
+</pre>
+<p>ただし、以下の注意が必要です。</p>
+<pre>・間に空行を入れられません。
+・Markdownブロック中の「\」は「\\」にエスケープする必要があります。具体的には、
+   ・\[…\]、\(…\) は \\[…\\] または \\(…\\)）とし、
+   ・LaTeXで改行を意味する「\\」は「\\\\」に変更する必要があります。
 </pre>
 <p>さらに、LaTeX として出力するためには、 <a href="https://github.com/mathjax/MathJax/">MathJax</a> などの設定を行う必要があります。詳しくは 、<a href="https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md">こちら</a>の MathJax の設定に関する記述をご参照下さい。</p>
 <h4><a name="p59"> Markdownブロック内での記述</a></h4>
-<pre>&lt;!-- MathJaxで表示するページに以下を追加します。CSPでの許可も忘れずに! --&gt;
+<pre>{{markdown
+&lt;!-- MathJaxで表示するページに以下を追加します。CSPでのURLの許可も必要になります。 --&gt;
 &lt;script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;&lt;/script&gt;
+}}
 </pre>
 <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-<p>行内に<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="1" style="font-size: 124.7%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true" style="width: 2.781em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-mspace style="margin-right: -0.325em;"></mjx-mspace><mjx-mpadded><mjx-block style="margin: 0.21em 0px 0px; position: relative;"><mjx-rbox style="left: 0px; top: -0.21em;"><mjx-texatom texclass="ORD"><mjx-mstyle size="s"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-mstyle></mjx-texatom></mjx-rbox></mjx-block></mjx-mpadded><mjx-mspace style="margin-right: -0.17em;"></mjx-mspace><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-mspace style="margin-right: -0.14em;"></mjx-mspace><mjx-mpadded><mjx-block style="margin: -0.216em 0px 0.215em; position: relative;"><mjx-rbox style="left: 0px; top: 0.215em;"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D438 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-rbox></mjx-block></mjx-mpadded><mjx-mspace style="margin-right: -0.115em;"></mjx-mspace><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>L</mi><mspace width="-.325em"></mspace><mpadded height="+.21em" depth="-.21em" voffset="+.21em"><mrow data-mjx-texclass="ORD"><mstyle displaystyle="false" scriptlevel="1"><mrow data-mjx-texclass="ORD"><mi>A</mi></mrow></mstyle></mrow></mpadded><mspace width="-.17em"></mspace><mi>T</mi><mspace width="-.14em"></mspace><mpadded height="-.5ex" depth="+.5ex" voffset="-.5ex"><mrow data-mjx-texclass="ORD"><mi>E</mi></mrow></mpadded><mspace width="-.115em"></mspace><mi>X</mi></math></mjx-assistive-mml></mjx-container>を表示させる場合</p>
+<p>行内に LaTeX を表示させる場合</p>
 <pre>`\\(` と `\\)` で(空行を入れず)挟みます。
-例えば、 \\( \sin^{2} \theta + \cos^{2} \theta = 1 \\) のように。
 </pre>
-<p>例えば、 <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="2" style="font-size: 124.7%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-n"><mjx-c class="mjx-c73"></mjx-c><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c6E"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.396em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-n"><mjx-c class="mjx-c63"></mjx-c><mjx-c class="mjx-c6F"></mjx-c><mjx-c class="mjx-c73"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>sin</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo data-mjx-texclass="NONE">&#8289;</mo><mi>θ</mi><mo>+</mo><msup><mi>cos</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo data-mjx-texclass="NONE">&#8289;</mo><mi>θ</mi><mo>=</mo><mn>1</mn></math></mjx-assistive-mml></mjx-container> のように。</p>
+<pre>{{markdown
+例えば、 \\( \sin^{2} \theta + \cos^{2} \theta = 1 \\) のように。
+}}
+</pre>
+<p>例えば、 <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="1" style="font-size: 124.7%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-n"><mjx-c class="mjx-c73"></mjx-c><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c6E"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.396em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-n"><mjx-c class="mjx-c63"></mjx-c><mjx-c class="mjx-c6F"></mjx-c><mjx-c class="mjx-c73"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>sin</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo data-mjx-texclass="NONE">&#8289;</mo><mi>θ</mi><mo>+</mo><msup><mi>cos</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo data-mjx-texclass="NONE">&#8289;</mo><mi>θ</mi><mo>=</mo><mn>1</mn></math></mjx-assistive-mml></mjx-container> のように。</p>
 <pre>`\\[` と `\\]`、または、`$$` と `$$` で(空行を入れず)挟む場合、
-
-以下の
+</pre>
+<pre>{{markdown
+以下のように
 \\[ \tan \theta = \frac{\sin \theta}{\cos \theta} \\] および
 $$ \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} $$ の数式は、
 １行で記述したとしても独立した行に表示されます。
+}}
 </pre>
-<p>以下の
-<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="3" style="font-size: 124.7%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mi class="mjx-n"><mjx-c class="mjx-c74"></mjx-c><mjx-c class="mjx-c61"></mjx-c><mjx-c class="mjx-c6E"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mfrac space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow><mjx-mi class="mjx-n"><mjx-c class="mjx-c73"></mjx-c><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c6E"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow><mjx-mi class="mjx-n"><mjx-c class="mjx-c63"></mjx-c><mjx-c class="mjx-c6F"></mjx-c><mjx-c class="mjx-c73"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>tan</mi><mo data-mjx-texclass="NONE">&#8289;</mo><mi>θ</mi><mo>=</mo><mfrac><mrow><mi>sin</mi><mo data-mjx-texclass="NONE">&#8289;</mo><mi>θ</mi></mrow><mrow><mi>cos</mi><mo data-mjx-texclass="NONE">&#8289;</mo><mi>θ</mi></mrow></mfrac></math></mjx-assistive-mml></mjx-container> および
-<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="4" style="font-size: 124.7%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-munder><mjx-row><mjx-base style="padding-left: 0.039em;"><mjx-mo class="mjx-n"><mjx-c class="mjx-c6C"></mjx-c><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c6D"></mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.167em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c210E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-texatom></mjx-under></mjx-row></mjx-munder><mjx-mfrac space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c210E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mi class="mjx-i"><mjx-c class="mjx-c210E TEX-I"></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><munder><mo data-mjx-texclass="OP" movablelimits="true">lim</mo><mrow data-mjx-texclass="ORD"><mi>h</mi><mo accent="false" stretchy="false">→</mo><mn>0</mn></mrow></munder><mfrac><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>−</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mi>h</mi></mfrac></math></mjx-assistive-mml></mjx-container> の数式は、
+<p>以下のように
+<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="2" style="font-size: 124.7%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mi class="mjx-n"><mjx-c class="mjx-c74"></mjx-c><mjx-c class="mjx-c61"></mjx-c><mjx-c class="mjx-c6E"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mfrac space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow><mjx-mi class="mjx-n"><mjx-c class="mjx-c73"></mjx-c><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c6E"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow><mjx-mi class="mjx-n"><mjx-c class="mjx-c63"></mjx-c><mjx-c class="mjx-c6F"></mjx-c><mjx-c class="mjx-c73"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>tan</mi><mo data-mjx-texclass="NONE">&#8289;</mo><mi>θ</mi><mo>=</mo><mfrac><mrow><mi>sin</mi><mo data-mjx-texclass="NONE">&#8289;</mo><mi>θ</mi></mrow><mrow><mi>cos</mi><mo data-mjx-texclass="NONE">&#8289;</mo><mi>θ</mi></mrow></mfrac></math></mjx-assistive-mml></mjx-container> および
+<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="3" style="font-size: 124.7%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-munder><mjx-row><mjx-base style="padding-left: 0.039em;"><mjx-mo class="mjx-n"><mjx-c class="mjx-c6C"></mjx-c><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c6D"></mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.167em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c210E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-texatom></mjx-under></mjx-row></mjx-munder><mjx-mfrac space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c210E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mi class="mjx-i"><mjx-c class="mjx-c210E TEX-I"></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><munder><mo data-mjx-texclass="OP" movablelimits="true">lim</mo><mrow data-mjx-texclass="ORD"><mi>h</mi><mo accent="false" stretchy="false">→</mo><mn>0</mn></mrow></munder><mfrac><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>−</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mi>h</mi></mfrac></math></mjx-assistive-mml></mjx-container> の数式は、
 １行で記述したとしても独立した行に表示されます。</p>
 <pre>`\begin` `\end` で挟まれていれば、`$$…$$, \\[…\\], \\(…\\) ` は不要です。
 また、LaTeX で改行を意味する「\\」は「\\\\」に変更する必要があります。
-
+</pre>
+<pre>{{markdown
 \begin{eqnarray}
 x &amp; = &amp; \sum_{i=1}^n i \\\\
    &amp; = &amp; \frac{n (n+1)}{2} \\\\
    &amp; \leq &amp; \alpha
 \end{eqnarray}
+}}
 </pre>
-<p><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="5" style="font-size: 124.7%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mtable style="min-width: 6.046em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-bottom: 0.15em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0px; padding-right: 0.139em; padding-bottom: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0.139em; padding-bottom: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-munderover space="2"><mjx-over style="padding-bottom: 0.192em; padding-left: 0.51em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-over><mjx-box><mjx-munder><mjx-row><mjx-base><mjx-mo class="mjx-lop"><mjx-c class="mjx-c2211 TEX-S2"></mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.167em; padding-left: 0.148em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-under></mjx-row></mjx-munder></mjx-box></mjx-munderover><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-top: 0.15em; padding-bottom: 0.15em;"><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding: 0.15em 0.139em 0.15em 0px;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0.139em; padding-top: 0.15em; padding-bottom: 0.15em;"><mjx-mfrac><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-top: 0.15em;"><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0px; padding-right: 0.139em; padding-top: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2264"></mjx-c></mjx-mo><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0.139em; padding-top: 0.15em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mtable displaystyle="true" columnalign="right center left" columnspacing="0em 0.278em" rowspacing="3pt"><mtr><mtd><mi>x</mi></mtd><mtd><mi></mi><mo>=</mo></mtd><mtd><mi></mi><munderover><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>i</mi></mtd></mtr><mtr><mtd></mtd><mtd><mi></mi><mo>=</mo></mtd><mtd><mfrac><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></mfrac></mtd></mtr><mtr><mtd></mtd><mtd><mi></mi><mo>&#8804;</mo></mtd><mtd><mi>α</mi></mtd></mtr></mtable></math></mjx-assistive-mml></mjx-container></p>
+<p><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="4" style="font-size: 124.7%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mtable style="min-width: 6.046em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-bottom: 0.15em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0px; padding-right: 0.139em; padding-bottom: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0.139em; padding-bottom: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-munderover space="2"><mjx-over style="padding-bottom: 0.192em; padding-left: 0.51em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-over><mjx-box><mjx-munder><mjx-row><mjx-base><mjx-mo class="mjx-lop"><mjx-c class="mjx-c2211 TEX-S2"></mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.167em; padding-left: 0.148em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-under></mjx-row></mjx-munder></mjx-box></mjx-munderover><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-top: 0.15em; padding-bottom: 0.15em;"><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding: 0.15em 0.139em 0.15em 0px;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0.139em; padding-top: 0.15em; padding-bottom: 0.15em;"><mjx-mfrac><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-top: 0.15em;"><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0px; padding-right: 0.139em; padding-top: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2264"></mjx-c></mjx-mo><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0.139em; padding-top: 0.15em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FC TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mtable displaystyle="true" columnalign="right center left" columnspacing="0em 0.278em" rowspacing="3pt"><mtr><mtd><mi>x</mi></mtd><mtd><mi></mi><mo>=</mo></mtd><mtd><mi></mi><munderover><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>i</mi></mtd></mtr><mtr><mtd></mtd><mtd><mi></mi><mo>=</mo></mtd><mtd><mfrac><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></mfrac></mtd></mtr><mtr><mtd></mtd><mtd><mi></mi><mo>&#8804;</mo></mtd><mtd><mi>α</mi></mtd></mtr></mtable></math></mjx-assistive-mml></mjx-container></p>
 <p>MathMLの記述はそのまま Markdownブロック内に張り付けます。</p>
 <pre>{{markdown
 &lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="block"&gt;
@@ -1333,24 +1325,25 @@ x &amp; = &amp; \sum_{i=1}^n i \\\\
 }}
 </pre>
 <p><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="0" style="font-size: 124.7%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mfrac><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70B TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>π</mi><msup><mi>r</mi><mn>3</mn></msup></math></mjx-assistive-mml></mjx-container></p>
-<p>FireFox、または、<a href="https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md">こちら</a>の MathJax に関する追加設定を行った Chrome や Edge などでは、表示された数式を右クリックし、「Copy to Clipboard」を選択することで MathML による記述を得ることができます。</p>
+<p>MathJaxで表示された数式から、それに対応する MathML や LaTeX での記述を得る方法につきましては、<a href="https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md">こちら</a>などをご参照下さい。</p>
 <h4><a name="p60"> Markdownブロック外での記述</a></h4>
-<p>上記の script タグが追加されたページは、Markdownブロック外においても（整形済テキストの範囲を除いて）<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="6" style="font-size: 124.7%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true" style="width: 2.781em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-mspace style="margin-right: -0.325em;"></mjx-mspace><mjx-mpadded><mjx-block style="margin: 0.21em 0px 0px; position: relative;"><mjx-rbox style="left: 0px; top: -0.21em;"><mjx-texatom texclass="ORD"><mjx-mstyle size="s"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-mstyle></mjx-texatom></mjx-rbox></mjx-block></mjx-mpadded><mjx-mspace style="margin-right: -0.17em;"></mjx-mspace><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-mspace style="margin-right: -0.14em;"></mjx-mspace><mjx-mpadded><mjx-block style="margin: -0.216em 0px 0.215em; position: relative;"><mjx-rbox style="left: 0px; top: 0.215em;"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D438 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-rbox></mjx-block></mjx-mpadded><mjx-mspace style="margin-right: -0.115em;"></mjx-mspace><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>L</mi><mspace width="-.325em"></mspace><mpadded height="+.21em" depth="-.21em" voffset="+.21em"><mrow data-mjx-texclass="ORD"><mstyle displaystyle="false" scriptlevel="1"><mrow data-mjx-texclass="ORD"><mi>A</mi></mrow></mstyle></mrow></mpadded><mspace width="-.17em"></mspace><mi>T</mi><mspace width="-.14em"></mspace><mpadded height="-.5ex" depth="+.5ex" voffset="-.5ex"><mrow data-mjx-texclass="ORD"><mi>E</mi></mrow></mpadded><mspace width="-.115em"></mspace><mi>X</mi></math></mjx-assistive-mml></mjx-container>(まはたMathML)が埋め込まれるようになります。</p>
+<p>上記の script タグが追加されたページは、Markdownブロック外においても（整形済テキストの範囲を除いて）<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="5" style="font-size: 124.7%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true" style="width: 2.781em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-mspace style="margin-right: -0.325em;"></mjx-mspace><mjx-mpadded><mjx-block style="margin: 0.21em 0px 0px; position: relative;"><mjx-rbox style="left: 0px; top: -0.21em;"><mjx-texatom texclass="ORD"><mjx-mstyle size="s"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-mstyle></mjx-texatom></mjx-rbox></mjx-block></mjx-mpadded><mjx-mspace style="margin-right: -0.17em;"></mjx-mspace><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-mspace style="margin-right: -0.14em;"></mjx-mspace><mjx-mpadded><mjx-block style="margin: -0.216em 0px 0.215em; position: relative;"><mjx-rbox style="left: 0px; top: 0.215em;"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D438 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-rbox></mjx-block></mjx-mpadded><mjx-mspace style="margin-right: -0.115em;"></mjx-mspace><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>L</mi><mspace width="-.325em"></mspace><mpadded height="+.21em" depth="-.21em" voffset="+.21em"><mrow data-mjx-texclass="ORD"><mstyle displaystyle="false" scriptlevel="1"><mrow data-mjx-texclass="ORD"><mi>A</mi></mrow></mstyle></mrow></mpadded><mspace width="-.17em"></mspace><mi>T</mi><mspace width="-.14em"></mspace><mpadded height="-.5ex" depth="+.5ex" voffset="-.5ex"><mrow data-mjx-texclass="ORD"><mi>E</mi></mrow></mpadded><mspace width="-.115em"></mspace><mi>X</mi></math></mjx-assistive-mml></mjx-container>(まはたMathML)が埋め込まれるようになります。</p>
 <p>Markdownブロック内との違いは以下のとおりです。</p>
 <p>行内に表示させる場合</p>
 <pre>- `\\(` と `\\)` の代わりに `\(` と `\)` を使います。ただし、行頭では使えません。
-例えば、\( a_2 x^2 + a_1 x + a_0 = \frac{1}{2} \) のように使います。
 </pre>
-<p>例えば、<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="7" style="font-size: 124.7%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mfrac space="4"><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>a</mi><mn>2</mn></msub><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msub><mi>a</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></math></mjx-assistive-mml></mjx-container> のように使います。</p>
+<pre>例えば、\( a_2 x^2 + a_1 x + a_0 = \frac{1}{2} \) のように使います。
+</pre>
+<p>例えば、<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="6" style="font-size: 124.7%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mfrac space="4"><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>a</mi><mn>2</mn></msub><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msub><mi>a</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></math></mjx-assistive-mml></mjx-container> のように使います。</p>
 <p>独立した行に表示させる場合</p>
 <pre>- `\\[` と `\\]` の代わりに `\[` と `\]` を使います。ただし、行頭では使えません。
 - `$$` と `$$` は行頭でも使えます。
-
-例えば、
+</pre>
+<pre>例えば、
 $$ \frac{4}{3} \pi r^3 $$のように。
 行頭以外では \[ \frac{\sqrt{(x^{2}+1)}}{c_4} \] などの記述も可能です。
 </pre>
-<p>例えば、<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="8" style="font-size: 124.7%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mfrac><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70B TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>π</mi><msup><mi>r</mi><mn>3</mn></msup></math></mjx-assistive-mml></mjx-container>のように。行頭以外では <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="9" style="font-size: 124.7%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mfrac><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-msqrt><mjx-sqrt><mjx-surd><mjx-mo class="mjx-sop"><mjx-c class="mjx-c221A TEX-S1"></mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top: 0.103em;"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.289em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-box></mjx-sqrt></mjx-msqrt></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mfrac><msqrt><mo stretchy="false">(</mo><msup><mi>x</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></msqrt><msub><mi>c</mi><mn>4</mn></msub></mfrac></math></mjx-assistive-mml></mjx-container> などの記述も可能です。</p>
+<p>例えば、<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="7" style="font-size: 124.7%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mfrac><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70B TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>π</mi><msup><mi>r</mi><mn>3</mn></msup></math></mjx-assistive-mml></mjx-container>のように。行頭以外では <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="8" style="font-size: 124.7%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mfrac><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-msqrt><mjx-sqrt><mjx-surd><mjx-mo class="mjx-sop"><mjx-c class="mjx-c221A TEX-S1"></mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top: 0.103em;"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.289em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-box></mjx-sqrt></mjx-msqrt></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mfrac><msqrt><mo stretchy="false">(</mo><msup><mi>x</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></msqrt><msub><mi>c</mi><mn>4</mn></msub></mfrac></math></mjx-assistive-mml></mjx-container> などの記述も可能です。</p>
 <pre>- `\begin`、`\end` の書式は `$$` と `$$` で挟み、行頭がスペースや `\` にならないようにします。
 - LaTeX で改行を意味する「\\」を「\\\\」に変更する必要はありません。
 </pre>
@@ -1358,16 +1351,13 @@ $$ \frac{4}{3} \pi r^3 $$のように。
 a &amp; b \\
 c &amp; d \end{pmatrix} $$
 </pre>
-<p><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="10" style="font-size: 124.7%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mrow><mjx-mo class="mjx-s3"><mjx-c class="mjx-c28 TEX-S3"></mjx-c></mjx-mo><mjx-mtable style="min-width: 2.049em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-bottom: 0.2em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-bottom: 0.2em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-top: 0.2em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-top: 0.2em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable><mjx-mo class="mjx-s3"><mjx-c class="mjx-c29 TEX-S3"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow></math></mjx-assistive-mml></mjx-container></p>
+<p><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="9" style="font-size: 124.7%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mrow><mjx-mo class="mjx-s3"><mjx-c class="mjx-c28 TEX-S3"></mjx-c></mjx-mo><mjx-mtable style="min-width: 2.049em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-bottom: 0.2em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-bottom: 0.2em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-top: 0.2em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-top: 0.2em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable><mjx-mo class="mjx-s3"><mjx-c class="mjx-c29 TEX-S3"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow></math></mjx-assistive-mml></mjx-container></p>
 <p>なお、Markdownブロック外でのみ LaTeX を表示させるのであれば <a href="http://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dwiki%2F352">tex2jax の後継</a> を検討するという方法もあります。</p>
 <h2><a name="p61"> 既知の不具合</a></h2>
 <h4><a name="p62"> FSWikiのPDFプラグインでは、Markdownブロック内の記述は表示されません。</a></h4>
 <ul>
 <li> [解決策] PDFへはWebブラウザなどを用いてご変換下さい。</li>
-<li> [設定例] 印刷で「PDFとして保存」、「レイアウト:縦」を選択し、「その他の設定」で「拡大/縮小(%)」を  FireFox の場合は 80 辺り, ChromeやEdgeの場合は 120 辺り、「余白: なし」に設定し、「 背景グラフィクス」にチェックを入れます。<ul>
-<li> なお、FireFox 97 で作成した PDF を  Acrobat Reader DC 2021.011 64ビットで開くと、リンクのページ辺りで「文書を読み取り中に問題が発生しました(14)。」が表示されます（Chrome や Edge では正常に表示されます）。 </li>
-</ul>
-</li>
+<li> [設定例] 印刷で「PDFとして保存」、「レイアウト:縦」を選択し、「その他の設定」で「拡大/縮小(%)」を  Chrome や Edge では 120 辺り、「余白: なし」に設定し、「 背景グラフィクス」にチェックを入れます。</li>
 </ul>
 
       </div>
@@ -1379,23 +1369,23 @@ c &amp; d \end{pmatrix} $$
 <ul class="outline">
 <li><a href="#p0"> Markdown plugin</a></li>
 <ul class="outline">
-<li><a href="#p1">設定の確認</a></li>
+<li><a href="#p1"> 設定の確認</a></li>
 <li><a href="#p2"> Markdown構文の対応状況</a></li>
 <li><a href="#p3"> Markdown での入力</a></li>
 </ul>
-<li><a href="#p4">見出し</a></li>
+<li><a href="#p4"> 見出し</a></li>
 <li><a href="#p5"> テキスト装飾</a></li>
 <ul class="outline">
 <li><a href="#p6"> テキスト装飾 スタイルの利用</a></li>
 <ul class="outline">
-<li><a href="#p7">推奨</a></li>
-<li><a href="#p8">非推奨</a></li>
-<li><a href="#p9">非推奨</a></li>
+<li><a href="#p7"> 推奨</a></li>
+<li><a href="#p8"> 非推奨</a></li>
+<li><a href="#p9"> 非推奨</a></li>
 </ul>
 </ul>
 <li><a href="#p10"> 実体参照符号</a></li>
 <ul class="outline">
-<li><a href="#p11">実体参照符号への自動変換</a></li>
+<li><a href="#p11"> 実体参照符号への自動変換</a></li>
 </ul>
 <li><a href="#p12"> エスケープ記号"\"</a></li>
 <li><a href="#p13"> 改行</a></li>
@@ -1431,7 +1421,7 @@ c &amp; d \end{pmatrix} $$
 <li><a href="#p29"> タスクリスト github 拡張構文 *1</a></li>
 <li><a href="#p30"> 説明 (定義リスト)</a></li>
 <ul class="outline">
-<li><a href="#p31">行頭コロンスペース定義リスト Discount 2.0.4/PHP 拡張構文 *1*2</a></li>
+<li><a href="#p31"> 行頭コロンスペース定義リスト Discount 2.0.4/PHP 拡張構文 *1*2</a></li>
 <ul class="outline">
 <li><a href="#p32"> 行頭コロンスペース定義リストの詳細</a></li>
 </ul>
