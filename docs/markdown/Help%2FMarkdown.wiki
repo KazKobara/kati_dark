@@ -2,7 +2,7 @@
 
 !! 設定の確認
 
-* この [[Help/Markdown]] は'''2022年3月18日版'''です。
+* この [[Help/Markdown]] は'''2022年6月20日版'''です。
 ** 最新版は（FSWki本体に取り込まれるまでは）[こちら|https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki]からご入手ください。
 * [Markdown plugin|https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417]のインストールと設定方法は[こちら|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]もご参照下さい。
 
@@ -11,8 +11,12 @@
     - 本ページを表示した場合、CSP (Content-Security-Policy) の警告が出る。
     - <span style="color:DeepPink;">[要確認！！] ここがピンク色で表示されている。</span>
     - <a href="javascript:alert('警告!!スクリプトへのリンクが有効になっています。')" title="javascript:alert()">[要確認！！] 本リンクをクリック</a>すると、「スクリプトへのリンクが有効になっています。」との警告が表示される。
-    - [\[要確認！！\] ここがリンクとなっており、かつ、クリック](javascript:alert\('警告!!スクリプトへのリンクが有効になっています。'\)
-"javascript:alert\(\)")すると、「スクリプトへのリンクが有効になっています。」との警告が表示される。
+<!--
+MKD_LATEX ランタイムフラグを指定した Discount 2.2.7 (v2maint 34a8ebb)用
+(Discount 2.2.7b (v2maint 68db3cd)では `\[ \]` `\( \)` は(仕様とおり?) `[ ]` `( )` のエスケープではなくLaTeX埋込となり、以下の記述ではリンクにならなくなったためコメントアウト。)
+    - [[要確認！！\] ここがリンクとなっており、かつ、クリック](javascript:alert('警告!!スクリプトへのリンクが有効になっています。'\)"javascript:alert(\)")すると、「スクリプトへのリンクが有効になっています。」との警告が表示される。
+    - [\[要確認！！\] ここがリンクとなっており、かつ、クリック](javascript:alert\('警告!!スクリプトへのリンクが有効になっています。'\)"javascript:alert\(\)")すると、「スクリプトへのリンクが有効になっています。」との警告が表示される。
+-->
 - 設定見直し方法の例
     - WebサーバなどにおいてCSPなどの設定が有効になっていない場合は有効にします。
     - CSPが既に有効になっているが 'unsafe-inline' が使用されている場合、'unsafe-inline' を使用しないようにします。代わりに、
@@ -98,6 +102,9 @@
 
 ----
 
+なお、FSWikiでは
+ {{outline}}
+により、見出しの一覧を作成できますが、Markdown で作成された見出しは一覧に含まれません。
 
 !!! テキスト装飾
 
@@ -274,16 +281,20 @@ HTML5ではサポートされておりません。
 
 !!! エスケープ記号"\"
 
- エスケープされていない3つのアスタリスクで挟まれているため***ボールドイタリック***
+ ***ボールドイタリック***
  \*\*\*アスタリスクで挟まれた通常の文字\*\*\*
- エスケープされる記号  \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \! \\ 
+ エスケープされる記号  \` \* \_ \{ \} \# \+ \- \. \! \\ \) \( \] \[
+ ただし `\( \) \[ \]` は「\( \LaTeX \)、\[ \LaTeX \]」のように `MKD_LATEX`ランタイムフラグを指定した Discount 2.2.7 (v2maint 34a8ebb) ではエスケープされ、
+ 2.2.7b (v2maint 68db3cd) ではエスケープされずLaTeX埋込になります。
 
 {{markdown
 ***ボールドイタリック***
 
 \*\*\*アスタリスクで挟まれた通常の文字\*\*\*
 
-エスケープされる記号  \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \! \\
+エスケープされる記号  \` \* \_ \{ \} \# \+ \- \. \! \\ \) \( \] \[
+
+ただし `\( \) \[ \]` は「\( \LaTeX \)、\[ \LaTeX \]」のように `MKD_LATEX`ランタイムフラグを指定した Discount 2.2.7 (v2maint 34a8ebb) ではエスケープされ、2.2.7b (v2maint 68db3cd) ではエスケープされずLaTeX埋込になります。
 }}
 
 
@@ -926,13 +937,13 @@ Discount markdown で configure.sh --github-checkbox=input とした場合には、以下の
 
 外部のWebサーバの画像を表示させる場合は、Webサーバの設定で Content-Security-Policy (CSP) の img-src にそのサーバのURLを追加する必要があります。
 
- - ![CSP img-srcに'self'を追加する必要があります!!](http://localhost:8366/favicon.ico "ローカルサーバ上の画像")
+ - ![CSP img-srcに'self'を追加する必要があります!!](favicon.ico "ローカルサーバ上の画像")
  - ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&page=FrontPage&action=ATTACH "別のサーバ上の画像")
 // - <p class="image"><img src="favicon.ico" width="16" height="16" alt="CSP img-srcに'self'を追加する必要があります!!" title="ローカルサーバ上の画像+サイズ変更" /></p>
 // - <p class="image"><img src="https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&amp;page=FrontPage&amp;action=ATTACH" width="75" height="70" alt="CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!" title="別のサーバ上の画像+サイズ変更" /></p>
 
 {{markdown
-- ![CSP img-srcに'self'を追加する必要があります!!](http://localhost:8366/favicon.ico "ローカルサーバ上の画像")
+- ![CSP img-srcに'self'を追加する必要があります!!](favicon.ico "ローカルサーバ上の画像")
 - ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&page=FrontPage&action=ATTACH "別のサーバ上の画像")
 <!--
 - <div class="image"><img src="favicon.ico" width="16" height="16" alt="CSP img-srcに'self'を追加する必要があります!!" title="ローカルサーバ上の画像+サイズ変更" /></div>
@@ -944,12 +955,12 @@ Discount markdown で configure.sh --github-checkbox=input とした場合には、以下の
 
 URL の後ろに '=widthxheight' を付けることで画像サイズを変更できます。
 
- - ![CSP img-srcに'self'を追加する必要があります!!](http://localhost:8366/favicon.ico =16x16 "ローカルサーバ上の画像16x16")
- - ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&page=FrontPage&action=ATTACH 75x70 "別のサーバ上の画像75x70")
+ - ![CSP img-srcに'self'を追加する必要があります!!](favicon.ico =16x16 "ローカルサーバ上の画像16x16")
+ - ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&page=FrontPage&action=ATTACH =75x70 "別のサーバ上の画像75x70")
 
 {{markdown
-- ![CSP img-srcに'self'を追加する必要があります!!](http://localhost:8366/favicon.ico =16x16 "ローカルサーバ上の画像16x16")
-- ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&page=FrontPage&action=ATTACH 75x70 "別のサーバ上の画像75x70")
+- ![CSP img-srcに'self'を追加する必要があります!!](favicon.ico =16x16 "ローカルサーバ上の画像16x16")
+- ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&page=FrontPage&action=ATTACH =75x70 "別のサーバ上の画像75x70")
 }}
 
 
@@ -1360,7 +1371,7 @@ echo "入れ子４段目"
 ただし、以下の注意が必要です。
 
  ・間に空行を入れられません。
- ・Markdownブロック中の「\」は「\\」にエスケープする必要があります。具体的には、
+ ・Discount 2.2.7 (v2maint 34a8ebb)では、Markdownブロック中の「\」は「\\」にエスケープする必要があります。具体的には、
     ・\[…\]、\(…\) は \\[…\\] または \\(…\\)）とし、
     ・LaTeXで改行を意味する「\\」は「\\\\」に変更する必要があります。
 

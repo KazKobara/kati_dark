@@ -3,10 +3,15 @@
 #   with LaTeX/MathJax3.
 #
 # How to use:
+# 0. httpd-security-fswiki-local.conf の style-src を以下のように変更:
+#    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/ と 'unsafe-inline' を一時的に追加
+#    - ハッシュ値 'sha*' を一時的に削除
+#    (cf. https://kazkobara.github.io/kati_dark/docs/markdown/markdown_plugin_for_fswiki.html の追加設定)
 # 1. Chrome で「名前を付けて保存」を選択し、「ウエブページ、完全」で Help_Markdown_for_FreeStyleWiki.htm へ保存。
 # 2. 本スクリプトを実行
-# 3. "Done"が表示されれば完了。
-# 4. 1.で保存したファイルをブラウザで開き確認。
+# 3. "Done"が表示されれば完了
+# 4. 1.で保存したファイルをブラウザで開き確認
+# 5. httpd-security-fswiki-local.conf の style-src を元に戻す。
 
 set -e
 trap 'echo "Error: line $LINENO returned $?!"' ERR

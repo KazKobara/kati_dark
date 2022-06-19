@@ -86,12 +86,12 @@ cd dockerfile_fswiki_local
         curl -O https://raw.githubusercontent.com/KazKobara/kati_dark/main/docs/markdown/Help%252FMarkdown.wiki
         ```
 
+  1. ダウンロードした `Help%2FMarkdown.wiki` をFSWikiの `data` フォルダ内に置き、`log/pagelist.cache` に `Help/Markdown` を追加するか、`log/pagelist.cache` を一旦削除
+
         > 注意:
 
         - [Help/Markdown (FSWiki版)]をWebブラウザの画面からコピー＆ペーストすると、いくつかの改行が削除され FSWiki 上で意図した表示となりません。
         - また、raw ファイルをWebブラウザの画面からコピー＆ペーストすると文字化けします。
-
-  1. ダウンロードした `Help%2FMarkdown.wiki` をFSWikiの `data` フォルダに置き、`log/pagelist.cache` に `Help/Markdown` を追加するか、`log/pagelist.cache` を一旦削除
 
 <!--
 以下の方法だと、後半の改行が削除されますので、FSWikiで意図した表示となりません。
@@ -230,31 +230,46 @@ cd dockerfile_fswiki_local
 1. Discount 2.2.3以降を用いている Discount.pm 中のランタイムフラグに MKD_LATEX() を追加
     - [pull request](https://github.com/sekimura/text-markdown-discount/pull/25) が取り込まれるまでは[こちら](https://github.com/KazKobara/text-markdown-discount/blob/discount-2.2.7/lib/Text/Markdown/Discount.pm)をご参照下さい。
 1. CSP（およびスタイルシート）の設定
-    1. Firefox, Chrome 99, Edge 99 共通の設定 ([参考](https://github.com/KazKobara/dockerfile_fswiki_local/blob/main/data/httpd-security-fswiki-local.conf )) <!--Firefox は 97,98 で確認-->
+    - 動作は、Firefox (97,98,101), Chrome (99,102), Edge (99,102) で確認
+    1. Firefox, Chrome, Edge 共通の設定 ([参考](https://github.com/KazKobara/dockerfile_fswiki_local/blob/main/data/httpd-security-fswiki-local.conf ))
         - script-src に `https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js` を追加
         - font-src に `https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/` を追加
-    1. Chrome 99, Edge 99 での追加設定
-        - style-src に `https://cdn.jsdelivr.net/npm/mathjax@3/es5/` と一時的に `'unsafe-inline'` を追加
-            - この時点で、MathJaxにより表示された数式を右クリックし「Copy to Clipboard」を選択すると MathML 形式(または LaTeX 形式)の記述を得ることができます。
+    1. Chrome, Edge での追加設定
+        - style-src を以下のように変更:
+            - `https://cdn.jsdelivr.net/npm/mathjax@3/es5/` と `'unsafe-inline'` を一時的に追加
+            - 'unsafe-hashes' とハッシュ値 'sha*' の全てを一時的に削除
+                - これらのいずれかが含まれていると、より緩い設定である 'unsafe-inline' は無視されます。
+        - この時点で、MathJaxにより表示された数式を右クリックし「Copy to Clipboard」を選択すると MathML 形式(または LaTeX 形式)の記述を得ることができます。
 
-                <!-- ![mathjax_clip](./mathjax_clip.png "to clipboard") -->
-                ![mathjax_clip](https://raw.githubusercontent.com/KazKobara/kati_dark/main/docs/markdown/mathjax_clip.png "to clipboard")
+            <!-- ![mathjax_clip](./mathjax_clip.png "to clipboard") -->
+            ![mathjax_clip](https://raw.githubusercontent.com/KazKobara/kati_dark/main/docs/markdown/mathjax_clip.png "to clipboard")
 
+            > 信頼できる利用者/管理者しか使えない環境であれば、この状態での使用を検討してもよいのかもしれません。
+            そうでない場合は、以下などの設定も必要になります。
         - Chrome (またはEdge)の画面を右クリックし「名前を付けて保存」->「ウェブページ、完全」でページをファイルに保存し、htm ファイルに追加されている `<style>`と`</style>` に挟まれている範囲を、そのページが読み込むスタイルシートに追加
             - その際、`.CtxtMenu`で始まるクラスの追加は不要（MathJax メニューは以下の `'unsafe-inline'` の削除により使えなくなるか使いづらいものになるため）
         - style-src の `'unsafe-inline'` (および `https://cdn.jsdelivr.net/npm/mathjax@3/es5/`) を削除し、Webサーバを再起動するなどして設定を反映
-        - 新たな LaTeX 表現を追加する度に上記の追加設定を繰り返します。
-            > なお、信頼できるエンティティしか使えない環境であれば、上記追加設定の一ポツのみを行うことを検討するという方法もあります。
-    1. Firefox, Chrome 99, Edge 99 共通の設定
+        - 新たな LaTeX 表現を追加する度に上記の追加設定を繰り返す。
+
+    1. Firefox, Chrome , Edge 共通の設定
         - LaTeX(まはたMathML)を埋込を含むページに以下を追加
 
             ```html
             <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             ```
 
-    > 注意:
-      - 設定の変更をブラウザ表示に反映させるためには、ブラウザの閲覧履歴を一旦削除する必要がある場合があります。
-          - ブラウザ閲覧履歴の削除は、Chrome ブラウザの場合、右上の「︙」->「その他のツール」->「閲覧履歴を削除…」などで行えます。
+    > 注意: 設定の変更をブラウザ表示に反映させるためには、ブラウザの閲覧履歴を削除する必要があります。具体的な方法の例は以下のとおりです。
+
+    - Chrome (102):
+        1. 右上の「︙」->「その他のツール」->「閲覧履歴を削除…」
+        1. 「過去1時間」などを選択し、「キャッシュされた画像とファイル」にチェックを入れ「データを削除」
+    - Edge (102):
+        1. 右上の「︙」->「履歴」
+        1. 開かれたウィンドウ中の「履歴」横の「︙」->「「閲覧データをクリア」
+        1. 「過去1時間」などを選択し、「キャッシュされた画像とファイル」にチェックを入れ「今すぐクリア」
+    - Firefox (101):
+        1. 右上の「≡」-> 「履歴」 -> 「最近の履歴を消去…」
+        1. 「１時間以内の履歴」などを選択し、「キャッシュ」にチェックを入れ「OK」
 
 ## MathJax の version と種類
 
@@ -286,10 +301,10 @@ MathJax の version と種類 | Firefox (ver.) | Chrome (ver.) | Edge (ver.) | �
 を `./configure.sh` のオプションと `Discount.pm` 中のランタイムフラグのいずれで指定すべきかについてまとめたものになります。
 
 - 表中の `--*` が `./configure.sh` のオプション、`MKD_*` がDiscount.pm 中のランタイムフラグになります。
-- 「停止」は、そのオプションやフラグを指定すると ./configure.sh やコマンドが停止することを意味します。
+- 「停止」は、そのオプションやフラグを指定すると ./configure.sh やコマンドが途中でエラー終了することを意味します。
 - 「無効」はそれらを指定しても停止しないが、機能は有効にならないことを意味します。
 - 例えば、
-  - コードブロック構文を有効にするためには、2.1.9 (06f029e) までは `./configure.sh --with-fenced-code` とする必要がありましたが、2.1.9 (088b5ab) 以降は、それを指定しても有効にはならず、`Discount.pm` 中のランタイムフラグに MKD_FENCEDCODE を追加する必要があります。
+  - コードブロック構文を有効にするためには、2.1.9 (06f029e) までは `./configure.sh --with-fenced-code` とする必要がありましたが、2.1.9 (088b5ab) 以降は、それを指定しても有効にはならず、`Discount.pm` 中のランタイムフラグに MKD_FENCEDCODE() を追加する必要があります。
 
 > なお、Text::Markdown 及び Text::Markdown::Discount の構成と対応している Markdown構文の違いは[Help/Markdown (FSWiki版)] 又は [Help/Markdown (HTML版)] をご参照下さい。
 

@@ -16,7 +16,7 @@
         <h2><a name="p0"> </a><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417">Markdown plugin</a></h2>
 <h3><a name="p1"><span class="sanchor">&nbsp;</span> 設定の確認</a></h3>
 <ul>
-<li> この <a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=Help%2FMarkdown" class="wikipage">Help/Markdown</a> は<strong>2022年3月18日版</strong>です。<ul>
+<li> この <a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=Help%2FMarkdown" class="wikipage">Help/Markdown</a> は<strong>2022年6月20日版</strong>です。<ul>
 <li> 最新版は（FSWki本体に取り込まれるまでは）<a href="https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki">こちら</a>からご入手ください。</li>
 </ul>
 </li>
@@ -29,9 +29,10 @@
 <li>本ページを表示した場合、CSP (Content-Security-Policy) の警告が出る。</li>
 <li><span style="color:DeepPink;">[要確認！！] ここがピンク色で表示されている。</span></li>
 <li><a href="javascript:alert(&#39;警告!!スクリプトへのリンクが有効になっています。&#39;)" title="javascript:alert()">[要確認！！] 本リンクをクリック</a>すると、「スクリプトへのリンクが有効になっています。」との警告が表示される。</li>
-<li><a href="javascript:alert(&#39;%B7%D9%B9%F0!!%A5%B9%A5%AF%A5%EA%A5%D7%A5%C8%A4%D8%A4%CE%A5%EA%A5%F3%A5%AF%A4%AC%CD%AD%B8%FA%A4%CB%A4%CA%A4%C3%A4%C6%A4%A4%A4%DE%A4%B9%A1%A3&#39;)" title="javascript:alert()">[要確認！！] ここがリンクとなっており、かつ、クリック</a>すると、「スクリプトへのリンクが有効になっています。」との警告が表示される。</li>
 </ul>
 </li>
+</ul>
+<ul>
 <li>設定見直し方法の例
 
 <ul>
@@ -137,6 +138,10 @@
 
 <h4>小見出し</h4>
 <hr>
+<p>なお、FSWikiでは</p>
+<pre>{{outline}}
+</pre>
+<p>により、見出しの一覧を作成できますが、Markdown で作成された見出しは一覧に含まれません。</p>
 <h2><a name="p5"> テキスト装飾</a></h2>
 <pre>*イタリック*、_イタリック_
 **ボールド**、__ボールド__
@@ -279,15 +284,19 @@ orange {color:orange;}    /* type selector */
 
 <p>「\」は「\」には変換されません。</p>
 <h2><a name="p12"> エスケープ記号"\"</a></h2>
-<pre>エスケープされていない3つのアスタリスクで挟まれているため***ボールドイタリック***
+<pre>***ボールドイタリック***
 \*\*\*アスタリスクで挟まれた通常の文字\*\*\*
-エスケープされる記号  \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \! \\ 
+エスケープされる記号  \` \* \_ \{ \} \# \+ \- \. \! \\ \) \( \] \[
+ただし `\( \) \[ \]` は「\( \LaTeX \)、\[ \LaTeX \]」のように `MKD_LATEX`ランタイムフラグを指定した Discount 2.2.7 (v2maint 34a8ebb) ではエスケープされ、
+2.2.7b (v2maint 68db3cd) ではエスケープされずLaTeX埋込になります。
 </pre>
 <p><strong><em>ボールドイタリック</em></strong></p>
 
 <p>***アスタリスクで挟まれた通常の文字***</p>
 
-<p>エスケープされる記号  ` * _ { } [ ] ( ) # + - . ! \</p>
+<p>エスケープされる記号  ` * _ { } # + - . ! \ ) ( ] [</p>
+
+<p>ただし <code>\( \) \[ \]</code> は「( \LaTeX )、[ \LaTeX ]」のように <code>MKD_LATEX</code>ランタイムフラグを指定した Discount 2.2.7 (v2maint 34a8ebb) ではエスケープされ、2.2.7b (v2maint 68db3cd) ではエスケープされずLaTeX埋込になります。</p>
 <h2><a name="p13"> 改行</a></h2>
 <pre>行末に2以上のスペースを入れると、  
 改行されます。
@@ -895,7 +904,7 @@ z. 項目2
 <p>注釈される文書。<a href="./Help_Markdown_for_FreeStyleWiki_files/%C3%ED%BC%E1%CA%B8%A1%A3">^1</a></p>
 <h2><a name="p41"> 画像</a></h2>
 <p>外部のWebサーバの画像を表示させる場合は、Webサーバの設定で Content-Security-Policy (CSP) の img-src にそのサーバのURLを追加する必要があります。</p>
-<pre>- ![CSP img-srcに'self'を追加する必要があります!!](./Help_Markdown_for_FreeStyleWiki_files/favicon.ico "ローカルサーバ上の画像")
+<pre>- ![CSP img-srcに'self'を追加する必要があります!!](favicon.ico "ローカルサーバ上の画像")
 - ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&amp;page=FrontPage&amp;action=ATTACH "別のサーバ上の画像")
 </pre>
 <ul>
@@ -904,12 +913,12 @@ z. 項目2
 </ul>
 <h3><a name="p42"><span class="sanchor">&nbsp;</span> サイズ指定画像 Discount 拡張構文</a></h3>
 <p>URL の後ろに '=widthxheight' を付けることで画像サイズを変更できます。</p>
-<pre>- ![CSP img-srcに'self'を追加する必要があります!!](./Help_Markdown_for_FreeStyleWiki_files/favicon.ico =16x16 "ローカルサーバ上の画像16x16")
-- ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&amp;page=FrontPage&amp;action=ATTACH 75x70 "別のサーバ上の画像75x70")
+<pre>- ![CSP img-srcに'self'を追加する必要があります!!](favicon.ico =16x16 "ローカルサーバ上の画像16x16")
+- ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&amp;page=FrontPage&amp;action=ATTACH =75x70 "別のサーバ上の画像75x70")
 </pre>
 <ul>
 <li><img src="./Help_Markdown_for_FreeStyleWiki_files/favicon.ico" height="16" width="16" title="ローカルサーバ上の画像16x16" alt="CSP img-srcに&#39;self&#39;を追加する必要があります!!"></li>
-<li><img src="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi" title="別のサーバ上の画像75x70" alt="CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!"></li>
+<li><img src="./Help_Markdown_for_FreeStyleWiki_files/fswiki.png" height="70" width="75" title="別のサーバ上の画像75x70" alt="CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!"></li>
 </ul>
 
 <h2><a name="p43"> コメント</a></h2>
@@ -1263,7 +1272,7 @@ echo "入れ子４段目"
 </pre>
 <p>ただし、以下の注意が必要です。</p>
 <pre>・間に空行を入れられません。
-・Markdownブロック中の「\」は「\\」にエスケープする必要があります。具体的には、
+・Discount 2.2.7 (v2maint 34a8ebb)では、Markdownブロック中の「\」は「\\」にエスケープする必要があります。具体的には、
    ・\[…\]、\(…\) は \\[…\\] または \\(…\\)）とし、
    ・LaTeXで改行を意味する「\\」は「\\\\」に変更する必要があります。
 </pre>

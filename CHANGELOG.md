@@ -1,9 +1,9 @@
 # Change Log
 
 <!-- markdownlint-disable MD024 no-duplicate-heading -->
-<!-- ## [Unreleased 0.0.1] -->
+<!-- ## [Unreleased 0.0.2] -->
 
-## [Unreleased 0.0.1]
+## [0.0.1]
 
 ### Fixed
 
@@ -15,13 +15,16 @@
 ### Added
 
 - `Help_Markdown_for_FreeStyleWiki.htm`
-- Common settings among themes in the head of `kati_dark.css`, such as,
+- common settings among themes in the head of `kati_dark.css`, such as,
   - `textarea.edit {; width: 100%;}` to fit the width of textarea in edit with browser.
-  - Settings for Content Security Policy (CSP) and plugin/markdown/Markdown.pm.
+  - settings for Content Security Policy (CSP) and plugin/markdown/Markdown.pm.
+- info of Discount markdown 2.2.7\* in Help/Markdown.
 
 ### Changed
 
-- Made the text area dark.
+- discount markdown 2.2.7b (v2maint 68db3cd), which is newer than 2.2.7 (v2maint 34a8ebb).
+- text-edit-area dark.
+- style components himg2.jpg and list_a.gif more dark friendly.
 - `EUC-JP (LF)` to `UTF-8 (LF)` in `kati_dark.css`.
 
 <!--

@@ -95,11 +95,15 @@ table.diff .insert {
         background-color:#3C3      /* for both */
 ```
 
+<!--
+色反転で対応済み
+
 ## TODO
 
 - [メニュー下の帯画像](https://github.com/KazKobara/kati_dark/blob/main/himg2.jpg)の右側を背景色の黒色に合せる。
   - でないとブラウザの幅を広げた際に帯画像と背景の境目が目立つため。
   - (デザインに疎いので)、絵心のある方からの提供に期待…
+-->
 
 ---
 
