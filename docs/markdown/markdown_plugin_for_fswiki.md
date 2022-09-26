@@ -4,7 +4,7 @@
 
 FSWiki に Markdown Plugin を入れると以下のスクリーンショットのように Markdown 構文を表示できるようになります。Markdown block 内に記述した LaTeX または MathML 形式の数式などを [MathJax](https://github.com/mathjax/MathJax/) を用いて綺麗に表示させることも可能になります。
 
-ただし、構成により利用できる Markdown 構文が変わり、また、セキュリティを含めた設定にもひと工夫が必要ですので、このページにまとめておきます。
+ただし、構成により利用できる Markdown 構文が変わり、また、Webサーバの Content Security Policy (CSP) などのセキュリティを含めた設定にもひと工夫が必要ですので、このページにまとめておきます。
 
 ## スクリーンショット
 

@@ -8,7 +8,7 @@
   <title>Help/Markdown - FreeStyleWiki</title>
 </head>
 <body>
-<h1><a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?word=Help%2FMarkdown&amp;action=SEARCH">Help/Markdown</a></h1>
+<h1><a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?action=SEARCH&amp;word=Help%2FMarkdown">Help/Markdown</a></h1>
 <div class="main">
   <div class="day">
     <div class="body">
@@ -16,7 +16,7 @@
         <h2><a name="p0"> </a><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417">Markdown plugin</a></h2>
 <h3><a name="p1"><span class="sanchor">&nbsp;</span> 設定の確認</a></h3>
 <ul>
-<li> この <a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=Help%2FMarkdown" class="wikipage">Help/Markdown</a> は<strong>2022年6月20日版</strong>です。<ul>
+<li> この <a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=Help%2FMarkdown" class="wikipage">Help/Markdown</a> は<strong>2022年9月26日版</strong>です。<ul>
 <li> 最新版は（FSWki本体に取り込まれるまでは）<a href="https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki">こちら</a>からご入手ください。</li>
 </ul>
 </li>
@@ -96,12 +96,12 @@
 <td colspan="1">Discount 2.1.7 + patches</td>
 <td colspan="1">--with-fenced-code --with-dl=both</td>
 <td colspan="1">MKD_NOHEADER MKD_NOPANTS</td>
-<td colspan="1"><a href="https://github.com/Orc/discount/issues/189">脆弱性</a> 修正コミット <a href="https://github.com/Orc/discount/commit/b002a5a4db31e42dfb45451c059bc56941c17974">b002a5a</a>などを取り込む必要があるため、*4 (0.14)以降を使う方がよいです。</td>
+<td colspan="1"><a href="https://github.com/Orc/discount/issues/189">脆弱性</a> 修正コミット <a href="https://github.com/Orc/discount/commit/b002a5a4db31e42dfb45451c059bc56941c17974">b002a5a</a>などを取り込む必要があるため、*4 以降を使う方がよいです。</td>
 </tr>
 <tr>
 <td colspan="1">*4</td>
-<td colspan="1"><a href="https://metacpan.org/pod/Text::Markdown::Discount">Text::Markdown::Discount</a> 0.14 (<a href="https://github.com/sekimura/text-markdown-discount/pull/25">pull request中</a>)</td>
-<td colspan="1">Discount 2.2.7 (v2maint 34a8ebb)</td>
+<td colspan="1"><a href="https://metacpan.org/pod/Text::Markdown::Discount">Text::Markdown::Discount</a> (<a href="https://github.com/sekimura/text-markdown-discount/pull/25">pull request 中</a> の <a href="https://github.com/KazKobara/text-markdown-discount/tree/discount-2.2.7">f395b80</a>)</td>
+<td colspan="1">Discount v2maint branchの最新版 (2.2.7 (v2maint 34a8ebb) と 2.2.7bでテスト)</td>
 <td colspan="1">--github-checkbox=input</td>
 <td colspan="1">MKD_NOHEADER MKD_NOPANTS MKD_FENCEDCODE MKD_DLEXTRA MKD_SAFELINK MKD_LATEX</td>
 <td colspan="1">Discountのversionとオプション/フラグ設定の関係は、<a href="https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md">こちら</a>の「Markdownの拡張構文を有効にする方法の違い」をご参照下さい。</td>
@@ -841,8 +841,9 @@ z. 項目2
 <p>しかしながら、Markdownブロック内では、Wikiページ（例えば Help、FrontPage、Menuなど）へのリンクは自動生成されません。</p>
 <h2><a name="p36"> 内部リンク</a></h2>
 <h3><a name="p37"><span class="sanchor">&nbsp;</span> (#見出し)形式での内部リンク </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a><a href="#p2" class="wikipage">*3</a><a href="#p2" class="wikipage">*4</a></h3>
-<p>以下の(#見出し)形式での内部リンクでは、「本ページのURLの後ろに(#見出し)が付けられた URL」へリンクが張られます。(ただし、プレビュー時には引数(?より右側)が取り除かれたURLとなり、<a href="#p2" class="wikipage">*2</a><a href="#p2" class="wikipage">*3</a>の環境では「URLエンコードされた(#見出し)」が付けられた URLへリンクが張られます。）</p>
-<p>しかしながら、FSWiki では見出しへのリンクは「#p」の後に何番目の見出しであるかを表す数字から１を引いた数字で指定しなければならないため、本リンクをクリックしても見出しへは移動しません。</p>
+<p>以下の(#見出し)形式での内部リンクでは、『本ページのURLの後ろに「URLエンコードされた"#見出し"」が付けられた URL』へリンクが張られます。</p>
+<blockquote><p>なお、プレビュー時には引数(?より右側)が取り除かれたURLに「URLエンコードされた"#見出し"」が付けられた URLへリンクが張られます。また、<a href="#p2" class="wikipage">*1</a>の環境では「URLエンコード」は行われません。</p>
+</blockquote>
 <pre>- [見出しへの内部リンク（吹き出し無）](#見出し)
 - [見出しへの内部リンク（吹き出し有）](#見出し  "吹き出し")
 </pre>
@@ -851,17 +852,52 @@ z. 項目2
 <li><a href="#%B8%AB%BD%D0%A4%B7" title="吹き出し">見出しへの内部リンク（吹き出し有）</a></li>
 </ul>
 
-<h3><a name="p38"><span class="sanchor">&nbsp;</span> ページ名と見出し番号を指定した内部リンク</a></h3>
-<p>上記の理由により、ページ名と見出し番号を直接記述すれば見出しへのリンクは実現可能です。ただし、リンクできるのは、Wikiの見出しのみで、Markdown ブロック内の見出しへはリンクを張れません。</p>
-<pre>- [Help/Markdownページの4番目の見出しへのリンク（URLコーディング無）](wiki.cgi?page=Help/Markdown#p3 "URLコーディング無")
-- [Help/Markdownページの5番目の見出しへのリンク（URLコーディングで記述）](wiki.cgi?page=Help%2FMarkdown#p4 'URLコーディングで記述')
+<p>しかしながら、<a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a><a href="#p2" class="wikipage">*3</a><a href="#p2" class="wikipage">*4</a>の環境では、リンクに対応するアンカータグが付けられていないため、リンクをクリックしても「見出し」へは移動しません。この問題は以下の節の対応を行うことで解決できます。</p>
+<h3><a name="p38"><span class="sanchor">&nbsp;</span> FSWikiの見出しへのリンク (ページ名と見出し番号の指定)</a></h3>
+<p>FSWikiの1番目の見出には &lt;a name="p0"&gt;、2番目の見出には &lt;a name="p1"&gt;、n番目の見出には &lt;a name="p[n-1]"&gt; のアンカータグが付けられているため、それを内部リンク構文 [任意のメッセージ](#anchor name) の # の後ろに指定します。また、ページ名を指定する場合は、# の前に「wiki.cgi?page=ページ名」を付けます。</p>
+<pre>- [3番目のFSWikiの見出しへのリンク（ページ名無）](#p2 "ページ名無")
+- [Help/Markdownページの4番目のFSWikiの見出しへのリンク（URLコーディング無）](wiki.cgi?page=Help/Markdown#p3 "URLコーディング無")
+- [Help/Markdownページの5番目FSWikiのの見出しへのリンク（URLコーディングで記述）](wiki.cgi?page=Help%2FMarkdown#p4 'URLコーディングで記述')
 </pre>
 <ul>
-<li><a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=Help/Markdown#p3" title="URLコーディング無">Help/Markdownページの4番目の見出しへのリンク（URLコーディング無）</a></li>
-<li><a href="#p4" title="URLコーディングで記述">Help/Markdownページの5番目の見出しへのリンク（URLコーディングで記述）</a></li>
+<li><a href="#p2" title="ページ名無">3番目のFSWikiの見出しへのリンク（ページ名無）</a></li>
+<li><a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=Help/Markdown#p3" title="URLコーディング無">Help/Markdownページの4番目のFSWikiの見出しへのリンク（URLコーディング無）</a></li>
+<li><a href="#p4" title="URLコーディングで記述">Help/Markdownページの5番目のFSWikiの見出しへのリンク（URLコーディングで記述）</a></li>
 </ul>
 
-<h2><a name="p39"> 集約リンク</a></h2>
+<h3><a name="p39"><span class="sanchor">&nbsp;</span> Markdownブロック内の見出しへのリンク (アンカータグの付与)</a></h3>
+<p>「Markdownブロック内の見出し」にアンカータグ &lt;a name="anchor name"&gt;&lt;/a&gt; を付け、そこで指定した "anchor name"  を内部リンク構文 [任意のメッセージ](#anchor name) の # の後ろに指定します。</p>
+<pre>{{markdown
+#### &lt;a name="Markdownブロック内の見出し"&gt;&lt;/a&gt; Markdownブロック内の見出し
+
+- [「Markdownブロック内の見出し」へのリンク](#Markdownブロック内の見出し)
+- [Help/Markdownページの「Markdownブロック内の見出し」へのリンク](wiki.cgi?page=Help/Markdown#Markdownブロック内の見出し)
+
+#### &lt;a name="anchored-markdown-header"&gt;&lt;/a&gt; Anchored Markdown Header
+
+- [Link to "Anchored Markdown Header" (with bubble)](#anchored-markdown-header "speech bubble")
+}}
+</pre>
+<h4><a name="Markdownブロック内の見出し"></a> Markdownブロック内の見出し</h4>
+
+<ul>
+<li><a href="#Markdown%A5%D6%A5%ED%A5%C3%A5%AF%C6%E2%A4%CE%B8%AB%BD%D0%A4%B7">「Markdownブロック内の見出し」へのリンク</a></li>
+<li><a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=Help/Markdown#Markdown%A5%D6%A5%ED%A5%C3%A5%AF%C6%E2%A4%CE%B8%AB%BD%D0%A4%B7">Help/Markdownページの「Markdownブロック内の見出し」へのリンク</a></li>
+</ul>
+
+
+<h4><a name="anchored-markdown-header"></a> Anchored Markdown Header</h4>
+
+<ul>
+<li><a href="#anchored-markdown-header" title="speech bubble">Link to "Anchored Markdown Header" (with bubble)</a></li>
+</ul>
+
+<p>なお、</p>
+<ul>
+<li> "anchor name" を見出しと同じ文字列(ただし、見出しに半角スペースが含まれる場合にはそれらをハイフン「-」に変換し、大文字は小文字に変換した)文字列にしておけば他の Markdown 実装との互換性を保てます。</li>
+<li> "anchor name"が Non-ASCII の場合には、いくつかのブラウザ(Chrome 105, Edge 105など)ではアンカータグに移動しないようです(Firefox 105 では移動しました)。</li>
+</ul>
+<h2><a name="p40"> 集約リンク</a></h2>
 <p>同じリンク先を繰り返し利用する場合は、リンク先を [ラベル]: の後ろに記述し、[ラベル]または[表示名][ラベル]でリンクを張ります。 </p>
 <pre>{{markdown
 - [FSWiki URL]による[FSWiki URL]のための[FSWikiのURL][FSWiki URL]。
@@ -896,13 +932,13 @@ z. 項目2
 
 
 <p>[[角括弧挟みラベル]]: <a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi">https://fswiki.osdn.jp/cgi-bin/wiki.cgi</a> "この行はリンク先の定義ではなく通常の文字列と見なされます。"</p>
-<h2><a name="p40"> 注釈 拡張構文 </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a><a href="#p2" class="wikipage">*3</a><a href="#p2" class="wikipage">*4</a></h2>
+<h2><a name="p41"> 注釈 拡張構文 </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a><a href="#p2" class="wikipage">*3</a><a href="#p2" class="wikipage">*4</a></h2>
 <pre>注釈される文書。[^1]
 
 [^1]: 注釈文。
 </pre>
 <p>注釈される文書。<a href="./Help_Markdown_for_FreeStyleWiki_files/%C3%ED%BC%E1%CA%B8%A1%A3">^1</a></p>
-<h2><a name="p41"> 画像</a></h2>
+<h2><a name="p42"> 画像</a></h2>
 <p>外部のWebサーバの画像を表示させる場合は、Webサーバの設定で Content-Security-Policy (CSP) の img-src にそのサーバのURLを追加する必要があります。</p>
 <pre>- ![CSP img-srcに'self'を追加する必要があります!!](favicon.ico "ローカルサーバ上の画像")
 - ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&amp;page=FrontPage&amp;action=ATTACH "別のサーバ上の画像")
@@ -911,7 +947,15 @@ z. 項目2
 <li><img src="./Help_Markdown_for_FreeStyleWiki_files/favicon.ico" title="ローカルサーバ上の画像" alt="CSP img-srcに&#39;self&#39;を追加する必要があります!!"></li>
 <li><img src="./Help_Markdown_for_FreeStyleWiki_files/fswiki.png" title="別のサーバ上の画像" alt="CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!"></li>
 </ul>
-<h3><a name="p42"><span class="sanchor">&nbsp;</span> サイズ指定画像 Discount 拡張構文</a></h3>
+<h3><a name="p43"><span class="sanchor">&nbsp;</span> サイズ指定画像 </a></h3>
+<h4><a name="p44"> HTML tag</a></h4>
+<pre>- &lt;img src="favicon.ico" width="16" height="16" alt="CSP img-srcに'self'を追加する必要があります!!" title="ローカルサーバ上の画像+サイズ変更" /&gt;
+</pre>
+<ul>
+<li><img src="./Help_Markdown_for_FreeStyleWiki_files/favicon.ico" width="16" height="16" alt="CSP img-srcに&#39;self&#39;を追加する必要があります!!" title="ローカルサーバ上の画像+サイズ変更"></li>
+</ul>
+
+<h4><a name="p45"> Discount 拡張構文</a></h4>
 <p>URL の後ろに '=widthxheight' を付けることで画像サイズを変更できます。</p>
 <pre>- ![CSP img-srcに'self'を追加する必要があります!!](favicon.ico =16x16 "ローカルサーバ上の画像16x16")
 - ![CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!](https://fswiki.osdn.jp/cgi-bin/wiki.cgi?file=fswiki%2Epng&amp;page=FrontPage&amp;action=ATTACH =75x70 "別のサーバ上の画像75x70")
@@ -921,12 +965,12 @@ z. 項目2
 <li><img src="./Help_Markdown_for_FreeStyleWiki_files/fswiki.png" height="70" width="75" title="別のサーバ上の画像75x70" alt="CSP img-srcに画像が置いてあるサーバのURLを追加する必要があります!!"></li>
 </ul>
 
-<h2><a name="p43"> コメント</a></h2>
+<h2><a name="p46"> コメント</a></h2>
 <pre>&lt;!--ここは表示されません。--&gt;
 </pre>
 <!--ここは表示されません。-->
 
-<h2><a name="p44"> 水平線</a></h2>
+<h2><a name="p47"> 水平線</a></h2>
 <p>スペースとタブを無視して「-」、「_」、「*」のいずれかの記号が３個以上連続する行は水平線になります。（ただし、行頭が4スペース以上開くとコードブロックと解釈されます。）</p>
 <pre>---
 -----
@@ -970,7 +1014,7 @@ _    _		_
 <hr>
 
 <hr>
-<h2><a name="p45"> テーブル 拡張構文 </a><a href="#p2" class="wikipage">*1</a></h2>
+<h2><a name="p48"> テーブル 拡張構文 </a><a href="#p2" class="wikipage">*1</a></h2>
 <pre>| 左寄せ列 | 中央寄せ列 | 右寄せ列 |
 |:---------|:----------:|---------:|
 | 1-1      |    1-2     |      1-3 |
@@ -999,7 +1043,7 @@ _    _		_
 </tbody>
 </table>
 
-<h3><a name="p46"><span class="sanchor">&nbsp;</span> Discount/PHP 拡張構文</a></h3>
+<h3><a name="p49"><span class="sanchor">&nbsp;</span> Discount/PHP 拡張構文</a></h3>
 <pre>左寄せ列 | 中央寄せ列 | 右寄せ列
 :--------|:----------:|---------:
 1-1      |    1-2     |      1-3
@@ -1028,12 +1072,12 @@ _    _		_
 </tbody>
 </table>
 
-<h3><a name="p47"><span class="sanchor">&nbsp;</span> 中央寄せ Discount 拡張構文</a></h3>
+<h3><a name="p50"><span class="sanchor">&nbsp;</span> 中央寄せ Discount 拡張構文</a></h3>
 <p>中央寄せが有効になっていない場合は、以下の節の注意点をご参照下さい。</p>
 <pre>-&gt;中央寄せ&lt;-
 </pre>
 <p style="text-align:center;">中央寄せ</p>
-<h3><a name="p48"><span class="sanchor">&nbsp;</span> 左寄せ、中央寄せ、右寄せを有効にする際の注意点</a></h3>
+<h3><a name="p51"><span class="sanchor">&nbsp;</span> 左寄せ、中央寄せ、右寄せを有効にする際の注意点</a></h3>
 <p><a href="#p2" class="wikipage">*2</a><a href="#p2" class="wikipage">*3</a><a href="#p2" class="wikipage">*4</a>の環境はテーブル表示に対応しているのですが、中央寄せ、右寄せのスタイルが以下のようにインラインで出力されます。</p>
 <pre>&lt;th style="text-align:left;"&gt; 左寄せ列 &lt;/th&gt;
 &lt;th style="text-align:center;"&gt; 中央寄せ列 &lt;/th&gt;
@@ -1065,8 +1109,8 @@ _    _		_
 </pre>
 <p>しかしながら、この修正は Markdown to HTML Converter とスタイルシートの両方を修正する必要があります。</p>
 <p>汎用的かつ暫定的な妥協策としては CSPの style-src に 'unsafe-hashes'  と、上記のインラインスタイルのハッシュ値を追加するという方法があります。具体的には、<a href="https://raw.githubusercontent.com/KazKobara/dockerfile_fswiki_local/main/data/httpd-security-fswiki-local.conf">httpd-security-fswiki-local.conf</a> の Next-recommended CSP  のような設定を有効にします。</p>
-<h2><a name="p49"> 整形済テキスト 拡張構文</a></h2>
-<h3><a name="p50"><span class="sanchor">&nbsp;</span> 文書中のコード</a></h3>
+<h2><a name="p52"> 整形済テキスト 拡張構文</a></h2>
+<h3><a name="p53"><span class="sanchor">&nbsp;</span> 文書中のコード</a></h3>
 <p>同じ長さのバッククオートで挟まれた箇所は、そのまま表示されます。  </p>
 <pre>{{markdown
 Markdownブロック内の文章：  
@@ -1077,7 +1121,7 @@ Markdownブロック内の文章：
 <p>Markdownブロック内の文章：<br>
 挟まれていない場合「&#169; &lt; <em>イタリック</em>」は変換されます。<br>
 挟まれている場合「<code>&amp;copy; &amp;lt; _イタリック_</code>」は変換されません。</p>
-<h4><a name="p51"> 連続するバッククオートをコードブロック内に含める場合</a></h4>
+<h4><a name="p54"> 連続するバッククオートをコードブロック内に含める場合</a></h4>
 <p>それより長いバッククオートで挟みます。</p>
 <pre>{{markdown
 Markdownブロック内の文章：  
@@ -1088,7 +1132,7 @@ Markdownブロック内の文章：
 <p>Markdownブロック内の文章：<br>
 挟まれていない場合「<code>鍵括弧内のバッククオートは表示されません。</code>」、<br>
 挟まれている場合<code>「```鍵括弧内のバッククオートは表示されます。```」</code>。</p>
-<h3><a name="p52"><span class="sanchor">&nbsp;</span> コードブロック(三重バッククオート上下挟み) </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
+<h3><a name="p55"><span class="sanchor">&nbsp;</span> コードブロック(三重バッククオート上下挟み) </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
 <p><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a>の環境では、文書中（インライン）のコードとして解釈され、改行は半角スペースに変換されます。</p>
 <pre>{{markdown
 コードブロック外では「&amp;copy; &amp;lt; _イタリック_」は変換されます。
@@ -1121,7 +1165,7 @@ echo "２行目。コードブロック内に空行を含む場合でも「&amp;
 
 echo "２行目。コードブロック内に空行を含む場合でも「&amp;copy; &amp;lt; _イタリック_」は変換されてはなりません。"
 </code></pre>
-<h3><a name="p53"><span class="sanchor">&nbsp;</span> コードブロック(三重チルダ上下挟み) </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
+<h3><a name="p56"><span class="sanchor">&nbsp;</span> コードブロック(三重チルダ上下挟み) </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
 <p>開始の三重チルダの前に空行が入っていないと、文書中（インライン）と解釈され二重チルダ挟み打消しになります。</p>
 <pre>{{markdown
 コードブロック外では「&amp;copy; &amp;lt; _イタリック_」は変換されます。
@@ -1139,7 +1183,7 @@ echo "２行目。コードブロック内に空行を含む場合でも「&amp;
 
 echo "２行目。コードブロック内に空行を含む場合でも「&amp;copy; &amp;lt; _イタリック_」は変換されてはなりません。"
 </code></pre>
-<h3><a name="p54"><span class="sanchor">&nbsp;</span> タグによるコードブロック</a></h3>
+<h3><a name="p57"><span class="sanchor">&nbsp;</span> タグによるコードブロック</a></h3>
 <p>preタグとcodeタグを使います。ただし、&lt;code&gt;タグ後の改行と&lt;/code&gt;後の改行は、それぞれ&lt;pre&gt;&lt;/pre&gt;内の最初と最後の改行と解釈されます。また、実体参照符号へは自動変換されないため、手動で変換しなければなりません。</p>
 <pre>{{markdown
 &lt;pre&gt;&lt;code&gt;
@@ -1171,7 +1215,7 @@ echo "2行目。&amp;lt;/code&amp;gt;タグ後に改行がある場合。"
 echo "2行目。&lt;/code&gt;タグ後に改行がある場合。"
 </code></pre>
 
-<h3><a name="p55"><span class="sanchor">&nbsp;</span> コードブロック（4スペース以上のインデント）</a></h3>
+<h3><a name="p58"><span class="sanchor">&nbsp;</span> コードブロック（4スペース以上のインデント）</a></h3>
 <p>空行に続く4スペース以上のインデントはコードブロックになります。</p>
 <pre>{{markdown
 コードブロック外では「&amp;copy; &amp;lt; _イタリック_」は変換されます。
@@ -1183,7 +1227,7 @@ echo "2行目。&lt;/code&gt;タグ後に改行がある場合。"
 
 <pre><code>echo "コードブロック内（4スペース以上インデントされた行）では「&amp;copy; &amp;lt; _イタリック_」は変換されません。"
 </code></pre>
-<h4><a name="p56"> インデント幅とコードブロック範囲の関係</a></h4>
+<h4><a name="p59"> インデント幅とコードブロック範囲の関係</a></h4>
 <p>スペース又はタブのみからなる行と空行を無視して、4スペース以上のインデントの行が連続する範囲がコードブロックと見なされます。</p>
 <pre>{{markdown
  echo "1スペースインデント。--------------- ここは本文 ---------------"
@@ -1227,7 +1271,7 @@ echo "4スペースインデント。前行は1タブスペース"
 
 echo "4スペースインデント。前行は1スペース。------ ここまでコードブロック ------"
 </code></pre>
-<h3><a name="p57"><span class="sanchor">&nbsp;</span> コードブロックの入れ子 </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
+<h3><a name="p60"><span class="sanchor">&nbsp;</span> コードブロックの入れ子 </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a></h3>
 <p>３個以降連続する`及び３個以降連続する~の内、コードブロック内で使用されていないもので上下を挟むか、インデントでのコードブロックを使用します。</p>
 <pre>{{markdown
 ````` text
@@ -1265,7 +1309,7 @@ echo "入れ子４段目"
 ~~~
 ````
 </code></pre>
-<h2><a name="p58"> LaTeX埋込 拡張構文  </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a><a href="#p2" class="wikipage">*3</a></h2>
+<h2><a name="p61"> LaTeX埋込 拡張構文  </a><a href="#p2" class="wikipage">*1</a><a href="#p2" class="wikipage">*2</a><a href="#p2" class="wikipage">*3</a></h2>
 <p>本構文を利用するには、まず Discount 2.2.3以降を使用している Discount.pm 中のランタイムフラグに MKD_LATEX() を追加します。</p>
 <pre>これにより、$$…$$、\[…\]、\(…\) のいずれかで挟まれている中身は
 （前述の実体参照符号化を除いて）そのまま出力されるようになります。
@@ -1277,7 +1321,7 @@ echo "入れ子４段目"
    ・LaTeXで改行を意味する「\\」は「\\\\」に変更する必要があります。
 </pre>
 <p>さらに、LaTeX として出力するためには、 <a href="https://github.com/mathjax/MathJax/">MathJax</a> などの設定を行う必要があります。詳しくは 、<a href="https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md">こちら</a>の MathJax の設定に関する記述をご参照下さい。</p>
-<h4><a name="p59"> Markdownブロック内での記述</a></h4>
+<h4><a name="p62"> Markdownブロック内での記述</a></h4>
 <pre>{{markdown
 &lt;!-- MathJaxで表示するページに以下を追加します。CSPでのURLの許可も必要になります。 --&gt;
 &lt;script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;&lt;/script&gt;
@@ -1335,7 +1379,7 @@ x &amp; = &amp; \sum_{i=1}^n i \\\\
 </pre>
 <p><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="0" style="font-size: 124.7%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mfrac><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70B TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>π</mi><msup><mi>r</mi><mn>3</mn></msup></math></mjx-assistive-mml></mjx-container></p>
 <p>MathJaxで表示された数式から、それに対応する MathML や LaTeX での記述を得る方法につきましては、<a href="https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md">こちら</a>などをご参照下さい。</p>
-<h4><a name="p60"> Markdownブロック外での記述</a></h4>
+<h4><a name="p63"> Markdownブロック外での記述</a></h4>
 <p>上記の script タグが追加されたページは、Markdownブロック外においても（整形済テキストの範囲を除いて）<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="5" style="font-size: 124.7%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true" style="width: 2.781em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-mspace style="margin-right: -0.325em;"></mjx-mspace><mjx-mpadded><mjx-block style="margin: 0.21em 0px 0px; position: relative;"><mjx-rbox style="left: 0px; top: -0.21em;"><mjx-texatom texclass="ORD"><mjx-mstyle size="s"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-mstyle></mjx-texatom></mjx-rbox></mjx-block></mjx-mpadded><mjx-mspace style="margin-right: -0.17em;"></mjx-mspace><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-mspace style="margin-right: -0.14em;"></mjx-mspace><mjx-mpadded><mjx-block style="margin: -0.216em 0px 0.215em; position: relative;"><mjx-rbox style="left: 0px; top: 0.215em;"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D438 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-rbox></mjx-block></mjx-mpadded><mjx-mspace style="margin-right: -0.115em;"></mjx-mspace><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>L</mi><mspace width="-.325em"></mspace><mpadded height="+.21em" depth="-.21em" voffset="+.21em"><mrow data-mjx-texclass="ORD"><mstyle displaystyle="false" scriptlevel="1"><mrow data-mjx-texclass="ORD"><mi>A</mi></mrow></mstyle></mrow></mpadded><mspace width="-.17em"></mspace><mi>T</mi><mspace width="-.14em"></mspace><mpadded height="-.5ex" depth="+.5ex" voffset="-.5ex"><mrow data-mjx-texclass="ORD"><mi>E</mi></mrow></mpadded><mspace width="-.115em"></mspace><mi>X</mi></math></mjx-assistive-mml></mjx-container>(まはたMathML)が埋め込まれるようになります。</p>
 <p>Markdownブロック内との違いは以下のとおりです。</p>
 <p>行内に表示させる場合</p>
@@ -1362,8 +1406,8 @@ c &amp; d \end{pmatrix} $$
 </pre>
 <p><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="9" style="font-size: 124.7%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mrow><mjx-mo class="mjx-s3"><mjx-c class="mjx-c28 TEX-S3"></mjx-c></mjx-mo><mjx-mtable style="min-width: 2.049em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-bottom: 0.2em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-bottom: 0.2em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-top: 0.2em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-top: 0.2em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable><mjx-mo class="mjx-s3"><mjx-c class="mjx-c29 TEX-S3"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow></math></mjx-assistive-mml></mjx-container></p>
 <p>なお、Markdownブロック外でのみ LaTeX を表示させるのであれば <a href="http://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dwiki%2F352">tex2jax の後継</a> を検討するという方法もあります。</p>
-<h2><a name="p61"> 既知の不具合</a></h2>
-<h4><a name="p62"> FSWikiのPDFプラグインでは、Markdownブロック内の記述は表示されません。</a></h4>
+<h2><a name="p64"> 既知の不具合</a></h2>
+<h4><a name="p65"> FSWikiのPDFプラグインでは、Markdownブロック内の記述は表示されません。</a></h4>
 <ul>
 <li> [解決策] PDFへはWebブラウザなどを用いてご変換下さい。</li>
 <li> [設定例] 印刷で「PDFとして保存」、「レイアウト:縦」を選択し、「その他の設定」で「拡大/縮小(%)」を  Chrome や Edge では 120 辺り、「余白: なし」に設定し、「 背景グラフィクス」にチェックを入れます。</li>
@@ -1443,48 +1487,53 @@ c &amp; d \end{pmatrix} $$
 <li><a href="#p36"> 内部リンク</a></li>
 <ul class="outline">
 <li><a href="#p37"> (#見出し)形式での内部リンク *1*2*3*4</a></li>
-<li><a href="#p38"> ページ名と見出し番号を指定した内部リンク</a></li>
+<li><a href="#p38"> FSWikiの見出しへのリンク (ページ名と見出し番号の指定)</a></li>
+<li><a href="#p39"> Markdownブロック内の見出しへのリンク (アンカータグの付与)</a></li>
 </ul>
-<li><a href="#p39"> 集約リンク</a></li>
-<li><a href="#p40"> 注釈 拡張構文 *1*2*3*4</a></li>
-<li><a href="#p41"> 画像</a></li>
+<li><a href="#p40"> 集約リンク</a></li>
+<li><a href="#p41"> 注釈 拡張構文 *1*2*3*4</a></li>
+<li><a href="#p42"> 画像</a></li>
 <ul class="outline">
-<li><a href="#p42"> サイズ指定画像 Discount 拡張構文</a></li>
-</ul>
-<li><a href="#p43"> コメント</a></li>
-<li><a href="#p44"> 水平線</a></li>
-<li><a href="#p45"> テーブル 拡張構文 *1</a></li>
+<li><a href="#p43"> サイズ指定画像 </a></li>
 <ul class="outline">
-<li><a href="#p46"> Discount/PHP 拡張構文</a></li>
-<li><a href="#p47"> 中央寄せ Discount 拡張構文</a></li>
-<li><a href="#p48"> 左寄せ、中央寄せ、右寄せを有効にする際の注意点</a></li>
-</ul>
-<li><a href="#p49"> 整形済テキスト 拡張構文</a></li>
-<ul class="outline">
-<li><a href="#p50"> 文書中のコード</a></li>
-<ul class="outline">
-<li><a href="#p51"> 連続するバッククオートをコードブロック内に含める場合</a></li>
-</ul>
-<li><a href="#p52"> コードブロック(三重バッククオート上下挟み) *1*2</a></li>
-<li><a href="#p53"> コードブロック(三重チルダ上下挟み) *1*2</a></li>
-<li><a href="#p54"> タグによるコードブロック</a></li>
-<li><a href="#p55"> コードブロック（4スペース以上のインデント）</a></li>
-<ul class="outline">
-<li><a href="#p56"> インデント幅とコードブロック範囲の関係</a></li>
-</ul>
-<li><a href="#p57"> コードブロックの入れ子 *1*2</a></li>
-</ul>
-<li><a href="#p58"> LaTeX埋込 拡張構文  *1*2*3</a></li>
-<ul class="outline">
-<ul class="outline">
-<li><a href="#p59"> Markdownブロック内での記述</a></li>
-<li><a href="#p60"> Markdownブロック外での記述</a></li>
+<li><a href="#p44"> HTML tag</a></li>
+<li><a href="#p45"> Discount 拡張構文</a></li>
 </ul>
 </ul>
-<li><a href="#p61"> 既知の不具合</a></li>
+<li><a href="#p46"> コメント</a></li>
+<li><a href="#p47"> 水平線</a></li>
+<li><a href="#p48"> テーブル 拡張構文 *1</a></li>
+<ul class="outline">
+<li><a href="#p49"> Discount/PHP 拡張構文</a></li>
+<li><a href="#p50"> 中央寄せ Discount 拡張構文</a></li>
+<li><a href="#p51"> 左寄せ、中央寄せ、右寄せを有効にする際の注意点</a></li>
+</ul>
+<li><a href="#p52"> 整形済テキスト 拡張構文</a></li>
+<ul class="outline">
+<li><a href="#p53"> 文書中のコード</a></li>
+<ul class="outline">
+<li><a href="#p54"> 連続するバッククオートをコードブロック内に含める場合</a></li>
+</ul>
+<li><a href="#p55"> コードブロック(三重バッククオート上下挟み) *1*2</a></li>
+<li><a href="#p56"> コードブロック(三重チルダ上下挟み) *1*2</a></li>
+<li><a href="#p57"> タグによるコードブロック</a></li>
+<li><a href="#p58"> コードブロック（4スペース以上のインデント）</a></li>
+<ul class="outline">
+<li><a href="#p59"> インデント幅とコードブロック範囲の関係</a></li>
+</ul>
+<li><a href="#p60"> コードブロックの入れ子 *1*2</a></li>
+</ul>
+<li><a href="#p61"> LaTeX埋込 拡張構文  *1*2*3</a></li>
 <ul class="outline">
 <ul class="outline">
-<li><a href="#p62"> FSWikiのPDFプラグインでは、Markdownブロック内の記述は表示されません。</a></li>
+<li><a href="#p62"> Markdownブロック内での記述</a></li>
+<li><a href="#p63"> Markdownブロック外での記述</a></li>
+</ul>
+</ul>
+<li><a href="#p64"> 既知の不具合</a></li>
+<ul class="outline">
+<ul class="outline">
+<li><a href="#p65"> FSWikiのPDFプラグインでは、Markdownブロック内の記述は表示されません。</a></li>
 </ul>
 </ul>
 </ul>

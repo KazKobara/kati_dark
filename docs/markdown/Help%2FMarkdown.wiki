@@ -2,7 +2,7 @@
 
 !! 設定の確認
 
-* この [[Help/Markdown]] は'''2022年6月20日版'''です。
+* この [[Help/Markdown]] は'''2022年9月26日版'''です。
 ** 最新版は（FSWki本体に取り込まれるまでは）[こちら|https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki]からご入手ください。
 * [Markdown plugin|https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417]のインストールと設定方法は[こちら|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]もご参照下さい。
 
@@ -37,8 +37,8 @@ MKD_LATEX ランタイムフラグを指定した Discount 2.2.7 (v2maint 34a8ebb)用
 , *1, [Text::Markdown|https://metacpan.org/pod/Text::Markdown] 1.000031, Markdown.pl,-,-, 27 Dec 2015以降更新無
 , *1, [Text::Markdown|https://metacpan.org/pod/Text::Markdown] 1.000031-3, Markdown.pl,-,-, "apt-get -y install libtext-markdown-perl (Ubuntu 20.04, as of Feb. 2022)" 
 , *2, [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] 0.12-1, Discount 2.2.6-1, --github-checkbox ,MKD_NOHEADER MKD_NOPANTS, "apt-get -y install libtext-markdown-discount-perl (Ubuntu 20.04, as of Feb. 2022)"
-, *3, [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] 0.13 (357a2ef), Discount 2.1.7 + patches, --with-fenced-code --with-dl=both, MKD_NOHEADER MKD_NOPANTS, [脆弱性|https://github.com/Orc/discount/issues/189] 修正コミット [b002a5a|https://github.com/Orc/discount/commit/b002a5a4db31e42dfb45451c059bc56941c17974]などを取り込む必要があるため、*4 (0.14)以降を使う方がよいです。
-, *4, [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] 0.14 ([pull request中|https://github.com/sekimura/text-markdown-discount/pull/25]), Discount 2.2.7 (v2maint 34a8ebb), --github-checkbox=input, MKD_NOHEADER MKD_NOPANTS MKD_FENCEDCODE MKD_DLEXTRA MKD_SAFELINK MKD_LATEX, Discountのversionとオプション/フラグ設定の関係は、[こちら|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]の「Markdownの拡張構文を有効にする方法の違い」をご参照下さい。
+, *3, [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] 0.13 (357a2ef), Discount 2.1.7 + patches, --with-fenced-code --with-dl=both, MKD_NOHEADER MKD_NOPANTS, [脆弱性|https://github.com/Orc/discount/issues/189] 修正コミット [b002a5a|https://github.com/Orc/discount/commit/b002a5a4db31e42dfb45451c059bc56941c17974]などを取り込む必要があるため、*4 以降を使う方がよいです。
+, *4, [Text::Markdown::Discount|https://metacpan.org/pod/Text::Markdown::Discount] ([pull request 中|https://github.com/sekimura/text-markdown-discount/pull/25] の [f395b80|https://github.com/KazKobara/text-markdown-discount/tree/discount-2.2.7]), Discount v2maint branchの最新版 (2.2.7 (v2maint 34a8ebb) と 2.2.7bでテスト), --github-checkbox=input, MKD_NOHEADER MKD_NOPANTS MKD_FENCEDCODE MKD_DLEXTRA MKD_SAFELINK MKD_LATEX, Discountのversionとオプション/フラグ設定の関係は、[こちら|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]の「Markdownの拡張構文を有効にする方法の違い」をご参照下さい。
 // apt list libtext-markdown-perl libtext-markdown-discount-perl discount
 
 // [こちら|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]の「Discount Markdown のversionと機能選択方法の違い」に移動。
@@ -851,9 +851,9 @@ Discount markdown で configure.sh --github-checkbox=input とした場合には、以下の
 
 !! (#見出し)形式での内部リンク [[*1|#p2]][[*2|#p2]][[*3|#p2]][[*4|#p2]]
 
-以下の(#見出し)形式での内部リンクでは、「本ページのURLの後ろに(#見出し)が付けられた URL」へリンクが張られます。(ただし、プレビュー時には引数(?より右側)が取り除かれたURLとなり、[[*2|#p2]][[*3|#p2]]の環境では「URLエンコードされた(#見出し)」が付けられた URLへリンクが張られます。）
+以下の(#見出し)形式での内部リンクでは、『本ページのURLの後ろに「URLエンコードされた"#見出し"」が付けられた URL』へリンクが張られます。
 
-しかしながら、FSWiki では見出しへのリンクは「#p」の後に何番目の見出しであるかを表す数字から１を引いた数字で指定しなければならないため、本リンクをクリックしても見出しへは移動しません。
+""なお、プレビュー時には引数(?より右側)が取り除かれたURLに「URLエンコードされた"#見出し"」が付けられた URLへリンクが張られます。また、[[*1|#p2]]の環境では「URLエンコード」は行われません。
 
  - [見出しへの内部リンク（吹き出し無）](#見出し)
  - [見出しへの内部リンク（吹き出し有）](#見出し  "吹き出し")
@@ -863,19 +863,51 @@ Discount markdown で configure.sh --github-checkbox=input とした場合には、以下の
 - [見出しへの内部リンク（吹き出し有）](#見出し  "吹き出し")
 }}
 
-!! ページ名と見出し番号を指定した内部リンク
+しかしながら、[[*1|#p2]][[*2|#p2]][[*3|#p2]][[*4|#p2]]の環境では、リンクに対応するアンカータグが付けられていないため、リンクをクリックしても「見出し」へは移動しません。この問題は以下の節の対応を行うことで解決できます。
 
-上記の理由により、ページ名と見出し番号を直接記述すれば見出しへのリンクは実現可能です。
-ただし、リンクできるのは、Wikiの見出しのみで、Markdown ブロック内の見出しへはリンクを張れません。
+!! FSWikiの見出しへのリンク (ページ名と見出し番号の指定)
 
- - [Help/Markdownページの4番目の見出しへのリンク（URLコーディング無）](wiki.cgi?page=Help/Markdown#p3 "URLコーディング無")
- - [Help/Markdownページの5番目の見出しへのリンク（URLコーディングで記述）](wiki.cgi?page=Help%2FMarkdown#p4 'URLコーディングで記述')
+FSWikiの1番目の見出には <a name="p0">、2番目の見出には <a name="p1">、n番目の見出には <a name="p[n-1]"> のアンカータグが付けられているため、それを内部リンク構文 [任意のメッセージ](#anchor name) の # の後ろに指定します。また、ページ名を指定する場合は、# の前に「wiki.cgi?page=ページ名」を付けます。
+
+ - [3番目のFSWikiの見出しへのリンク（ページ名無）](#p2 "ページ名無")
+ - [Help/Markdownページの4番目のFSWikiの見出しへのリンク（URLコーディング無）](wiki.cgi?page=Help/Markdown#p3 "URLコーディング無")
+ - [Help/Markdownページの5番目FSWikiのの見出しへのリンク（URLコーディングで記述）](wiki.cgi?page=Help%2FMarkdown#p4 'URLコーディングで記述')
 
 {{markdown
-- [Help/Markdownページの4番目の見出しへのリンク（URLコーディング無）](wiki.cgi?page=Help/Markdown#p3 "URLコーディング無")
-- [Help/Markdownページの5番目の見出しへのリンク（URLコーディングで記述）](wiki.cgi?page=Help%2FMarkdown#p4 'URLコーディングで記述')
+- [3番目のFSWikiの見出しへのリンク（ページ名無）](#p2 "ページ名無")
+- [Help/Markdownページの4番目のFSWikiの見出しへのリンク（URLコーディング無）](wiki.cgi?page=Help/Markdown#p3 "URLコーディング無")
+- [Help/Markdownページの5番目のFSWikiの見出しへのリンク（URLコーディングで記述）](wiki.cgi?page=Help%2FMarkdown#p4 'URLコーディングで記述')
 }}
 
+!! Markdownブロック内の見出しへのリンク (アンカータグの付与)
+
+「Markdownブロック内の見出し」にアンカータグ <a name="anchor name"></a> を付け、そこで指定した "anchor name"  を内部リンク構文 [任意のメッセージ](#anchor name) の # の後ろに指定します。
+
+ {{markdown
+ #### <a name="Markdownブロック内の見出し"></a> Markdownブロック内の見出し
+ 
+ - [「Markdownブロック内の見出し」へのリンク](#Markdownブロック内の見出し)
+ - [Help/Markdownページの「Markdownブロック内の見出し」へのリンク](wiki.cgi?page=Help/Markdown#Markdownブロック内の見出し)
+ 
+ #### <a name="anchored-markdown-header"></a> Anchored Markdown Header
+ 
+ - [Link to "Anchored Markdown Header" (with bubble)](#anchored-markdown-header "speech bubble")
+ }}
+
+{{markdown
+#### <a name="Markdownブロック内の見出し"></a> Markdownブロック内の見出し
+
+- [「Markdownブロック内の見出し」へのリンク](#Markdownブロック内の見出し)
+- [Help/Markdownページの「Markdownブロック内の見出し」へのリンク](wiki.cgi?page=Help/Markdown#Markdownブロック内の見出し)
+
+#### <a name="anchored-markdown-header"></a> Anchored Markdown Header
+
+- [Link to "Anchored Markdown Header" (with bubble)](#anchored-markdown-header "speech bubble")
+}}
+
+なお、
+* "anchor name" を見出しと同じ文字列(ただし、見出しに半角スペースが含まれる場合にはそれらをハイフン「-」に変換し、大文字は小文字に変換した)文字列にしておけば他の Markdown 実装との互換性を保てます。
+* "anchor name"が Non-ASCII の場合には、いくつかのブラウザ(Chrome 105, Edge 105など)ではアンカータグに移動しないようです(Firefox 105 では移動しました)。
 
 !!! 集約リンク
 
@@ -951,7 +983,17 @@ Discount markdown で configure.sh --github-checkbox=input とした場合には、以下の
 -->
 }}
 
-!! サイズ指定画像 Discount 拡張構文
+!! サイズ指定画像 
+
+! HTML tag
+
+ - <img src="favicon.ico" width="16" height="16" alt="CSP img-srcに'self'を追加する必要があります!!" title="ローカルサーバ上の画像+サイズ変更" />
+
+{{markdown
+- <img src="favicon.ico" width="16" height="16" alt="CSP img-srcに'self'を追加する必要があります!!" title="ローカルサーバ上の画像+サイズ変更" />
+}}
+
+! Discount 拡張構文
 
 URL の後ろに '=widthxheight' を付けることで画像サイズを変更できます。
 
