@@ -2,7 +2,7 @@
 
 !! 設定の確認
 
-* この [[Help/Markdown]] は'''2022年9月26日版'''です。
+* この [[Help/Markdown]] は'''2022年9月27日版'''です。
 ** 最新版は（FSWki本体に取り込まれるまでは）[こちら|https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki]からご入手ください。
 * [Markdown plugin|https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417]のインストールと設定方法は[こちら|https://github.com/KazKobara/kati_dark/tree/main/docs/markdown/markdown_plugin_for_fswiki.md]もご参照下さい。
 
@@ -821,8 +821,9 @@ Discount markdown で configure.sh --github-checkbox=input とした場合には、以下の
  - [FSWiki（吹き出し無）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi)
  - [FSWiki（""で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi "吹 き 出 し")
  - [FSWiki（''で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi '吹 き 出 し')
- - [FSWiki（()で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi (吹き出し)) \*1,\*2,\*3,\*4 （最初の閉じ括弧までがリンクとなります。）
- - [FSWiki（"",'',()のいずれでも挟まれていない文字列が()内にある場合）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi 文字列) （\*1,\*2,\*3,\*4 の環境では、最初の閉じ括弧までがリンクとなります。）
+ - [FSWiki（()で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi (吹き出し)) （最初の閉じ括弧までがリンクとなります。）
+ - [FSWiki（「" "」,「' '」のいずれにも挟まれていない文字列が()内にある場合）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi 文字列) （最初の閉じ括弧までがリンクとなります。）
+ - [「)」が含まれるURLは<>で挟みます](<https://en.wikipedia.org/wiki/Peter_Eckersley_(computer_scientist)> '(吹 き 出 し)') ([参考](https://github.com/Orc/discount/issues/260))
 
 {{markdown
 - address@example.com https://fswiki.osdn.jp/cgi-bin/wiki.cgi (オートリンク \*1,\*2,(\*3,\*4は MKD_AUTOLINK ランタイムフラグの指定で対応可能です。))
@@ -830,8 +831,9 @@ Discount markdown で configure.sh --github-checkbox=input とした場合には、以下の
 - [FSWiki（吹き出し無）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi)
 - [FSWiki（""で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi "吹 き 出 し")
 - [FSWiki（''で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi '吹 き 出 し')
-- [FSWiki（()で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi (吹き出し\)) \*1,\*2,\*3,\*4 （最初の閉じ括弧までがリンクとなります。）
-- [FSWiki（"",'',()のいずれにも挟まれていない文字列が()内にある場合）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi 文字列) （\*1,\*2,\*3,\*4 の環境では、最初の閉じ括弧までがリンクとなります。）
+- [FSWiki（()で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi (吹き出し)) （最初の閉じ括弧までがリンクとなります。）
+- [FSWiki（「" "」,「' '」のいずれにも挟まれていない文字列が()内にある場合）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi 文字列) （最初の閉じ括弧までがリンクとなります。）
+- [「)」が含まれるURLは<>で挟みます](<https://en.wikipedia.org/wiki/Peter_Eckersley_(computer_scientist)> '(吹 き 出 し)') ([参考](https://github.com/Orc/discount/issues/260))
 }}
 
 //VS Code 1.63.2 では「()で挟んだ吹き出し」は 有効、"",'',()のいずれにも挟まれていない文字列が()内に入っている場合はその構文はリンクとはみなされず、通常の文字列となり、オートリンクが有効な場合にはURLのみリンクとなります。

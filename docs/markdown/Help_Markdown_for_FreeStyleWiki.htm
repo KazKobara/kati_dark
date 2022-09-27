@@ -16,7 +16,7 @@
         <h2><a name="p0"> </a><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417">Markdown plugin</a></h2>
 <h3><a name="p1"><span class="sanchor">&nbsp;</span> 設定の確認</a></h3>
 <ul>
-<li> この <a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=Help%2FMarkdown" class="wikipage">Help/Markdown</a> は<strong>2022年9月26日版</strong>です。<ul>
+<li> この <a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=Help%2FMarkdown" class="wikipage">Help/Markdown</a> は<strong>2022年9月27日版</strong>です。<ul>
 <li> 最新版は（FSWki本体に取り込まれるまでは）<a href="https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki">こちら</a>からご入手ください。</li>
 </ul>
 </li>
@@ -820,8 +820,9 @@ z. 項目2
 - [FSWiki（吹き出し無）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi)
 - [FSWiki（""で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi "吹 き 出 し")
 - [FSWiki（''で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi '吹 き 出 し')
-- [FSWiki（()で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi (吹き出し)) \*1,\*2,\*3,\*4 （最初の閉じ括弧までがリンクとなります。）
-- [FSWiki（"",'',()のいずれでも挟まれていない文字列が()内にある場合）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi 文字列) （\*1,\*2,\*3,\*4 の環境では、最初の閉じ括弧までがリンクとなります。）
+- [FSWiki（()で挟んだ吹き出し有）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi (吹き出し)) （最初の閉じ括弧までがリンクとなります。）
+- [FSWiki（「" "」,「' '」のいずれにも挟まれていない文字列が()内にある場合）](https://fswiki.osdn.jp/cgi-bin/wiki.cgi 文字列) （最初の閉じ括弧までがリンクとなります。）
+- [「)」が含まれるURLは&lt;&gt;で挟みます](&lt;https://en.wikipedia.org/wiki/Peter_Eckersley_(computer_scientist)&gt; '(吹 き 出 し)') ([参考](https://github.com/Orc/discount/issues/260))
 </pre>
 <ul>
 <li><a href="mailto:address@example.com">address@example.com</a> <a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi">https://fswiki.osdn.jp/cgi-bin/wiki.cgi</a> (オートリンク *1,*2,(*3,*4は MKD_AUTOLINK ランタイムフラグの指定で対応可能です。))</li>
@@ -829,8 +830,9 @@ z. 項目2
 <li><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi">FSWiki（吹き出し無）</a></li>
 <li><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi" title="吹 き 出 し">FSWiki（""で挟んだ吹き出し有）</a></li>
 <li><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi" title="吹 き 出 し">FSWiki（''で挟んだ吹き出し有）</a></li>
-<li><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi%20(%BF%E1%A4%AD%BD%D0%A4%B7)">FSWiki（()で挟んだ吹き出し有）</a> *1,*2,*3,*4 （最初の閉じ括弧までがリンクとなります。）</li>
-<li><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi%20%CA%B8%BB%FA%CE%F3">FSWiki（"",'',()のいずれにも挟まれていない文字列が()内にある場合）</a> （*1,*2,*3,*4 の環境では、最初の閉じ括弧までがリンクとなります。）</li>
+<li><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi%20(%BF%E1%A4%AD%BD%D0%A4%B7">FSWiki（()で挟んだ吹き出し有）</a>) （最初の閉じ括弧までがリンクとなります。）</li>
+<li><a href="https://fswiki.osdn.jp/cgi-bin/wiki.cgi%20%CA%B8%BB%FA%CE%F3">FSWiki（「" "」,「' '」のいずれにも挟まれていない文字列が()内にある場合）</a> （最初の閉じ括弧までがリンクとなります。）</li>
+<li><a href="https://en.wikipedia.org/wiki/Peter_Eckersley_(computer_scientist)" title="(吹 き 出 し)">「)」が含まれるURLは&lt;&gt;で挟みます</a> (<a href="https://github.com/Orc/discount/issues/260">参考</a>)</li>
 </ul>
 
 <p>ちなみに、Wikiでは存在するページ（例えば <a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=Help" class="wikipage">Help</a>、<a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=FrontPage" class="wikipage">FrontPage</a>、<a href="./Help_Markdown_for_FreeStyleWiki_files/wiki.cgi?page=Menu" class="wikipage">Menu</a>など）へのリンクが自動的に生成されます。</p>
