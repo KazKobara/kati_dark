@@ -108,4 +108,4 @@ table.diff .insert {
 ---
 
 - [https://github.com/KazKobara/](https://github.com/KazKobara/)
-- [https://kazkobara.github.io/ (mostly in Japanese)](https://kazkobara.github.io/)
+- [https://kazkobara.github.io/](https://kazkobara.github.io/README-jp.html)

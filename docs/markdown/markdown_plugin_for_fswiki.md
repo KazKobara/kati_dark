@@ -60,6 +60,9 @@ cd dockerfile_fswiki_local
 
 対応している Markdown 構文は、 [Help/Markdown (FSWiki版)] や [Help/Markdown (HTML版)] にまとめてあります。
 
+<!--
+[Help/Markdown (HTML版)] のリンクで直接閲覧可能になりました。
+
 ## [Help/Markdown (HTML版)] の閲覧方法
 
 1. ファイルを入手
@@ -70,6 +73,7 @@ cd dockerfile_fswiki_local
     ```
 
 1. Help_Markdown_for_FreeStyleWiki.htm をブラウザで開く。
+-->
 
 ## [Help/Markdown (FSWiki版)] の閲覧方法
 
@@ -342,8 +346,9 @@ markdownプラグインは存在しません。
 [markdown_20120714.zip]: https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417&action=ATTACH&file=markdown%5F20120714%2Ezip "https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417&action=ATTACH&file=markdown%5F20120714%2Ezip"
 [Discount本家]: https://github.com/Orc/discount "https://github.com/Orc/discount"
 [Help/Markdown (FSWiki版)]: https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki "https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help%252FMarkdown.wiki"
-[Help/Markdown (HTML版)]: https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help_Markdown_for_FreeStyleWiki.htm "https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help_Markdown_for_FreeStyleWiki.htm"
+[Help/Markdown (HTML版)]: https://kazkobara.github.io/kati_dark/docs/markdown/Help_Markdown_for_FreeStyleWiki.htm "https://kazkobara.github.io/kati_dark/docs/markdown/Help_Markdown_for_FreeStyleWiki.htm"
 <!--
+[Help/Markdown (HTML版)]: https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help_Markdown_for_FreeStyleWiki.htm "https://github.com/KazKobara/kati_dark/blob/main/docs/markdown/Help_Markdown_for_FreeStyleWiki.htm"
 [Help/Markdown (FSWiki版)]: https://raw.githubusercontent.com/KazKobara/kati_dark/main/docs/markdown/Help%2FMarkdown.wiki "https://raw.githubusercontent.com/KazKobara/kati_dark/main/docs/markdown/Help%2FMarkdown.wiki"
 -->
 [Text::Markdown]: https://metacpan.org/pod/Text::Markdown "https://metacpan.org/pod/Text::Markdown"
@@ -352,9 +357,12 @@ markdownプラグインは存在しません。
 
 ---
 最後までお読み頂きありがとうございます。
+GitHubアカウントをお持ちでしたら、フォロー及び Star 頂ければと思います。リンクも歓迎です。
 
-- <https://github.com/KazKobara/>
-- <https://kazkobara.github.io/>
+- [Follow (クリック後の画面左)](https://github.com/KazKobara)
+- [Star (クリック後の画面右上)](https://github.com/KazKobara/kati_dark/)
+
+[homeに戻る](https://kazkobara.github.io/README-jp.html)
 
 ---
 
