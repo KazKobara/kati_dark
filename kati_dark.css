@@ -1,14 +1,22 @@
 /* -------- Common Settings Among Themes -------- */
 /*
 	TODO: Share common settings with other themes.
-	NOTE: Using '@import' is not recommended in terms of
-	the processing speed.
-*/
-/*
+	FSWiki stores user defined styles in ./config/usercss.dat.
+	'@import' is not recommended in terms of the processing speed.
+
 @import url('../resources/common.css');
 */
 
 /***** Common Style *****/
+
+/*** Auto line-feed in code blocks in CSS level 3 ***/
+/*  Styles for obsolete browsers are available at https://bowz.info/409 and
+	https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BBS%2D%BB%A8%C3%CC%B7%C7%BC%A8%C8%C4%2F284
+	in Japanese.
+ */
+pre {
+	white-space: pre-wrap;
+}
 
 /*** To fit textarea width for edit with browser ***/
 textarea.edit {
@@ -300,7 +308,7 @@ hr {
 /* ーーーーーー □囲み文字 ーーーーーー */
 pre {
 	border-radius: 10px;
-	-moz-border-radius: 10px;
+	/* -moz-border-radius: 10px; */
 	border : #D3D3D3 1px solid;
 	/*
 	background-color: #f8f5f1;
@@ -316,7 +324,7 @@ pre {
 /* ーーーーーー 引用文 ーーーーーー */
 blockquote {
 	border-radius: 10px;
-	-moz-border-radius: 10px;
+	/* -moz-border-radius: 10px; */
 	border      : #d4d4d4 1px dotted;
 	/*
 	background-color: #f8f5f1;

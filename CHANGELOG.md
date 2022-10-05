@@ -18,6 +18,7 @@
 - common settings among themes in the head of `kati_dark.css`, such as,
   - `textarea.edit {; width: 100%;}` to fit the width of textarea in edit with browser.
   - settings for Content Security Policy (CSP) and plugin/markdown/Markdown.pm.
+  - auto line-feed in code blocks.
 - info of Discount markdown 2.2.7\* in Help/Markdown.
 
 ### Changed
@@ -26,6 +27,7 @@
 - text-edit-area dark.
 - style components himg2.jpg and list_a.gif more dark friendly.
 - `EUC-JP (LF)` to `UTF-8 (LF)` in `kati_dark.css`.
+- links to Help/Markdown (HTML).
 
 <!--
 ## Template
