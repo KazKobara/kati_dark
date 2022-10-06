@@ -16,6 +16,7 @@
  */
 pre {
 	white-space: pre-wrap;
+	word-wrap: break-word;
 }
 
 /*** To fit textarea width for edit with browser ***/
