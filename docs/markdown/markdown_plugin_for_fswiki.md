@@ -341,7 +341,10 @@ markdownプラグインは存在しません。
 [kati_dark]: https://github.com/KazKobara/kati_dark "https://github.com/KazKobara/kati_dark"
 [その他のテーマ]: https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=%A5%C6%A1%BC%A5%DE%B0%EC%CD%F7 "https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=%A5%C6%A1%BC%A5%DE%B0%EC%CD%F7"
 [kati_dark.css]: https://raw.githubusercontent.com/KazKobara/kati_dark/main/kati_dark.css "https://raw.githubusercontent.com/KazKobara/kati_dark/main/kati_dark.css"
-[ローカルユース用 Docker FSWiki]: https://github.com/KazKobara/dockerfile_fswiki_local "https://github.com/KazKobara/dockerfile_fswiki_local"
+<!--
+[ローカルユース用 Docker FSWiki]: https://github.com/KazKobara/dockerfile_fswiki_local "https://github.com/KazKobara/dockerfile_fswiki_local" 
+-->
+[ローカルユース用 Docker FSWiki]: https://kazkobara.github.io/dockerfile_fswiki_local/README-jp.html "https://kazkobara.github.io/dockerfile_fswiki_local/README-jp.html"
 [Markdown plugin]: https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417 "https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417"
 [markdown_20120714.zip]: https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417&action=ATTACH&file=markdown%5F20120714%2Ezip "https://fswiki.osdn.jp/cgi-bin/wiki.cgi?page=BugTrack%2Dplugin%2F417&action=ATTACH&file=markdown%5F20120714%2Ezip"
 [Discount本家]: https://github.com/Orc/discount "https://github.com/Orc/discount"
